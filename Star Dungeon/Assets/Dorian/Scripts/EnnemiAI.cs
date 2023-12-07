@@ -17,20 +17,20 @@ public class EnnemiAI : MonoBehaviour
         {
             new Sequence(new List<Node>
             {
-                new NodSeePlayer(target,Agent,DetectionRadius)
+                new NodeSeePlayer(target,Agent,DetectionRadius),
                 new Selector(new List<Node>
                 {
                     new Sequence(new List<Node>
                     {
-                        new NodDistanceCheck(target,agent)
-                                            new NodMoveToPlayer(target,agent)
-                                            new NodMoveToPlayer(target,agent)
+                        new NodeDistanceCheck(target,agent)
+                        new NodeMoveToPlayer(target,agent)
+                        new NodeStartCombat()
                     }),
 
                 })
             }),
-            new Patrol(transform,speed,waypoints, agent)
-        });
+            new NodePatrol(transform,speed,waypoints, agent)
+        }); 
     }
 
     private void Update()
