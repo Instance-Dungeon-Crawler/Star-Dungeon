@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: "Assets/Mat\xE9o/Scenes/Devroom_Mat\xE9o.unity"
+    guid: 5bad7ed711ad9f34eab49f2ef2b90a61
   m_configObjects: {}
