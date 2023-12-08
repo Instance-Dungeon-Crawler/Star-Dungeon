@@ -21,9 +21,8 @@ public class EnnemiAI : MonoBehaviour
                   {
                       new Sequence(new List<Node>
                       {
-        //                new NodeDistanceCheck()
-        //                new NodeMoveToPlayer()
-        //                new NodeStartCombat()
+                          new NodeMoveToPlayer(transform, _player),
+                          new NodeStartCombat(transform, _player)
                       }),
                   }),
               }),

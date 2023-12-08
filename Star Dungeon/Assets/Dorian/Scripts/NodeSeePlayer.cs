@@ -20,7 +20,7 @@ public class NodeSeePlayer : Node
     {
         Vector3 targetDir = _player.transform.position - _transform.position;
         float angle = Vector3.Angle(targetDir, _transform.forward);
-        if (angle < 90 && Vector3.Magnitude(targetDir)<15)
+        if (angle < 90 && Vector3.Distance(_transform.position, _player.transform.position) < 15)
         {
             return NodeState.SUCCESS;
         }

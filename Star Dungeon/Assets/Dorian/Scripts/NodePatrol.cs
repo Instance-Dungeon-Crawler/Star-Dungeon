@@ -31,7 +31,7 @@ public class NodePatrol : Node
             _transform.position = Vector3.MoveTowards(_transform.position, wp.position, _speed * Time.deltaTime);
             _transform.LookAt(wp.position);
         }
-        return nodeState;
+        return NodeState.SUCCESS;
     } 
 }
 
