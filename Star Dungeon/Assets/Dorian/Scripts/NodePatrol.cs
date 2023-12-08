@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.PlasticSCM.Editor.WebApi;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class NodePatrol : Node
 {
@@ -10,7 +11,7 @@ public class NodePatrol : Node
     private Transform _transform;
     private Transform[] _waypoints;
     private int _currentWaypointIndex = 0;
-    private float _speed = 1f;
+    private float _speed = 10f;
 
     public NodePatrol(Transform transform, Transform[] waypoints)
     {
