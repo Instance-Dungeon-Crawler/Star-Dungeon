@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,32 +6,29 @@ using UnityEngine.AI;
 
 public class EnnemiAI : MonoBehaviour
 {
-    private float speed = 3.5f;
-    private Transform waypoints;
-    private Transform target;
-
+    public UnityEngine.Transform[] waypoints;
     private Node NodeStart;
 
     private void Start()
     {
         NodeStart = new Selector(new List<Node>
         {
-            new Sequence(new List<Node>
+            /*new Sequence(new List<Node>
             {
-                new NodeSeePlayer(target,Agent,DetectionRadius),
+                new NodeSeePlayer(),
                 new Selector(new List<Node>
                 {
                     new Sequence(new List<Node>
                     {
-                        new NodeDistanceCheck(target,agent)
-                        new NodeMoveToPlayer(target,agent)
+                        new NodeDistanceCheck()
+                        new NodeMoveToPlayer()
                         new NodeStartCombat()
                     }),
 
                 })
-            }),
-            new NodePatrol(transform,speed,waypoints, agent)
-        }); 
+            }),*/
+            new NodePatrol(transform,waypoints)
+        }) ; 
     }
 
     private void Update()
