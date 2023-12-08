@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5497095234677447786}
   m_Layer: 0
   m_Name: Xander
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -117,10 +117,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 6002211124906797498}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3b95465f4b5319843902f2c128bacc6d, type: 3}
+  m_Script: {fileID: 11500000, guid: e6a4b01e8b83c894a91df68b9be1b394, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _statePlayer: {fileID: 11400000, guid: 303bd20b60b5cd34785423245d408bac, type: 2}
+  _statePlayer: {fileID: 11400000, guid: 103768792d99d634d987dce90f42a6a0, type: 2}
   _playerLife: 0
   _playerMana: 0
   _playerAttackSpeed: 0

@@ -16,8 +16,6 @@ public class ScriptableReader : MonoBehaviour
 
     void Awake()
     {
-        _statePlayer = GetComponent<StatePlayer>();
-
         _playerPlayerName = _statePlayer._playerName;
         _playerClassName = _statePlayer._className;
 

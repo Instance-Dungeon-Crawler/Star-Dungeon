@@ -1,0 +1,34 @@
+{
+    "name": "Inventory",
+    "maps": [
+        {
+            "name": "Inventory",
+            "id": "f26ac70a-9683-42d3-9f30-b614cb9f0de1",
+            "actions": [
+                {
+                    "name": "OpenInventory",
+                    "type": "Button",
+                    "id": "d5f0cf4a-ac5c-4c3b-89b1-9641377ee6f4",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "5c54eb6e-905e-4291-8799-2ebbea6e97fe",
+                    "path": "<Keyboard>/t",
+                    "interactions": "Press",
+                    "processors": "",
+                    "groups": "",
+                    "action": "OpenInventory",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
