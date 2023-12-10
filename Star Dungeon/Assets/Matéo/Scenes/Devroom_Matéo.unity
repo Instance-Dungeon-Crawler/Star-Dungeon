@@ -649,7 +649,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66894d94917a4e343967bb2709731966, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetAngle: {x: 0, y: -0.70710677, z: 0, w: 0.70710677}
+  targetAngle: {x: 0, y: -0.7071068, z: 0, w: 0.70710677}
   _currentAngle: {x: 0, y: 0, z: 0, w: 0}
   _time: 1
   _curve:
@@ -845,8 +845,20 @@ MonoBehaviour:
     m_ActionId: a63345ca-be87-453b-aac3-f4ecbef337cd
     m_ActionName: Player/camera[/Keyboard/a,/Keyboard/e]
   - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: d8b80725-766c-44ca-91a7-72ec72bdbabe
+      m_Calls:
+      - m_Target: {fileID: 2120619405}
+        m_TargetAssemblyTypeName: InputsController, Assembly-CSharp
+        m_MethodName: PositiveRotation
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 1cdb89a8-3ae4-4111-8565-ddf2ad472a41
     m_ActionName: Player/Positive Rotation Camera[/Keyboard/e]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
@@ -867,6 +879,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _playerController: {fileID: 1725748879}
   _cameraMovements: {fileID: 1725748880}
+  RotationRight: 0
 --- !u!4 &2120619406
 Transform:
   m_ObjectHideFlags: 0

@@ -44,6 +44,15 @@ public partial class @NewControls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Positive Rotation Camera"",
+                    ""type"": ""Button"",
+                    ""id"": ""1cdb89a8-3ae4-4111-8565-ddf2ad472a41"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -147,13 +156,24 @@ public partial class @NewControls: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
+                    ""name"": ""1D Axis"",
+                    ""id"": ""a182e712-2c76-47b0-aa63-3cf01241ca6b"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Positive Rotation Camera"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
                     ""name"": ""positive"",
-                    ""id"": ""a74832ca-40a9-413f-9f9d-459ca6aee35d"",
+                    ""id"": ""fb60080a-01cc-4d05-8c26-f4e92944d4c1"",
                     ""path"": ""<Keyboard>/e"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Negative Rotation Camera"",
+                    ""action"": ""Positive Rotation Camera"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 }
@@ -166,6 +186,7 @@ public partial class @NewControls: IInputActionCollection2, IDisposable
         m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
         m_Player_Movement = m_Player.FindAction("Movement", throwIfNotFound: true);
         m_Player_NegativeRotationCamera = m_Player.FindAction("Negative Rotation Camera", throwIfNotFound: true);
+        m_Player_PositiveRotationCamera = m_Player.FindAction("Positive Rotation Camera", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -229,12 +250,14 @@ public partial class @NewControls: IInputActionCollection2, IDisposable
     private List<IPlayerActions> m_PlayerActionsCallbackInterfaces = new List<IPlayerActions>();
     private readonly InputAction m_Player_Movement;
     private readonly InputAction m_Player_NegativeRotationCamera;
+    private readonly InputAction m_Player_PositiveRotationCamera;
     public struct PlayerActions
     {
         private @NewControls m_Wrapper;
         public PlayerActions(@NewControls wrapper) { m_Wrapper = wrapper; }
         public InputAction @Movement => m_Wrapper.m_Player_Movement;
         public InputAction @NegativeRotationCamera => m_Wrapper.m_Player_NegativeRotationCamera;
+        public InputAction @PositiveRotationCamera => m_Wrapper.m_Player_PositiveRotationCamera;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -250,6 +273,9 @@ public partial class @NewControls: IInputActionCollection2, IDisposable
             @NegativeRotationCamera.started += instance.OnNegativeRotationCamera;
             @NegativeRotationCamera.performed += instance.OnNegativeRotationCamera;
             @NegativeRotationCamera.canceled += instance.OnNegativeRotationCamera;
+            @PositiveRotationCamera.started += instance.OnPositiveRotationCamera;
+            @PositiveRotationCamera.performed += instance.OnPositiveRotationCamera;
+            @PositiveRotationCamera.canceled += instance.OnPositiveRotationCamera;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -260,6 +286,9 @@ public partial class @NewControls: IInputActionCollection2, IDisposable
             @NegativeRotationCamera.started -= instance.OnNegativeRotationCamera;
             @NegativeRotationCamera.performed -= instance.OnNegativeRotationCamera;
             @NegativeRotationCamera.canceled -= instance.OnNegativeRotationCamera;
+            @PositiveRotationCamera.started -= instance.OnPositiveRotationCamera;
+            @PositiveRotationCamera.performed -= instance.OnPositiveRotationCamera;
+            @PositiveRotationCamera.canceled -= instance.OnPositiveRotationCamera;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -281,5 +310,6 @@ public partial class @NewControls: IInputActionCollection2, IDisposable
     {
         void OnMovement(InputAction.CallbackContext context);
         void OnNegativeRotationCamera(InputAction.CallbackContext context);
+        void OnPositiveRotationCamera(InputAction.CallbackContext context);
     }
 }

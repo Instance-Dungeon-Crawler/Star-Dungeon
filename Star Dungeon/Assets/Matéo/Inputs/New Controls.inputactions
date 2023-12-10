@@ -22,6 +22,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "Positive Rotation Camera",
+                    "type": "Button",
+                    "id": "1cdb89a8-3ae4-4111-8565-ddf2ad472a41",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -125,13 +134,24 @@
                     "isPartOfComposite": true
                 },
                 {
+                    "name": "1D Axis",
+                    "id": "a182e712-2c76-47b0-aa63-3cf01241ca6b",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Positive Rotation Camera",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
                     "name": "positive",
-                    "id": "a74832ca-40a9-413f-9f9d-459ca6aee35d",
+                    "id": "fb60080a-01cc-4d05-8c26-f4e92944d4c1",
                     "path": "<Keyboard>/e",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Negative Rotation Camera",
+                    "action": "Positive Rotation Camera",
                     "isComposite": false,
                     "isPartOfComposite": true
                 }
