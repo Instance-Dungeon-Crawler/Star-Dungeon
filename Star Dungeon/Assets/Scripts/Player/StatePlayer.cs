@@ -1,6 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+    using UnityEngine;
 
 [CreateAssetMenu(fileName = "New Player", menuName = "Player")]
 public class StatePlayer : ScriptableObject

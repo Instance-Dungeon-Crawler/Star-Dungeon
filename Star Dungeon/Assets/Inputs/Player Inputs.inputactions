@@ -1,0 +1,74 @@
+{
+    "name": "Player Inputs",
+    "maps": [
+        {
+            "name": "Player",
+            "id": "3ecdbc0d-4699-4257-ad00-965168d995ec",
+            "actions": [
+                {
+                    "name": "Movements",
+                    "type": "Button",
+                    "id": "4b2e82fd-32ea-4a52-8497-d53face67418",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Positive Camera Rotation",
+                    "type": "Button",
+                    "id": "17319ce7-8083-437f-a150-e2fea666fc36",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Negative Camera Rotation",
+                    "type": "Button",
+                    "id": "446ed996-6178-4f93-9b1f-c8bb93d1cf99",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "3df17f4d-8fe1-4589-8ac7-b9a6b8632d79",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Movements",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f3aecd1c-91c1-4d43-a52e-5b5c28e59406",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Positive Camera Rotation",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2aa6d330-612f-4df6-b1ae-ebfc5d4dc897",
+                    "path": "<Keyboard>/q",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Negative Camera Rotation",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
