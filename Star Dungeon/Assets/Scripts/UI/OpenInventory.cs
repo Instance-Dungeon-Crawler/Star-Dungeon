@@ -3,18 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class OpenInventory : MonoBehaviour
+public class OpenCloseInventory : MonoBehaviour
 {
     private bool _inventoryIsOpen = false;
-    void Start()
-    {
-        
-    }
-
-    void Update()
-    {
-        
-    }
 
     public void OpenInvent(InputAction.CallbackContext context)
     {
@@ -26,13 +17,17 @@ public class OpenInventory : MonoBehaviour
                 GameObject.Find("Canvas").transform.Find("Fond Menu").gameObject.SetActive(false);
             }
         }
-        if (_inventoryIsOpen)
+        else
         {
-            if (context.started)
+            if (_inventoryIsOpen)
             {
-                _inventoryIsOpen = false;
-                GameObject.Find("Canvas").transform.Find("Fond Menu").gameObject.SetActive(false);
+                if (context.started)
+                {
+                    _inventoryIsOpen = false;
+                    GameObject.Find("Canvas").transform.Find("Fond Menu").gameObject.SetActive(false);
+                }
             }
         }
+
     }
 }
