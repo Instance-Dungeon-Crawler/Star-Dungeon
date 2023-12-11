@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -20,7 +17,7 @@ public class NodeStartCombat : Node
     {
         if (_transform.position == _player.transform.position)
         {
-            SceneManager.LoadScene("FightScene");
+            SceneManager.LoadScene("Battle");
         }
         return nodeState;
     }
