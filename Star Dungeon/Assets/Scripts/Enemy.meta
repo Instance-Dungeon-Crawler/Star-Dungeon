@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Star Dungeon/Assets/Scripts/Enemy.meta
 guid: 94b2da2ec6428bd4a80bf8c3ea9b4f9f
+========
+guid: 7dfefc9e1de397747991d0b4c3b3f1c5
+>>>>>>>> Inventory:Star Dungeon/Assets/Prefab/Narratif.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

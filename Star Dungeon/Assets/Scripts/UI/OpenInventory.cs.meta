@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+<<<<<<<< HEAD:Star Dungeon/Assets/Scripts/UI/ButtonCustom.cs.meta
+guid: 5435d87b7b4fd824580914f21259b08c
+========
+guid: 675a20dd256c2f844be15df469df8632
+>>>>>>>> Inventory:Star Dungeon/Assets/Scripts/UI/OpenInventory.cs.meta
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
