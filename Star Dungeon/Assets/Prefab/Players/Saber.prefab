@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 315260652029398995}
   - component: {fileID: 8379112548799200526}
   - component: {fileID: 8676987650050831042}
-  - component: {fileID: 4139079279517955393}
+  - component: {fileID: 5816514575181936389}
   m_Layer: 0
   m_Name: Saber
   m_TagString: Untagged
@@ -108,7 +108,7 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &4139079279517955393
+--- !u!114 &5816514575181936389
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -117,10 +117,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 3293488001460962638}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3b95465f4b5319843902f2c128bacc6d, type: 3}
+  m_Script: {fileID: 11500000, guid: e6a4b01e8b83c894a91df68b9be1b394, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _statePlayer: {fileID: 11400000, guid: df489b4cf35ad2e418e3bd7a92134382, type: 2}
+  _statePlayer: {fileID: 11400000, guid: 85146c5dff1be0e4f9a68f48d1602b1c, type: 2}
   _playerLife: 0
   _playerMana: 0
   _playerAttackSpeed: 0

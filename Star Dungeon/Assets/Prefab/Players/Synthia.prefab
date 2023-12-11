@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8353981627310965791}
   - component: {fileID: 3631445208339994798}
   - component: {fileID: 5291933880215600798}
-  - component: {fileID: 1731491688940500482}
+  - component: {fileID: 7140471241224086825}
   m_Layer: 0
   m_Name: Synthia
   m_TagString: Untagged
@@ -108,7 +108,7 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1731491688940500482
+--- !u!114 &7140471241224086825
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -117,10 +117,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 596867988883574515}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3b95465f4b5319843902f2c128bacc6d, type: 3}
+  m_Script: {fileID: 11500000, guid: e6a4b01e8b83c894a91df68b9be1b394, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _statePlayer: {fileID: 11400000, guid: 54f63ebbb0592fe41aed80ae3ff16ca7, type: 2}
+  _statePlayer: {fileID: 11400000, guid: 71afa308ea60ce644b47e021f2a1239d, type: 2}
   _playerLife: 0
   _playerMana: 0
   _playerAttackSpeed: 0
