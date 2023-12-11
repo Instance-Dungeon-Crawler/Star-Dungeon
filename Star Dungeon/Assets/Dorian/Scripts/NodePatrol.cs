@@ -7,7 +7,6 @@ using UnityEngine.InputSystem;
 
 public class NodePatrol : Node
 {
-    [Header("EnemiPatrol")]
     private Transform _transform;
     private Transform[] _waypoints;
     private int _currentWaypointIndex = 0;
@@ -20,6 +19,7 @@ public class NodePatrol : Node
     }
     public override NodeState Evaluate()
     {
+        //make AI patrol between multiple waypoints
         Transform wp = _waypoints[_currentWaypointIndex];
         if (Vector3.Distance(_transform.position, wp.position) < 0.01f)
         {

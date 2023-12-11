@@ -15,12 +15,14 @@ public class NodeMoveToPlayer : Node
     }
     public override NodeState Evaluate()
     {
+        //make the AI look at the player and move to him
         if (_transform.position != _player.transform.position)
         {
             _transform.LookAt(_player.transform);
             _transform.position = Vector3.MoveTowards(_transform.position, _player.transform.position, _speed * Time.deltaTime);
             return NodeState.RUNNING;
         }
+        //return SUCCESS if player is reached
         else if (_transform.position == _player.transform.position)
         {
             return NodeState.SUCCESS;

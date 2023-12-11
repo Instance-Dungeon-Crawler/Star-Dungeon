@@ -16,16 +16,19 @@ public class EnnemiAI : MonoBehaviour
         {
               new Sequence(new List<Node>
                 {
+                  //check if the Ennemi see the player
                   new NodeSeePlayer(transform, _player),
                   new Selector(new List<Node>
                   {
                       new Sequence(new List<Node>
                       {
+                          //if player is seen move to him and start combat once player is reached
                           new NodeMoveToPlayer(transform, _player),
                           new NodeStartCombat(transform, _player)
                       }),
                   }),
               }),
+            //default behavior of patrolling between waypoints
             new NodePatrol(transform,_waypoints)
         }) ; 
     }

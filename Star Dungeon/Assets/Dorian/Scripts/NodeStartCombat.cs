@@ -14,6 +14,8 @@ public class NodeStartCombat : Node
         _transform = transform;
         _player = player;
     }
+
+    //load the scene where the fight will happen
     public override NodeState Evaluate()
     {
         if (_transform.position == _player.transform.position)

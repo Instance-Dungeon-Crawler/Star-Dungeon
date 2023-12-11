@@ -18,6 +18,7 @@ public class NodeSeePlayer : Node
 
     public override NodeState Evaluate()
     {
+        //check if the player is line of sight
         Vector3 targetDir = _player.transform.position - _transform.position;
         float angle = Vector3.Angle(targetDir, _transform.forward);
         if (angle < 90 && Vector3.Distance(_transform.position, _player.transform.position) < 15)
