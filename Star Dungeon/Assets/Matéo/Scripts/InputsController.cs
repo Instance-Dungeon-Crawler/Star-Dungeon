@@ -1,16 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class InputsController : MonoBehaviour
 {
-
-
+    [SerializeField] PlayerMovement _playerMovement;
     PlayerInput _playerInput;
     [SerializeField] private PlayerController _playerController;
     [SerializeField] private Cameramovements _cameraMovements;
-    public bool RotationRight = false;
 
 
     void Start()
@@ -20,29 +16,64 @@ public class InputsController : MonoBehaviour
 
     public void PlayerMovements(InputAction.CallbackContext context)
     {
-        Vector3 vector3 = context.ReadValue<Vector3>();
-        if (context.performed)
-        
-            _playerController.OnMove(vector3);
+        if (context.started && _playerMovement._canMove && _cameraMovements._canRotate)
+        {
 
+            _playerController.OnMove();
+
+            Rigidbody rb = GetComponent<Rigidbody>();
+
+            rb.constraints = RigidbodyConstraints.FreezeRotationX;
+
+        }
+        if (context.canceled && _playerMovement._canMove)
+        {
+            _playerMovement._canRotate = false;
+
+        }
     }
 
     public void NegativeRotation(InputAction.CallbackContext context)
     {
-        if (context.performed && _cameraMovements._canRotate)
+        if (context.performed && _cameraMovements._canRotate && _playerMovement._canMove)
         {
             _cameraMovements.Rotate();
             _cameraMovements.targetAngle = Quaternion.Euler(0, _cameraMovements.transform.rotation.eulerAngles.y - 90, 0f);
+            _playerMovement._canMove = false;
+
+            Rigidbody rb = GetComponent<Rigidbody>();
+
+
+            rb.constraints = RigidbodyConstraints.FreezeRotationZ;
+        }
+
+        else if (context.canceled)
+        {
+            _playerMovement._canMove = true;
+
         }
     }
 
     public void PositiveRotation(InputAction.CallbackContext context)
     {
-        if (context.performed && _cameraMovements._canRotate)
+        if (context.performed && _cameraMovements._canRotate && _playerMovement._canMove)
         {
+
             _cameraMovements.Rotate();
             _cameraMovements.targetAngle = Quaternion.Euler(0, _cameraMovements.transform.rotation.eulerAngles.y + 90, 0f);
+            _playerMovement._canMove = false;
+
+            Rigidbody rb = GetComponent<Rigidbody>();
+
+
+            rb.constraints = RigidbodyConstraints.FreezeRotationZ;
         }
+        else if (context.canceled)
+        {
+            _playerMovement._canMove = true;
+
+        }
+
     }
 
 

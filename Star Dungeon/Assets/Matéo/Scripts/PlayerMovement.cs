@@ -1,28 +1,46 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public Rigidbody rb;
+    Cameramovements _caameramovements;
+    private Rigidbody _rigidBody;
     public float _movespeed;
-    private Vector3 _moveDirection;
-
-    private void FixedUpdate()
+    public Vector3 _targetPos;
+    [SerializeField] private float _time;
+    public bool _canMove = true;
+    public bool _canRotate = true;
+    private void Start()
     {
-        PlayerMovements();
+        _rigidBody = GetComponent<Rigidbody>();
     }
 
-    public void Move(Vector3 _vector3)
+    public IEnumerator PlayerMovements()
     {
-        _moveDirection = _vector3;
+
+        float time = 0f;
+        Vector3 Startposition = transform.position;
+        _targetPos = (transform.position + transform.forward * _movespeed);
+
+        while (time < 1)
+        {
+
+         
+            _canMove = false;
+            this.transform.position = Vector3.LerpUnclamped(Startposition, _targetPos, time);
+
+            yield return null;
+            time += Time.deltaTime / _time;
+
+        }
+
+        transform.position = _targetPos;
+        _canMove = true;
+        
     }
 
-    public void PlayerMovements()
+    public void Movements()
     {
-        rb.velocity = _moveDirection * _movespeed;
+        StartCoroutine(PlayerMovements());
     }
-
-
 }

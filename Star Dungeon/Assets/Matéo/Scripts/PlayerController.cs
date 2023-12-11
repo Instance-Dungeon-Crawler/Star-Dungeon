@@ -1,23 +1,21 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-
     PlayerMovement _playerMovement;
+    private Rigidbody _rigidBody;
+  
     void Start()
     {
         _playerMovement = GetComponent<PlayerMovement>();
-      
+        
     }
 
-    public void OnMove(Vector3 _vector3)
+    public void OnMove()
     {
-        _playerMovement.Move(_vector3);
+     
+            _playerMovement.Movements();
+           
     }
 
-    
-   
 }
