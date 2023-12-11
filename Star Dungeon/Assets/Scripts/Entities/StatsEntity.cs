@@ -1,10 +1,10 @@
-    using UnityEngine;
+using UnityEngine;
 
 [CreateAssetMenu(fileName = "New Entity", menuName = "Entity")]
 public class StatsEntity : MonoBehaviour
 {
-    public string _entityname;
-    public string _name;
+    public string _entityName;
+    public string _className;
 
     public int _life;
     public int _mana;

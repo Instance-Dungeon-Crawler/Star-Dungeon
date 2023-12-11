@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class ScriptableReader : MonoBehaviour
 {
-    [SerializeField] private StatePlayer _statePlayer;
+    [SerializeField] private StatsEntity _statsEntity;
 
     [HideInInspector] public int _playerLife;
     [HideInInspector] public int _playerMana;
@@ -14,13 +14,13 @@ public class ScriptableReader : MonoBehaviour
 
     void Awake()
     {
-        _playerPlayerName = _statePlayer._playerName;
-        _playerClassName = _statePlayer._className;
-        _playerLife = _statePlayer._life;
-        _playerMana = _statePlayer._mana;
-        _playerAttackSpeed = _statePlayer._attackSpeed;
-        _playerResistance = _statePlayer._resistance;
-        _playerPower = _statePlayer._power;
+        _playerPlayerName = _statsEntity._entityName;
+        _playerClassName = _statsEntity._className;
+        _playerLife = _statsEntity._life;
+        _playerMana = _statsEntity._mana;
+        _playerAttackSpeed = _statsEntity._attackSpeed;
+        _playerResistance = _statsEntity._resistance;
+        _playerPower = _statsEntity._power;
     }
 }
 

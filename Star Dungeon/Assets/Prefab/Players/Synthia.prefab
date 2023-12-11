@@ -120,7 +120,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6a4b01e8b83c894a91df68b9be1b394, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _statePlayer: {fileID: 11400000, guid: 71afa308ea60ce644b47e021f2a1239d, type: 2}
+  _statsEntity: {fileID: 11400000, guid: 71afa308ea60ce644b47e021f2a1239d, type: 2}
   _playerLife: 0
   _playerMana: 0
   _playerAttackSpeed: 0
