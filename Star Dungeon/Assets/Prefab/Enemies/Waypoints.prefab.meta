@@ -1,6 +1,12 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Star Dungeon/Assets/Prefab/Enemies/Waypoints.prefab.meta
 guid: 007080ed245f6574987c6ffe9f91dc9a
 PrefabImporter:
+========
+guid: d7bf5a3c44da626488ea3df4b114f518
+folderAsset: yes
+DefaultImporter:
+>>>>>>>> c28f8dc (Battle System):Star Dungeon/Assets/Scripts/Enemy.meta
   externalObjects: {}
   userData: 
   assetBundleName: 
