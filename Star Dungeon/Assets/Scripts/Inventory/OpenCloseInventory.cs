@@ -13,8 +13,8 @@ public class OpenCloseInventory : MonoBehaviour
         {
             if (context.started)
             {
-                _inventoryIsOpen = false;
-                GameObject.Find("Canvas").transform.Find("Fond Menu").gameObject.SetActive(false);
+                _inventoryIsOpen = true;
+                GameObject.Find("Canvas").transform.Find("Fond Menu").gameObject.SetActive(true);
             }
         }
         else
