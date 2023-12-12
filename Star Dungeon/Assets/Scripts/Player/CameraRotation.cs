@@ -9,7 +9,7 @@ public class CameraRotation : MonoBehaviour
     private Quaternion _currentAngle;
 
     [Header("Time")]
-    [SerializeField] private float _time;
+    public float _time;
 
     [Header("Curve Movements")]
     [SerializeField] AnimationCurve _curve;

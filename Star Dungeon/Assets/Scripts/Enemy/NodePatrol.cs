@@ -7,7 +7,7 @@ public class NodePatrol : Node
     private Transform[] _waypoints;
     private GameObject _player;
     private int _currentWaypointIndex = 0;
-    private float _speed = 10f;
+    private float _speed = 5f;
     private CameraRotation _cameraRotation;
 
 
