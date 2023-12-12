@@ -7,28 +7,28 @@ using TMPro;
 
 public class ButtonCustom : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
 {
-    public bool m_interactable = true;
+    public bool _interactable = true;
 
     [Header("Sprites")]
-    [SerializeField] private Sprite m_disable;
+    [SerializeField] private Sprite _disable;
     private Sprite m_enable;
 
     [Header("Colors")]
-    [SerializeField] private Color m_enterColor;
-    [SerializeField] private Color m_exitColor;
-    [SerializeField] private Color m_clickColor;
+    [SerializeField] private Color _enterColor;
+    [SerializeField] private Color _exitColor;
+    [SerializeField] private Color _clickColor;
 
     [Space(15)]
     [FormerlySerializedAs("onClick")]
-    [SerializeField] private ButtonClickedEvent m_onClick = new ButtonClickedEvent();
+    [SerializeField] private ButtonClickedEvent _onClick = new ButtonClickedEvent();
 
     [Space(15)]
     [FormerlySerializedAs("onEnter")]
-    [SerializeField] private ButtonClickedEvent m_onEnter = new ButtonClickedEvent();
+    [SerializeField] private ButtonClickedEvent _onEnter = new ButtonClickedEvent();
 
     [Space(15)]
     [FormerlySerializedAs("onExit")]
-    [SerializeField] private ButtonClickedEvent m_onExit = new ButtonClickedEvent();
+    [SerializeField] private ButtonClickedEvent _onExit = new ButtonClickedEvent();
     private void Start()
     {
         m_enable = GetComponent<Image>().sprite;
@@ -41,38 +41,38 @@ public class ButtonCustom : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        if (m_interactable)
+        if (_interactable)
         {
-            m_onEnter.Invoke();
+            _onEnter.Invoke();
             if(GetComponentInChildren<TMP_Text>() != null)
-                GetComponentInChildren<TMP_Text>().color = m_enterColor;
+                GetComponentInChildren<TMP_Text>().color = _enterColor;
         }
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        if (m_interactable)
+        if (_interactable)
         {
-            m_onExit.Invoke();
+            _onExit.Invoke();
             if (GetComponentInChildren<TMP_Text>() != null)
-                GetComponentInChildren<TMP_Text>().color = m_exitColor;
+                GetComponentInChildren<TMP_Text>().color = _exitColor;
         }
     }
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        if (m_interactable)
+        if (_interactable)
         {
-            m_onClick.Invoke();
+            _onClick.Invoke();
             if (GetComponentInChildren<TMP_Text>() != null)
-                GetComponentInChildren<TMP_Text>().color = m_clickColor;
+                GetComponentInChildren<TMP_Text>().color = _clickColor;
         }
     }
 
     private void Interactable()
     {
-        if (!m_interactable)
-            GetComponent<Image>().sprite = m_disable;
+        if (!_interactable)
+            GetComponent<Image>().sprite = _disable;
         else
             GetComponent<Image>().sprite = m_enable;
     }
