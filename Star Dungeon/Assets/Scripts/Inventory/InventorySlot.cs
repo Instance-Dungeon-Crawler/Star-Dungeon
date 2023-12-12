@@ -11,4 +11,5 @@ public class InventorySlot : MonoBehaviour, IDropHandler
         DragItem DragItem = dropped.GetComponent<DragItem>();
         DragItem._parentAfterDrag = transform;
     }
+
 }
