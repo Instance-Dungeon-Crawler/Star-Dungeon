@@ -59,7 +59,7 @@ public class GameManager : MonoBehaviour
                 _SupportHP = 100;
                 _SupportDamage = 50;
                 _VoleurHP = 75;
-                _VoleurDamage = 50;
+                _VoleurDamage = 100;
 
 
 
