@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class EnnemiAI : MonoBehaviour
 {
-    public CameraRotation _cameraRotation;
+    public PlayerMovement _playerMovement;
     public Transform[] _waypoints;
     private Node NodeStart;
     public GameObject _player;
@@ -21,13 +21,13 @@ public class EnnemiAI : MonoBehaviour
                       new Sequence(new List<Node>
                       {
                           //if player is seen move to him and start combat once player is reached
-                          new NodeMoveToPlayer(transform, _player, _cameraRotation),
+                          new NodeMoveToPlayer(transform, _player, _playerMovement),
                           new NodeStartCombat(transform, _player)
                       }),
                   }),
               }),
             //default behavior of patrolling between waypoints
-            new NodePatrol(transform,_waypoints,_player, _cameraRotation)
+            new NodePatrol(transform,_waypoints,_player, _playerMovement)
         }) ; 
     }
 

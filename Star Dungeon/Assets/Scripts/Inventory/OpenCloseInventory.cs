@@ -5,29 +5,7 @@ using UnityEngine.InputSystem;
 
 public class OpenCloseInventory : MonoBehaviour
 {
-    private bool _inventoryIsOpen = false;
 
-    public void OpenInvent(InputAction.CallbackContext context)
-    {
-        if (!_inventoryIsOpen)
-        {
-            if (context.started)
-            {
-                _inventoryIsOpen = true;
-                GameObject.Find("Canvas").transform.Find("Fond Menu").gameObject.SetActive(true);
-            }
-        }
-        else
-        {
-            if (_inventoryIsOpen)
-            {
-                if (context.started)
-                {
-                    _inventoryIsOpen = false;
-                    GameObject.Find("Canvas").transform.Find("Fond Menu").gameObject.SetActive(false);
-                }
-            }
-        }
 
-    }
+    
 }

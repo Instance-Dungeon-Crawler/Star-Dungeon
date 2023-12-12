@@ -14,7 +14,6 @@ public class CameraRotation : MonoBehaviour
     [Header("Curve Movements")]
     [SerializeField] AnimationCurve _curve;
     public bool _canRotate = false;
-    public bool _haskey = false;
     public IEnumerator RotateCameraLeft()
     {
         _currentAngle = transform.rotation;

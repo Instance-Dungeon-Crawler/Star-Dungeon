@@ -8,16 +8,16 @@ public class NodePatrol : Node
     private GameObject _player;
     private int _currentWaypointIndex = 0;
     private float _speed = 5f;
-    private CameraRotation _cameraRotation;
+    private PlayerMovement _playerMovement;
 
 
 
-    public NodePatrol(Transform transform, Transform[] waypoints, GameObject player,CameraRotation _camera)
+    public NodePatrol(Transform transform, Transform[] waypoints, GameObject player, PlayerMovement _movements)
     {
         _transform = transform;
         _waypoints = waypoints;
         _player = player;
-        _cameraRotation = _camera;
+        _playerMovement = _movements;
 
     }
 
@@ -30,7 +30,7 @@ public class NodePatrol : Node
             _transform.position = wp.position;
             _currentWaypointIndex = (_currentWaypointIndex + 1) % _waypoints.Length;
         }
-        else if(!_cameraRotation._canRotate)
+        else if(!_playerMovement._canMove)
         {
             _transform.position = Vector3.MoveTowards(_transform.position, wp.position, _speed * Time.deltaTime);
             _transform.LookAt(_player.transform);

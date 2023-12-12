@@ -2,8 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Skills
@@ -205,7 +205,7 @@ public class BattleButtonsManager : MonoBehaviour
             if (characters.GetComponent<ScriptableReader>()._entityLife <= 0)
             {
                 _characters.Remove(characters);
-                _attackDialogue.SetText(characters.GetComponent<ScriptableReader>()._entityName + " is dead.");
+                _attackDialogue.SetText(characters.GetComponent<ScriptableReader>()._entityName + " is dead. ");
             }
             else
                 _attackDialogue.SetText("What should " + _skills._launcher.GetComponent<ScriptableReader>()._entityName + " do ?");
@@ -217,7 +217,9 @@ public class BattleButtonsManager : MonoBehaviour
             if (enemy.GetComponent<ScriptableReader>()._entityLife <= 0)
             {
                 _enemies.Remove(enemy);
-                _attackDialogue.SetText(enemy.GetComponent<ScriptableReader>()._entityName + " is dead.");
+                _attackDialogue.SetText(enemy.GetComponent<ScriptableReader>()._entityName + " is dead. You got a key, now you can open the door !");
+                PlayerPrefs.SetInt("Key", 1);
+                SceneManager.LoadScene("Devroom");
             }
             else
                 _attackDialogue.SetText("What should " + _skills._launcher.GetComponent<ScriptableReader>()._entityName + " do ?");
