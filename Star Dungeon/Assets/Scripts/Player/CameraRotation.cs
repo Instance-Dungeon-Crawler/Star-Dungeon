@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class CameraRotation : MonoBehaviour
 {
+
     [Header("Angles")]
     [HideInInspector] public Quaternion _targetAngle;
     private Quaternion _currentAngle;
@@ -13,6 +14,7 @@ public class CameraRotation : MonoBehaviour
     [Header("Curve Movements")]
     [SerializeField] AnimationCurve _curve;
     public bool _canRotate = false;
+    public bool _haskey = false;
     public IEnumerator RotateCameraLeft()
     {
         _currentAngle = transform.rotation;
