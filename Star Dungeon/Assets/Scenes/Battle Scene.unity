@@ -213,25 +213,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _interactable: 1
-  _disable: {fileID: 21300000, guid: 1e118a4eb28b3f44abed6eaa5562618c, type: 3}
-  _enterColor: {r: 1, g: 0, b: 0, a: 1}
-  _exitColor: {r: 0, g: 0, b: 0, a: 1}
-  _clickColor: {r: 0, g: 0, b: 0, a: 1}
+  _disable: {fileID: 0}
+  _enterColor: {r: 0, g: 0, b: 0, a: 0}
+  _exitColor: {r: 0, g: 0, b: 0, a: 0}
+  _clickColor: {r: 0, g: 0, b: 0, a: 0}
   _onClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 641798202}
-        m_TargetAssemblyTypeName: BattleButtonsManager, Assembly-CSharp
-        m_MethodName: Skip
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   _onEnter:
     m_PersistentCalls:
       m_Calls: []
@@ -896,20 +884,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abafde11d8bba8446806d97d38fb0b11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _enemyStats: {fileID: 1168926991}
-  _xander: {fileID: 2096241763}
-  _synthia: {fileID: 1383069894}
-  _saber: {fileID: 1331538297}
+  _enemyStats: {fileID: 0}
+  _xander: {fileID: 0}
+  _synthia: {fileID: 0}
+  _saber: {fileID: 0}
   _characters: []
   _enemies: []
-  _attackDialogue: {fileID: 1186302098}
-  _attackButton: {fileID: 1908959219}
-  _skipButton: {fileID: 103240732}
-  _charactersSliders:
-  - {fileID: 1088671134}
-  - {fileID: 116377140}
-  - {fileID: 1720653702}
-  - {fileID: 1984823423}
+  _attackDialogue: {fileID: 0}
+  _attackButton: {fileID: 0}
+  _skipButton: {fileID: 0}
+  _charactersSliders: []
 --- !u!1 &797515928
 GameObject:
   m_ObjectHideFlags: 0
@@ -1629,7 +1613,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _statsEntity: {fileID: 11400000, guid: a9b7436edcf72eb42b627171b8f536fd, type: 2}
-  _entityLife: 200
+  _entityLife: 0
   _entityMana: 0
   _entityAttackSpeed: 0
   _entityResistance: 0
@@ -3412,25 +3396,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _interactable: 1
-  _disable: {fileID: 21300000, guid: 1e118a4eb28b3f44abed6eaa5562618c, type: 3}
-  _enterColor: {r: 0, g: 1, b: 0, a: 1}
-  _exitColor: {r: 0, g: 0, b: 0, a: 1}
-  _clickColor: {r: 0, g: 0, b: 0, a: 1}
+  _disable: {fileID: 0}
+  _enterColor: {r: 0, g: 0, b: 0, a: 0}
+  _exitColor: {r: 0, g: 0, b: 0, a: 0}
+  _clickColor: {r: 0, g: 0, b: 0, a: 0}
   _onClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 641798202}
-        m_TargetAssemblyTypeName: BattleButtonsManager, Assembly-CSharp
-        m_MethodName: Attacks
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   _onEnter:
     m_PersistentCalls:
       m_Calls: []
