@@ -14,5 +14,4 @@ public class PlayerController : MonoBehaviour
     {
         _playerMovement.Movements(); 
     }
-
 }

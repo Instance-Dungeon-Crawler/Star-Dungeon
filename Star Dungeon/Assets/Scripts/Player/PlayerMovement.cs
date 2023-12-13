@@ -7,7 +7,6 @@ public class PlayerMovement : MonoBehaviour
     public Vector3 _targetPos;
     [SerializeField] private float _time;
     public bool _canMove = true;
-    public bool _canRotate = true;
 
     public IEnumerator PlayerMovements()
     {
