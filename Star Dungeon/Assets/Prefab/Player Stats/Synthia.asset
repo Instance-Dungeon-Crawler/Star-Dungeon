@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _entityName: Synthia
   _className: Healer
+  _level: 1
+  _XP: 0
   _life: 100
   _mana: 100
   _attackSpeed: 7

@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _entityName: Saber
   _className: Robber
+  _level: 1
+  _XP: 0
   _life: 75
   _mana: 75
   _attackSpeed: 10

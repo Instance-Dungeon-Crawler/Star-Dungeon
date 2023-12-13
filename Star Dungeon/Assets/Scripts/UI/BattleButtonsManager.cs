@@ -47,6 +47,9 @@ public class BattleButtonsManager : MonoBehaviour
     Skills _skills2 = new Skills();
     Skills _skills3 = new Skills();
 
+    [Header("XP")]
+    [SerializeField] private int _XPGoal = 50;
+
     private enum _enum { xander, synthia, saber };
     private _enum _character;
     private int _luckFactor;
@@ -220,6 +223,7 @@ public class BattleButtonsManager : MonoBehaviour
                 _attackDialogue.SetText(enemy.GetComponent<ScriptableReader>()._entityName + " is dead. You got a key, now you can open the door !");
                 PlayerPrefs.SetInt("Key", 1);
                 SceneManager.LoadScene("Devroom");
+                
             }
             else
                 _attackDialogue.SetText("What should " + _skills._launcher.GetComponent<ScriptableReader>()._entityName + " do ?");

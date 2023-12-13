@@ -14,8 +14,8 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
-  m_Fog: 0
-  m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  m_Fog: 1
+  m_FogColor: {r: 0, g: 0, b: 0, a: 1}
   m_FogMode: 3
   m_FogDensity: 0.01
   m_LinearFogStart: 0
@@ -914,6 +914,7 @@ MonoBehaviour:
   - {fileID: 116377140}
   - {fileID: 1720653702}
   - {fileID: 1984823423}
+  _XPGoal: 50
 --- !u!1 &797515928
 GameObject:
   m_ObjectHideFlags: 0
@@ -1633,6 +1634,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _statsEntity: {fileID: 11400000, guid: a9b7436edcf72eb42b627171b8f536fd, type: 2}
+  _entityLevel: 0
   _entityLife: 0
   _entityMana: 0
   _entityAttackSpeed: 0
@@ -1640,6 +1642,7 @@ MonoBehaviour:
   _entityPower: 0
   _entityName: 
   _entityClassName: 
+  _entityXP: 0
 --- !u!1 &1171026855
 GameObject:
   m_ObjectHideFlags: 0
@@ -2111,6 +2114,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _statsEntity: {fileID: 11400000, guid: 85146c5dff1be0e4f9a68f48d1602b1c, type: 2}
+  _entityLevel: 0
   _entityLife: 0
   _entityMana: 0
   _entityAttackSpeed: 0
@@ -2118,6 +2122,7 @@ MonoBehaviour:
   _entityPower: 0
   _entityName: 
   _entityClassName: 
+  _entityXP: 0
 --- !u!1 &1381635183
 GameObject:
   m_ObjectHideFlags: 0
@@ -2344,6 +2349,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _statsEntity: {fileID: 11400000, guid: 71afa308ea60ce644b47e021f2a1239d, type: 2}
+  _entityLevel: 0
   _entityLife: 0
   _entityMana: 0
   _entityAttackSpeed: 0
@@ -2351,6 +2357,7 @@ MonoBehaviour:
   _entityPower: 0
   _entityName: 
   _entityClassName: 
+  _entityXP: 0
 --- !u!1 &1408762423
 GameObject:
   m_ObjectHideFlags: 0
@@ -3933,6 +3940,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _statsEntity: {fileID: 11400000, guid: da4bd9aab9816fa44933669c111c0005, type: 2}
+  _entityLevel: 0
   _entityLife: 0
   _entityMana: 0
   _entityAttackSpeed: 0
@@ -3940,6 +3948,7 @@ MonoBehaviour:
   _entityPower: 0
   _entityName: 
   _entityClassName: 
+  _entityXP: 0
 --- !u!1 &2135861037
 GameObject:
   m_ObjectHideFlags: 0
