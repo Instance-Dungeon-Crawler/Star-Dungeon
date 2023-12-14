@@ -900,12 +900,8 @@ MonoBehaviour:
   _xander: {fileID: 2096241763}
   _synthia: {fileID: 1383069894}
   _saber: {fileID: 1331538297}
-  _characters:
-  - {fileID: 2096241758}
-  - {fileID: 1383069890}
-  - {fileID: 1331538293}
-  _enemies:
-  - {fileID: 1168926987}
+  _characters: []
+  _enemies: []
   _attackDialogue: {fileID: 1186302098}
   _attackButton: {fileID: 1908959219}
   _skipButton: {fileID: 103240732}
@@ -2114,7 +2110,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _statsEntity: {fileID: 11400000, guid: 85146c5dff1be0e4f9a68f48d1602b1c, type: 2}
-  _entityLevel: 0
+  _entityLevel: 1
   _entityLife: 0
   _entityMana: 0
   _entityAttackSpeed: 0
@@ -2349,7 +2345,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _statsEntity: {fileID: 11400000, guid: 71afa308ea60ce644b47e021f2a1239d, type: 2}
-  _entityLevel: 0
+  _entityLevel: 1
   _entityLife: 0
   _entityMana: 0
   _entityAttackSpeed: 0
@@ -3940,7 +3936,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _statsEntity: {fileID: 11400000, guid: da4bd9aab9816fa44933669c111c0005, type: 2}
-  _entityLevel: 0
+  _entityLevel: 1
   _entityLife: 0
   _entityMana: 0
   _entityAttackSpeed: 0

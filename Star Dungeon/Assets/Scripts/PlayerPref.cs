@@ -1,37 +1,51 @@
+using System.Collections.Generic;
+using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.TextCore.Text;
 
 public class PlayerPref : MonoBehaviour
 {
     [SerializeField] ScriptableReader _xander;
     [SerializeField] ScriptableReader _synthia;
     [SerializeField] ScriptableReader _saber;
+    [SerializeField] private List<GameObject> _characters = new List<GameObject>();
+
     void Awake()
     {
-        //Xander Stats
-        PlayerPrefs.SetInt("xanderLvl", _xander._entityLevel);
-        PlayerPrefs.SetInt("xanderXP", _xander._entityXP);
-        PlayerPrefs.SetFloat("xanderLife",_xander._entityLife);
-        PlayerPrefs.SetFloat("xanderMana",_xander._entityMana);
-        PlayerPrefs.SetFloat("xanderAttackSpeed",_xander._entityAttackSpeed);
-        PlayerPrefs.SetFloat("xanderResistance",_xander._entityResistance);
-        PlayerPrefs.SetFloat("xanderPower", _xander._entityPower);
+        if (!PlayerPrefs.HasKey("GlobalLvl"))
+        {
+            PlayerPrefs.SetInt("GlobalLvl", 1);
+            PlayerPrefs.SetInt("GlobalXP", 0);
+            PlayerPrefs.SetInt("threshold", 50);
+        }
+    }
 
-        //Synthia Stats
-        PlayerPrefs.SetInt("synthiaLvl", _synthia._entityLevel);
-        PlayerPrefs.SetInt("synthiaXP", _synthia._entityXP);
-        PlayerPrefs.SetFloat("synthiaLife", _synthia._entityLife);
-        PlayerPrefs.SetFloat("synthiaMana", _synthia._entityMana);
-        PlayerPrefs.SetFloat("synthiaAttackSpeed", _synthia._entityAttackSpeed);
-        PlayerPrefs.SetFloat("synthiaResistance", _synthia._entityResistance);
-        PlayerPrefs.SetFloat("synthiaPower", _synthia._entityPower);
+    private void Start()
+    {
+        foreach (GameObject gameObject in GameObject.FindGameObjectsWithTag("Characters"))
+        {
+            _characters.Add(gameObject);
+        }
+        if (PlayerPrefs.GetInt("GlobalXP") >= PlayerPrefs.GetInt("threshold")) 
+        {
+            PlayerPrefs.SetInt("GlobalLvl", PlayerPrefs.GetInt("GlobalLvl") + 1);
+            PlayerPrefs.SetInt("threshold", (PlayerPrefs.GetInt("threshold") + 50));
+            foreach (GameObject characters in _characters)
+            {
+                GameObject.Find(characters.GetComponent<ScriptableReader>()._entityName).GetComponent<ScriptableReader>()._entityLife = GameObject.Find(characters.GetComponent<ScriptableReader>()._entityName).GetComponent<ScriptableReader>()._entityLife * 1.10f;
+                GameObject.Find(characters.GetComponent<ScriptableReader>()._entityName).GetComponent<ScriptableReader>()._entityMana = GameObject.Find(characters.GetComponent<ScriptableReader>()._entityName).GetComponent<ScriptableReader>()._entityMana * 1.10f;
+                GameObject.Find(characters.GetComponent<ScriptableReader>()._entityName).GetComponent<ScriptableReader>()._entityAttackSpeed = GameObject.Find(characters.GetComponent<ScriptableReader>()._entityName).GetComponent<ScriptableReader>()._entityAttackSpeed * 1.10f;
+                GameObject.Find(characters.GetComponent<ScriptableReader>()._entityName).GetComponent<ScriptableReader>()._entityResistance = GameObject.Find(characters.GetComponent<ScriptableReader>()._entityName).GetComponent<ScriptableReader>()._entityResistance * 1.10f;
+                GameObject.Find(characters.GetComponent<ScriptableReader>()._entityName).GetComponent<ScriptableReader>()._entityPower = GameObject.Find(characters.GetComponent<ScriptableReader>()._entityName).GetComponent<ScriptableReader>()._entityPower * 1.10f;
+            }
+        }
+    }
 
-        //_saber Stats
-        PlayerPrefs.SetInt("saberLvl", _saber._entityLevel);
-        PlayerPrefs.SetInt("saberXP", _saber._entityXP);
-        PlayerPrefs.SetFloat("saberLife", _saber._entityLife);
-        PlayerPrefs.SetFloat("saberMana", _saber._entityMana);
-        PlayerPrefs.SetFloat("saberAttackSpeed", _saber._entityAttackSpeed);
-        PlayerPrefs.SetFloat("saberResistance", _saber._entityResistance);
-        PlayerPrefs.SetFloat("saberPower", _saber._entityPower);
+    public void OnApplicationQuit()
+    {
+        PlayerPrefs.SetInt("GlobalLvl", 1);
+        PlayerPrefs.SetInt("GlobalXP", 0);
+        PlayerPrefs.SetInt("threshold", 50);
     }
 }

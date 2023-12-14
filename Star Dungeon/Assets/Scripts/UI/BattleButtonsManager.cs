@@ -12,7 +12,6 @@ public class Skills
     public float _attackSpeed;
     public GameObject _target;
     public GameObject _launcher;
-
     public bool _attack;
 }
 
@@ -47,8 +46,6 @@ public class BattleButtonsManager : MonoBehaviour
     Skills _skills2 = new Skills();
     Skills _skills3 = new Skills();
 
-    [Header("XP")]
-    [SerializeField] private int _XPGoal = 50;
 
     private enum _enum { xander, synthia, saber };
     private _enum _character;
@@ -200,6 +197,19 @@ public class BattleButtonsManager : MonoBehaviour
         StartCoroutine(WaitBeforeAttack());
         _skillsList.Clear();
     }
+    public void Levelling()
+    {    
+        if (PlayerPrefs.GetInt("GlobalLvl") < 3)
+        {
+            int test = PlayerPrefs.GetInt("GlobalXP") + 50;
+            PlayerPrefs.SetInt("GlobalXP", test);
+            _attackDialogue.SetText("you have gained 50 xp");
+            if (PlayerPrefs.GetInt("GlobalXP") >= PlayerPrefs.GetInt("threshold"))
+            {
+                _attackDialogue.SetText("you have gained a lvl");
+            }
+        }
+    }
 
     private void EndGame()
     {
@@ -220,8 +230,9 @@ public class BattleButtonsManager : MonoBehaviour
             if (enemy.GetComponent<ScriptableReader>()._entityLife <= 0)
             {
                 _enemies.Remove(enemy);
-                _attackDialogue.SetText(enemy.GetComponent<ScriptableReader>()._entityName + " is dead. You got a key, now you can open the door !");
+                _attackDialogue.SetText(enemy.GetComponent<ScriptableReader>()._entityName + " has been defeated. You found a key,you can now open the locked doors !");
                 PlayerPrefs.SetInt("Key", 1);
+                Levelling();
                 SceneManager.LoadScene("Devroom");
                 
             }
@@ -249,7 +260,7 @@ public class BattleButtonsManager : MonoBehaviour
                 }
                 else if (skills._launcher.GetComponent<ScriptableReader>()._entityLife <= 0)
                 {
-                    _attackDialogue.SetText(skills._launcher.GetComponent<ScriptableReader>()._entityName + " is dead. He cannot attack.");
+                    _attackDialogue.SetText(skills._launcher.GetComponent<ScriptableReader>()._entityName + " is dead. They cannot attack.");
                     StartCoroutine(ClearDialogueBox());
                 }
                 else
@@ -262,7 +273,7 @@ public class BattleButtonsManager : MonoBehaviour
             else
             {
                 Debug.Log("skip");
-                _attackDialogue.SetText(skills._launcher.GetComponent<ScriptableReader>()._entityName + " skip his turn ");
+                _attackDialogue.SetText(skills._launcher.GetComponent<ScriptableReader>()._entityName + " skipped their turn ");
                 StartCoroutine(ClearDialogueBox());
                 yield return new WaitForSeconds(4);
             }

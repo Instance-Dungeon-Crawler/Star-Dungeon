@@ -135,6 +135,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Saber
       objectReference: {fileID: 0}
+    - target: {fileID: 3293488001460962638, guid: c2039fe89c75ae745beb291db6223c48, type: 3}
+      propertyPath: m_TagString
+      value: Characters
+      objectReference: {fileID: 0}
     - target: {fileID: 5099962034314867748, guid: c2039fe89c75ae745beb291db6223c48, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
@@ -528,7 +532,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2624815921532611381, guid: 007080ed245f6574987c6ffe9f91dc9a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 19.79
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 2624815921532611381, guid: 007080ed245f6574987c6ffe9f91dc9a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1070,6 +1074,7 @@ MonoBehaviour:
   _xander: {fileID: 1682165587}
   _synthia: {fileID: 597104873}
   _saber: {fileID: 61417007}
+  _characters: []
 --- !u!4 &590177004
 Transform:
   m_ObjectHideFlags: 0
@@ -1079,7 +1084,7 @@ Transform:
   m_GameObject: {fileID: 590177002}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 13.446144, y: 2.4020393, z: 16.659649}
+  m_LocalPosition: {x: 10.93, y: 14.24, z: 12.97}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1096,6 +1101,10 @@ PrefabInstance:
     - target: {fileID: 596867988883574515, guid: 385df3b13800e2e459eb55e46579ceaa, type: 3}
       propertyPath: m_Name
       value: Synthia
+      objectReference: {fileID: 0}
+    - target: {fileID: 596867988883574515, guid: 385df3b13800e2e459eb55e46579ceaa, type: 3}
+      propertyPath: m_TagString
+      value: Characters
       objectReference: {fileID: 0}
     - target: {fileID: 1684129419547484940, guid: 385df3b13800e2e459eb55e46579ceaa, type: 3}
       propertyPath: m_LocalScale.x
@@ -2349,7 +2358,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2624815921532611381, guid: 007080ed245f6574987c6ffe9f91dc9a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 19.79
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 2624815921532611381, guid: 007080ed245f6574987c6ffe9f91dc9a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2713,7 +2722,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4254185222570085126, guid: ae39488fe8efe1d4aa676ee4fa4584d3, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 25
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 4254185222570085126, guid: ae39488fe8efe1d4aa676ee4fa4584d3, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3548,6 +3557,10 @@ PrefabInstance:
     - target: {fileID: 6002211124906797498, guid: ff5ae7a95af672d45818e6f2aa8ff8dd, type: 3}
       propertyPath: m_Name
       value: Xander
+      objectReference: {fileID: 0}
+    - target: {fileID: 6002211124906797498, guid: ff5ae7a95af672d45818e6f2aa8ff8dd, type: 3}
+      propertyPath: m_TagString
+      value: Characters
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
