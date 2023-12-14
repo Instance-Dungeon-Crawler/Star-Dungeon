@@ -9,7 +9,16 @@ using UnityEngine.UI;
 public class ButtonManager : MonoBehaviour
 {
 
- 
+    private void Start()
+    {
+
+        Screen.SetResolution(1920, 1080, true);
+
+        QualitySettings.SetQualityLevel(1);
+
+
+    }
+
     public void PlayGame()
     {
         SceneManager.LoadScene("Devroom");
@@ -20,6 +29,12 @@ public class ButtonManager : MonoBehaviour
         SceneManager.LoadScene(3);
     }
 
+    public void Option()
+    {
+
+        SceneManager.LoadScene(2);
+
+    }
 
     public void QuitGame()
     {
@@ -28,41 +43,31 @@ public class ButtonManager : MonoBehaviour
 
     }
 
-    public void ScreenResolution()
+    public void WindowResolution()
     {
-        string index = UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject.name;
-        int largeurEcranApres = Screen.width;
-        int hauteurEcranApres = Screen.height;
 
-        switch (index)
-        {
-            case "0" :
-                Screen.SetResolution(1440, 900, true);
-                Debug.Log("Nouvelle largeur de l'écran : " + largeurEcranApres);
-                Debug.Log("Nouvelle hauteur de l'écran : " + hauteurEcranApres);
-                break;
+        Screen.SetResolution(1600, 900, true);
+      
+    }
 
-            case "1" :
-                Screen.SetResolution(1920, 1080, true);
-                Debug.Log("Nouvelle largeur de l'écran : " + largeurEcranApres);
-                Debug.Log("Nouvelle hauteur de l'écran : " + hauteurEcranApres);
-                break;
+    public void FullscreenResolution()
+    {
 
-            case "2" :
-                Screen.SetResolution(2560, 1440, true);
-                Debug.Log("Nouvelle largeur de l'écran : " + largeurEcranApres);
-                Debug.Log("Nouvelle hauteur de l'écran : " + hauteurEcranApres);
-                break;
-
-        
-
-            
-        }
-
-       
+        Screen.SetResolution(1920, 1080, true);
 
 
     }
+
+    public void FullscreenWindowResolution()
+    {
+
+
+        Screen.SetResolution(2560, 1440, true);
+
+
+    }
+
+
 
     public void low()
     {
