@@ -7,6 +7,7 @@ public class EnnemiAI : MonoBehaviour
     public Transform[] _waypoints;
     private Node NodeStart;
     public GameObject _player;
+    public Animator _animator;
 
     private void Start()
     {
@@ -27,7 +28,7 @@ public class EnnemiAI : MonoBehaviour
                   }),
               }),
             //default behavior of patrolling between waypoints
-            new NodePatrol(transform,_waypoints,_player, _playerMovement)
+            new NodePatrol(transform,_waypoints,_player, _playerMovement, _animator)
         }) ; 
     }
 

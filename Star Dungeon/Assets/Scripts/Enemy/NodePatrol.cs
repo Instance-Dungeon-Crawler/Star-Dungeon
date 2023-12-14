@@ -9,16 +9,16 @@ public class NodePatrol : Node
     private int _currentWaypointIndex = 0;
     private float _speed = 5f;
     private PlayerMovement _playerMovement;
+    private Animator _Animator;
 
 
-
-    public NodePatrol(Transform transform, Transform[] waypoints, GameObject player, PlayerMovement _movements)
+    public NodePatrol(Transform transform, Transform[] waypoints, GameObject player, PlayerMovement _movements, Animator _animator)
     {
         _transform = transform;
         _waypoints = waypoints;
         _player = player;
         _playerMovement = _movements;
-
+        _Animator = _animator;
     }
 
     public override NodeState Evaluate()
@@ -32,9 +32,11 @@ public class NodePatrol : Node
         }
         else if(!_playerMovement._canMove)
         {
+            _Animator.SetBool("IsWalking",true);
             _transform.position = Vector3.MoveTowards(_transform.position, wp.position, _speed * Time.deltaTime);
             _transform.LookAt(_player.transform);
         }
+        _Animator.SetBool("IsWalking", false);
         return NodeState.RUNNING;
     } 
 }
