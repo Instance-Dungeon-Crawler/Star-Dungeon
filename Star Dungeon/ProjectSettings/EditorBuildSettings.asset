@@ -6,13 +6,13 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Devroom_Dorian.unity
-    guid: e31f1ec13c5455742b6b24246456721f
-  - enabled: 1
     path: Assets/Scenes/Devroom.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Battle.unity
     guid: de4fdffc1bf0e064390a8762ce3960a9
+  - enabled: 1
+    path: Assets/Scenes/Battle Scene.unity
+    guid: c65d18edac3de1c49bffa1355721a334
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 201ba43ca6e7d53458240e95dd1f8f52, type: 2}

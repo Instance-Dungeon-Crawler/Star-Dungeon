@@ -75,14 +75,16 @@ public class DoorScript : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.tag == "Player" && _player.GetComponent<CameraRotation>()._haskey  == true) 
+        if (other.tag == "Player" && _player.GetComponent<PlayerController>()._haskey  == 1) 
         {
+            PlayerPrefs.SetInt("Key", 0);
+            _player.GetComponent<PlayerController>()._haskey--;
             if (!Moving)
             {
                 Moving = true;
             }
         }
-        else if (other.tag == "Player" && _player.GetComponent<CameraRotation>()._haskey == false)
+        else if (other.tag == "Player" && _player.GetComponent<PlayerController>()._haskey == 1)
         {
             _LockedDoorText.SetActive(true);
         }
