@@ -32,7 +32,7 @@ public class ButtonManager : MonoBehaviour
     public void Option()
     {
 
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene("MenuSettings");
 
     }
 
