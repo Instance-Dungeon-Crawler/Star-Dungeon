@@ -8,11 +8,21 @@ public class InputsController : MonoBehaviour
     [SerializeField] private CameraRotation _cameraRotation;
     private bool _inventoryIsOpen = false;
 
-    public void PlayerMovements(InputAction.CallbackContext context)
+    public void PlayerForward(InputAction.CallbackContext context)
     {
         if (context.started && _playerMovements._canMove)
         {
-            _playerController.OnMove();
+            _playerController.OnMoveForward();
+            _cameraRotation._canRotate = false;
+            _playerMovements._canMove = false;
+        }
+    }
+
+    public void PlayerBack(InputAction.CallbackContext context)
+    {
+        if (context.started && _playerMovements._canMove)
+        {
+            _playerController.OnMoveBack();
             _cameraRotation._canRotate = false;
             _playerMovements._canMove = false;
         }

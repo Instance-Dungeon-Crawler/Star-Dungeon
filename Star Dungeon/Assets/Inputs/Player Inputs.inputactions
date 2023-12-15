@@ -6,9 +6,18 @@
             "id": "3ecdbc0d-4699-4257-ad00-965168d995ec",
             "actions": [
                 {
-                    "name": "Movements",
+                    "name": "Forward",
                     "type": "Button",
                     "id": "4b2e82fd-32ea-4a52-8497-d53face67418",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Back",
+                    "type": "Button",
+                    "id": "0e11f82e-660b-4e09-9dbd-7cdad7fa4dd4",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -54,17 +63,6 @@
             "bindings": [
                 {
                     "name": "",
-                    "id": "3df17f4d-8fe1-4589-8ac7-b9a6b8632d79",
-                    "path": "<Keyboard>/w",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Movements",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "f3aecd1c-91c1-4d43-a52e-5b5c28e59406",
                     "path": "<Keyboard>/e",
                     "interactions": "",
@@ -104,6 +102,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "Mouse Position",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e4d9f25d-f982-4831-8ebf-388eb8e152da",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Forward",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d5ad5c04-11cf-41ff-84d4-c387c6b9c9ef",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Back",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -10,8 +10,13 @@ public class PlayerController : MonoBehaviour
         _haskey = PlayerPrefs.GetInt("Key", 0);
     }
 
-    public void OnMove()
+    public void OnMoveForward()
     {
-        _playerMovement.Movements(); 
+        _playerMovement.Forward(); 
+    }
+
+    public void OnMoveBack()
+    {
+        _playerMovement.Back();  
     }
 }
