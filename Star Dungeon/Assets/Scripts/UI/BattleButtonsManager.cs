@@ -192,21 +192,19 @@ public class BattleButtonsManager : MonoBehaviour
     }
 
 
-    public void LaunchAttack()
+    private void LaunchAttack()
     {
         StartCoroutine(WaitBeforeAttack());
         _skillsList.Clear();
     }
-    public void Levelling()
+    private void Levelling()
     {    
         if (PlayerPrefs.GetInt("GlobalLvl") < 3)
         {
-            int test = PlayerPrefs.GetInt("GlobalXP") + 50;
-            PlayerPrefs.SetInt("GlobalXP", test);
             _attackDialogue.SetText("you have gained 50 xp");
             if (PlayerPrefs.GetInt("GlobalXP") >= PlayerPrefs.GetInt("threshold"))
             {
-                _attackDialogue.SetText("you have gained a lvl");
+                _attackDialogue.SetText("You have gained a lvl");
             }
         }
     }
