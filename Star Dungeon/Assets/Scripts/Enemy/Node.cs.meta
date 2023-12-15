@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Star Dungeon/Assets/Scripts/Enemy/Node.cs.meta
 guid: 3475db3b7274d0747aaa5a7d76ddf189
+========
+guid: f7b0a9e186cabf0459ae33cc5610c6ec
+>>>>>>>> Movement:Star Dungeon/Assets/Scripts/Enemy/ButtonGodMod.cs.meta
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2

@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Star Dungeon/Assets/Scripts/Inputs.meta
 guid: 91b1a7c11451dd04296c9529b2a5fcb7
+========
+guid: 6c203b65b07f33341943c1d3016d6a34
+>>>>>>>> Inventory:Star Dungeon/Assets/Scripts/UI.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

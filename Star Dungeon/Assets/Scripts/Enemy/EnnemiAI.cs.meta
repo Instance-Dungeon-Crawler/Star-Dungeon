@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Star Dungeon/Assets/Scripts/Enemy/EnnemiAI.cs.meta
 guid: 026b67e97cc8b2c488fd4fb0e6ed5ae8
+========
+guid: ac1eb05af6d391b4eb0f4c070a99f1d0
+>>>>>>>> Inventory:Star Dungeon/Assets/TextMesh Pro/Examples & Extras/Scripts/DropdownSample.cs.meta
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2

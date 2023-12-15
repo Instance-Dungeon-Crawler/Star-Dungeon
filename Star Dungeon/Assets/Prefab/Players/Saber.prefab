@@ -105,8 +105,6 @@ GameObject:
   - component: {fileID: 8379112548799200526}
   - component: {fileID: 8676987650050831042}
   - component: {fileID: 5816514575181936389}
-  - component: {fileID: 6669990722457264743}
-  - component: {fileID: 6801241283790395732}
   m_Layer: 0
   m_Name: Saber
   m_TagString: Untagged
@@ -124,7 +122,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 9041627593303334743}
@@ -217,79 +215,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _statsEntity: {fileID: 11400000, guid: 85146c5dff1be0e4f9a68f48d1602b1c, type: 2}
-  _playerLife: 0
-  _playerMana: 0
-  _playerAttackSpeed: 0
-  _playerResistance: 0
-  _playerPower: 0
-  _playerPlayerName: 
-  _playerClassName: 
---- !u!114 &6669990722457264743
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3293488001460962638}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e4f3b4d5296113342aadac5d1777f360, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _targetAngle: {x: 0, y: 0, z: 0, w: 0}
-  _time: 2
-  _curve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 1
-      outSlope: 1
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 1
-      value: 1
-      inSlope: 1
-      outSlope: 1
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  _canRotate: 1
---- !u!54 &6801241283790395732
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3293488001460962638}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 20
-  m_AngularDrag: 0
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
+  _entityLife: 0
+  _entityMana: 0
+  _entityAttackSpeed: 0
+  _entityResistance: 0
+  _entityPower: 0
+  _entityName: 
+  _entityClassName: 
 --- !u!1 &6326020957053389929
 GameObject:
   m_ObjectHideFlags: 0
