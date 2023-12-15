@@ -1,10 +1,5 @@
-using JetBrains.Annotations;
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 public class ButtonManager : MonoBehaviour
 {
@@ -21,7 +16,7 @@ public class ButtonManager : MonoBehaviour
 
     public void PlayGame()
     {
-        SceneManager.LoadScene("Devroom");
+        SceneManager.LoadScene(0);
     }
 
     public void Mainmenu()
@@ -31,8 +26,8 @@ public class ButtonManager : MonoBehaviour
 
     public void Option()
     {
-
-        SceneManager.LoadScene("MenuSettings");
+        
+        SceneManager.LoadScene(2);
 
     }
 

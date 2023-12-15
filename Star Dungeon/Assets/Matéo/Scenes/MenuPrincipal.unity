@@ -574,6 +574,7 @@ GameObject:
   - component: {fileID: 154181628}
   - component: {fileID: 154181627}
   - component: {fileID: 154181626}
+  - component: {fileID: 154181630}
   m_Layer: 5
   m_Name: bouton option
   m_TagString: Untagged
@@ -627,7 +628,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _interactable: 1
   _disable: {fileID: 0}
-  _enterColor: {r: 1, g: 1, b: 1, a: 1}
+  _enterColor: {r: 0.63529414, g: 0.039215688, b: 0.8117647, a: 1}
   _exitColor: {r: 1, g: 1, b: 1, a: 1}
   _clickColor: {r: 1, g: 1, b: 1, a: 1}
   _onClick:
@@ -689,6 +690,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 154181624}
   m_CullTransparentMesh: 1
+--- !u!114 &154181630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 154181624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef86a16452cf4c549a9432dc593e53dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  transitionTime: 0.5
+  NextScene: 2
 --- !u!1 &195453836
 GameObject:
   m_ObjectHideFlags: 0
@@ -954,6 +969,7 @@ GameObject:
   - component: {fileID: 342185285}
   - component: {fileID: 342185284}
   - component: {fileID: 342185283}
+  - component: {fileID: 342185287}
   m_Layer: 5
   m_Name: bouton credit
   m_TagString: Untagged
@@ -1007,7 +1023,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _interactable: 1
   _disable: {fileID: 0}
-  _enterColor: {r: 1, g: 1, b: 1, a: 1}
+  _enterColor: {r: 0.63529414, g: 0.039215688, b: 0.8117647, a: 1}
   _exitColor: {r: 1, g: 1, b: 1, a: 1}
   _clickColor: {r: 1, g: 1, b: 1, a: 1}
   _onClick:
@@ -1069,6 +1085,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 342185281}
   m_CullTransparentMesh: 1
+--- !u!95 &342185287
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 342185281}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 363acf8536992cd408edb61319dd5f0b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &363259757
 GameObject:
   m_ObjectHideFlags: 0
@@ -1589,7 +1626,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _interactable: 1
   _disable: {fileID: 0}
-  _enterColor: {r: 1, g: 1, b: 1, a: 1}
+  _enterColor: {r: 0.63529414, g: 0.039215688, b: 0.8117647, a: 1}
   _exitColor: {r: 1, g: 1, b: 1, a: 1}
   _clickColor: {r: 1, g: 1, b: 1, a: 1}
   _onClick:
@@ -1918,7 +1955,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 694850671}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3d59236ccacac7846b328fd1af2f149b, type: 3}
   m_Name: 
@@ -2092,6 +2129,7 @@ GameObject:
   - component: {fileID: 784995527}
   - component: {fileID: 784995526}
   - component: {fileID: 784995525}
+  - component: {fileID: 784995529}
   m_Layer: 5
   m_Name: bouton haut
   m_TagString: Untagged
@@ -2145,7 +2183,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _interactable: 1
   _disable: {fileID: 0}
-  _enterColor: {r: 1, g: 1, b: 1, a: 1}
+  _enterColor: {r: 0.63529414, g: 0.039215688, b: 0.8117647, a: 1}
   _exitColor: {r: 1, g: 1, b: 1, a: 1}
   _clickColor: {r: 1, g: 1, b: 1, a: 1}
   _onClick:
@@ -2207,6 +2245,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 784995523}
   m_CullTransparentMesh: 1
+--- !u!114 &784995529
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 784995523}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef86a16452cf4c549a9432dc593e53dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  transitionTime: 0.5
+  NextScene: 0
 --- !u!1 &851547510
 GameObject:
   m_ObjectHideFlags: 0
