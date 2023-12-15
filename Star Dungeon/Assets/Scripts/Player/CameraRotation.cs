@@ -1,9 +1,10 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
 public class CameraRotation : MonoBehaviour
 {
-
+    private PlayerMovement _playerMovement;
     [Header("Angles")]
     [HideInInspector] public Quaternion _targetAngle;
     private Quaternion _currentAngle;
@@ -14,6 +15,12 @@ public class CameraRotation : MonoBehaviour
     [Header("Curve Movements")]
     [SerializeField] AnimationCurve _curve;
     public bool _canRotate = true;
+
+    private void Start()
+    {
+        _playerMovement = GetComponent<PlayerMovement>();
+    }
+
     public IEnumerator RotateCameraLeft()
     {
         _currentAngle = transform.rotation;
@@ -29,6 +36,7 @@ public class CameraRotation : MonoBehaviour
             time += Time.deltaTime / _time;
         }
         _canRotate = true;
+        _playerMovement._canMove = true;
         transform.rotation = _targetAngle;
     }
 

@@ -3281,14 +3281,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 351112229}
     m_Modifications:
-    - target: {fileID: 1515629246813266460, guid: 6c6496700466cad42a92bb73be4dffb4, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 0a57f15e8a2251a4fbe88c8d03316b11, type: 3}
-    - target: {fileID: 1515629246813266460, guid: 6c6496700466cad42a92bb73be4dffb4, type: 3}
-      propertyPath: m_Color.r
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3588877115676115878, guid: 6c6496700466cad42a92bb73be4dffb4, type: 3}
       propertyPath: m_Name
       value: Fond Menu

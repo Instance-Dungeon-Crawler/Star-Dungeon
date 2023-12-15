@@ -10,27 +10,31 @@ public class InputsController : MonoBehaviour
 
     public void PlayerMovements(InputAction.CallbackContext context)
     {
-        if (context.started && _playerMovements._canMove && _cameraRotation._canRotate)
+        if (context.started && _playerMovements._canMove)
+        {
             _playerController.OnMove();
-        else if(context.canceled && _playerMovements._canMove)
             _cameraRotation._canRotate = false;
+            _playerMovements._canMove = false;
+        }
     }
 
     public void NegativeRotation(InputAction.CallbackContext context)
     {
-        if (context.performed && _cameraRotation._canRotate && _playerMovements._canMove)
+        if (context.performed && _cameraRotation._canRotate)
         {
             _cameraRotation.Rotate();
             _cameraRotation._targetAngle = Quaternion.Euler(0, _cameraRotation.transform.rotation.eulerAngles.y - 90, 0f);
+            _playerMovements._canMove = false;
         }
     }
 
     public void PositiveRotation(InputAction.CallbackContext context)
     {
-        if (context.performed && _cameraRotation._canRotate && _playerMovements._canMove)
+        if (context.performed && _cameraRotation._canRotate)
         {
             _cameraRotation.Rotate();
             _cameraRotation._targetAngle = Quaternion.Euler(0, _cameraRotation.transform.rotation.eulerAngles.y + 90, 0f);
+            _playerMovements._canMove = false;
         }
     }
 

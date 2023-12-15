@@ -1,12 +1,19 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    private CameraRotation _cameraRotation;
     public float _moveSpeed;
     public Vector3 _targetPos;
     [SerializeField] private float _time;
     public bool _canMove = true;
+
+    private void Start()
+    {
+        _cameraRotation = GetComponent<CameraRotation>();
+    }
 
     public IEnumerator PlayerMovements()
     {
@@ -24,7 +31,9 @@ public class PlayerMovement : MonoBehaviour
             time += Time.deltaTime / _time;
         }
         transform.position = _targetPos;
+        _cameraRotation._canRotate = true;
         _canMove = true;
+        Debug.Log("Fin du mouvement");
     }
 
     public void Movements()
