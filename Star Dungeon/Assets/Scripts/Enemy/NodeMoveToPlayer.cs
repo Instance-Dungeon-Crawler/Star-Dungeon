@@ -15,6 +15,7 @@ public class NodeMoveToPlayer : Node
     public override NodeState Evaluate()
     {
         //make the AI look at the player and move to him
+        Vector3 targetDir = _player.transform.position - _transform.position;
         if (_transform.position != _player.transform.position && !_playerMovements._canMove)
         {
             _transform.LookAt(_player.transform);

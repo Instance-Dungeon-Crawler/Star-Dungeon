@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class EnnemiAI : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class EnnemiAI : MonoBehaviour
     private Node NodeStart;
     public GameObject _player;
     public Animator _animator;
+    public NavMeshAgent _agent;
 
     private void Start()
     {
@@ -27,8 +29,8 @@ public class EnnemiAI : MonoBehaviour
                       }),
                   }),
               }),
-            //default behavior of patrolling between waypoints
-            new NodePatrol(transform,_waypoints,_player, _playerMovement, _animator)
+            //default behavior of patrolling
+            new NodePatrol(transform,_player, _playerMovement, _animator, _agent)
         }) ; 
     }
 
