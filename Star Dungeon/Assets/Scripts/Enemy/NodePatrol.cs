@@ -32,13 +32,13 @@ public class NodePatrol : Node
         {
             if (hit.collider.name == "Wall")
             {
-                _transform.Rotate(_transform.rotation.x, _transform.rotation.y+90,_transform.rotation.z);
+                _transform.rotation = new Quaternion(_transform.rotation.x, _transform.rotation.y + 90, _transform.rotation.z, _transform.rotation.w);
             }
         }
         if (_timer <= 0)
         {
-            _Agent.SetDestination(_transform.forward*3);
-            _timer = 1;
+            _Agent.SetDestination(_transform.position + _transform.forward*3);
+            _timer = 2;
         }
         return NodeState.RUNNING;
     } 
