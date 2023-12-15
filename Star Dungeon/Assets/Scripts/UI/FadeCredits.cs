@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class FadeCredits : MonoBehaviour
 {
+    [SerializeField] private GameObject _canvasMenu;
     [SerializeField] private List<CanvasGroup> m_objectsToFade = new List<CanvasGroup>();
     [SerializeField] private float m_FadeInDuration, m_fadeOutDuration, m_AttendanceTime, m_WaitBeforeStart;
 
@@ -25,6 +27,7 @@ public class FadeCredits : MonoBehaviour
     private void Start()
     {
         StartCoroutine(StartFadeSequence());
+
     }
 
     private IEnumerator StartFadeSequence()
@@ -32,6 +35,7 @@ public class FadeCredits : MonoBehaviour
         yield return new WaitForSeconds(m_WaitBeforeStart);
 
         StartCoroutine(FadeSequence());
+
     }
     private IEnumerator FadeSequence()
     {
@@ -50,17 +54,19 @@ public class FadeCredits : MonoBehaviour
     {
         float startAlpha = canvasGroup.alpha;
         float elapsedTime = 0f;
-
+      
         while (elapsedTime < duration)
         {
             canvasGroup.alpha = Mathf.Lerp(startAlpha, targetAlpha, elapsedTime / duration);
             elapsedTime += Time.deltaTime;
             yield return null;
+
         }
 
+       
         canvasGroup.alpha = targetAlpha;
 
-        //Setactive false all objects of the list
+
         if (targetAlpha == 0f)
         {
             if (canvasGroup != m_objectsToFade[m_objectsToFade.Count - 1])
@@ -68,18 +74,29 @@ public class FadeCredits : MonoBehaviour
                 canvasGroup.gameObject.SetActive(false);
             }
         }
+
     }
 
+   
     public void ResetCredits()
     {
-        StopAllCoroutines();
+      
+        _canvasMenu.gameObject.SetActive(false);
+
+        StartCoroutine(StartFadeSequence());
+        
 
         foreach (CanvasGroup canvasGroup in m_objectsToFade)
         {
             canvasGroup.alpha = 0f;
             canvasGroup.gameObject.SetActive(true);
+            
         }
 
-        StartCoroutine(StartFadeSequence());
+       
     }
+
+
 }
+
+
