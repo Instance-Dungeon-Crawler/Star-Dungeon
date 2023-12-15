@@ -34,9 +34,12 @@ public class NodePatrol : Node
         {
             _Animator.SetBool("IsWalking",true);
             _transform.position = Vector3.MoveTowards(_transform.position, wp.position, _speed * Time.deltaTime);
-            _transform.LookAt(_player.transform);
+            _transform.LookAt(wp.transform);
         }
-        _Animator.SetBool("IsWalking", false);
+        else if(_playerMovement._canMove)
+        {
+            _Animator.SetBool("IsWalking", false);
+        }     
         return NodeState.RUNNING;
     } 
 }
