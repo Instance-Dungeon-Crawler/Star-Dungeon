@@ -45,7 +45,8 @@ public class InputsController : MonoBehaviour
             if (context.started)
             {
                 _inventoryIsOpen = true;
-                GameObject.Find("Inventory (Canvas)").transform.Find("Fond Menu").gameObject.SetActive(true);
+                GameObject.Find("Inventory (Canvas)").transform.Find("Inventory").gameObject.SetActive(true);
+                GameObject.Find("HUD").transform.Find("Inventory").gameObject.SetActive(false);
             }
         }
         else
@@ -55,7 +56,8 @@ public class InputsController : MonoBehaviour
                 if (context.started)
                 {
                     _inventoryIsOpen = false;
-                    GameObject.Find("Inventory (Canvas)").transform.Find("Fond Menu").gameObject.SetActive(false);
+                    GameObject.Find("Inventory (Canvas)").transform.Find("Inventory").gameObject.SetActive(false);
+                    GameObject.Find("HUD").transform.Find("Inventory").gameObject.SetActive(true);
                 }
             }
         }

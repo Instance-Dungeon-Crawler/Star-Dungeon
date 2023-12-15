@@ -5,13 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="665704e8-9598-48cf-954f-e9c5213aa5c5" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Star Dungeon/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Star Dungeon/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Imports/Sci-Fi UI Game Asset Pack/white assets/HUD/map.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Imports/Sci-Fi UI Game Asset Pack/white assets/HUD/map.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Imports/Sci-Fi UI Game Asset Pack/white assets/icons/icon2-exit.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Imports/Sci-Fi UI Game Asset Pack/white assets/icons/icon2-exit.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Imports/Sci-Fi UI Game Asset Pack/white assets/icons/icon2.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Imports/Sci-Fi UI Game Asset Pack/white assets/icons/icon2.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefab/Narratif/Fond Menu.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefab/Narratif/Fond Menu.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Devroom.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Devroom.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Inputs/InputsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Inputs/InputsController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMovement.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/InventoryButtonManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/MiniMap.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo"><![CDATA[{
   "customColor": "",
@@ -95,7 +105,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1702645643790</updated>
-      <workItem from="1702645646771" duration="354000" />
+      <workItem from="1702645646771" duration="2987000" />
     </task>
     <servers />
   </component>
