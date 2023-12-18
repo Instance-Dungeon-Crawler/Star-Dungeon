@@ -9,23 +9,26 @@ public class PlayerMovement : MonoBehaviour
     public Vector3 _targetPos;
     [SerializeField] private float _time;
     public bool _canMove = true;
+    private Animator _animator;
 
     private void Start()
     {
         _cameraRotation = GetComponent<CameraRotation>();
+        _animator = GetComponentInChildren<Animator>();
+
     }
 
     public IEnumerator PlayerForward()
     {
+        _animator.SetTrigger("Camera");
         float time = 0f;
         Vector3 startposition = transform.position;
         _targetPos = (transform.position + transform.forward * _distance);
-
+        //_animator.SetTrigger("Camera");
         while (time < 1)
         {
             _canMove = false;
             this.transform.position = Vector3.LerpUnclamped(startposition, _targetPos, time);
-
             yield return null;
             time += Time.deltaTime / _time;
         }
