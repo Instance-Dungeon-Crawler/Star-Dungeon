@@ -16,7 +16,7 @@ public class ButtonManager : MonoBehaviour
 
     public void PlayGame()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(4);
     }
 
     public void Mainmenu()
@@ -27,7 +27,7 @@ public class ButtonManager : MonoBehaviour
     public void Option()
     {
         
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene("MenuSettings");
 
     }
 
@@ -41,14 +41,14 @@ public class ButtonManager : MonoBehaviour
     public void WindowResolution()
     {
 
-        Screen.SetResolution(1600, 900, true);
-      
+        Screen.SetResolution(800, 600, true);
+
     }
 
     public void FullscreenResolution()
     {
 
-        Screen.SetResolution(1920, 1080, true);
+        Screen.fullScreen = !Screen.fullScreen;
 
 
     }
@@ -62,9 +62,7 @@ public class ButtonManager : MonoBehaviour
 
     }
 
-
-
-    public void low()
+    public void Low()
     {
         QualitySettings.SetQualityLevel(0);
 
@@ -72,7 +70,7 @@ public class ButtonManager : MonoBehaviour
 
     }
 
-    public void med()
+    public void Med()
     {
 
 
@@ -82,7 +80,7 @@ public class ButtonManager : MonoBehaviour
 
     }
 
-    public void high()
+    public void High()
     {
 
         QualitySettings.SetQualityLevel(2);

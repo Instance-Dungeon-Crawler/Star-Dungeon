@@ -27,27 +27,31 @@ public class FadeCredits : MonoBehaviour
     private void Start()
     {
         StartCoroutine(StartFadeSequence());
-
+        
     }
 
     private IEnumerator StartFadeSequence()
     {
         yield return new WaitForSeconds(m_WaitBeforeStart);
-
+       
         StartCoroutine(FadeSequence());
 
     }
     private IEnumerator FadeSequence()
     {
+       
         foreach (CanvasGroup canvasGroup in m_objectsToFade)
         {
+            
             yield return StartCoroutine(FadeCanvasGroup(canvasGroup, 1f, m_FadeInDuration));
 
             yield return new WaitForSeconds(m_AttendanceTime);
 
             if (canvasGroup != m_objectsToFade[m_objectsToFade.Count - 1])
                 yield return StartCoroutine(FadeCanvasGroup(canvasGroup, 0f, m_fadeOutDuration));
+            
         }
+        
     }
 
     private IEnumerator FadeCanvasGroup(CanvasGroup canvasGroup, float targetAlpha, float duration)
@@ -60,10 +64,11 @@ public class FadeCredits : MonoBehaviour
             canvasGroup.alpha = Mathf.Lerp(startAlpha, targetAlpha, elapsedTime / duration);
             elapsedTime += Time.deltaTime;
             yield return null;
-
+            
         }
 
-       
+        
+
         canvasGroup.alpha = targetAlpha;
 
 
@@ -71,10 +76,11 @@ public class FadeCredits : MonoBehaviour
         {
             if (canvasGroup != m_objectsToFade[m_objectsToFade.Count - 1])
             {
+                
                 canvasGroup.gameObject.SetActive(false);
             }
         }
-
+        
     }
 
    
@@ -93,6 +99,8 @@ public class FadeCredits : MonoBehaviour
             
         }
 
+        
+     
        
     }
 
