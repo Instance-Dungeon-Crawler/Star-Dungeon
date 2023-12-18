@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+<<<<<<<< HEAD:Star Dungeon/Assets/Scripts/Inputs/InputsController.cs.meta
+guid: abafde11d8bba8446806d97d38fb0b11
+========
+guid: cc1644b68b26e53429135e8d0e625e68
+>>>>>>>> c28f8dc (Battle System):Star Dungeon/Assets/Cédric/Scripts/BattleButtonsManager.cs.meta
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

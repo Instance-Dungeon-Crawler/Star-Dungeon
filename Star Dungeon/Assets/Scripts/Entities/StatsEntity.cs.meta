@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+<<<<<<<< HEAD:Star Dungeon/Assets/Scripts/Player/CameraRotation.cs.meta
+guid: 6ee005825bd3fa944a245a53518e072b
+========
+guid: 0115f84189629094b85ded49b49ae2ab
+>>>>>>>> c28f8dc (Battle System):Star Dungeon/Assets/Scripts/Player/StatsEntity.cs.meta
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
