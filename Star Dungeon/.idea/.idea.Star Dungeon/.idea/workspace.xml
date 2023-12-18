@@ -4,15 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="665704e8-9598-48cf-954f-e9c5213aa5c5" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Star Dungeon/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Star Dungeon/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Inputs/Player Inputs.inputactions" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Inputs/Player Inputs.inputactions" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Devroom.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Devroom.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Inputs/InputsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Inputs/InputsController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMovement.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/MinimapRenderTexture.renderTexture" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/MinimapRenderTexture.renderTexture" afterDir="false" />
-    </list>
+    <list default="true" id="665704e8-9598-48cf-954f-e9c5213aa5c5" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -105,7 +97,7 @@
       <option name="presentableId" value="Default" />
       <updated>1702645643790</updated>
       <workItem from="1702645646771" duration="2987000" />
-      <workItem from="1702654341532" duration="2072000" />
+      <workItem from="1702654341532" duration="2498000" />
     </task>
     <servers />
   </component>
