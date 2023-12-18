@@ -30,7 +30,7 @@ public class EnnemiAI : MonoBehaviour
                   }),
               }),
             //default behavior of patrolling
-            new NodePatrol(transform,_player, _playerMovement, _animator, _agent)
+            new NodePatrol(transform, _animator, _agent)
         }) ; 
     }
 
