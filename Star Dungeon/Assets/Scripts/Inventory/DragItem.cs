@@ -20,18 +20,28 @@ public class DragItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
         {
             GameObject.Find("Xander").GetComponent<ScriptableReader>()._entityAttackSpeed -= Image.GetComponent<ScriptableReaderEquipement>()._equipementAttackSpeed;
             GameObject.Find("Xander").GetComponent<ScriptableReader>()._entityPower -= Image.GetComponent<ScriptableReaderEquipement>()._equipementPower;
+            GameObject.Find("Xander").GetComponent<ScriptableReader>()._entityMana -= Image.GetComponent<ScriptableReaderEquipement>()._equipementMana;
             print(GameObject.Find("Xander").GetComponent<ScriptableReader>()._entityAttackSpeed);
             print(GameObject.Find("Xander").GetComponent<ScriptableReader>()._entityPower);
+            print(GameObject.Find("Xander").GetComponent<ScriptableReader>()._entityMana);
         }
         if (_parentAfterDrag.tag == "Slot 1 (5)")
         {
-            GameObject.Find("Synthia").GetComponent<ScriptableReader>()._entityAttackSpeed += Image.GetComponent<ScriptableReaderEquipement>()._equipementAttackSpeed;
-            GameObject.Find("Synthia").GetComponent<ScriptableReader>()._entityPower += Image.GetComponent<ScriptableReaderEquipement>()._equipementPower;
+            GameObject.Find("Synthia").GetComponent<ScriptableReader>()._entityAttackSpeed -= Image.GetComponent<ScriptableReaderEquipement>()._equipementAttackSpeed;
+            GameObject.Find("Synthia").GetComponent<ScriptableReader>()._entityPower -= Image.GetComponent<ScriptableReaderEquipement>()._equipementPower;
+            GameObject.Find("Synthia").GetComponent<ScriptableReader>()._entityMana -= Image.GetComponent<ScriptableReaderEquipement>()._equipementMana;
+            print(GameObject.Find("Synthia").GetComponent<ScriptableReader>()._entityAttackSpeed);
+            print(GameObject.Find("Synthia").GetComponent<ScriptableReader>()._entityPower);
+            print(GameObject.Find("Synthia").GetComponent<ScriptableReader>()._entityMana);
         }
         if (_parentAfterDrag.tag == "Slot 1 (6)")
         {
-            GameObject.Find("Saber").GetComponent<ScriptableReader>()._entityAttackSpeed += Image.GetComponent<ScriptableReaderEquipement>()._equipementAttackSpeed;
-            GameObject.Find("Saber").GetComponent<ScriptableReader>()._entityPower += Image.GetComponent<ScriptableReaderEquipement>()._equipementPower;
+            GameObject.Find("Saber").GetComponent<ScriptableReader>()._entityAttackSpeed -= Image.GetComponent<ScriptableReaderEquipement>()._equipementAttackSpeed;
+            GameObject.Find("Saber").GetComponent<ScriptableReader>()._entityPower -= Image.GetComponent<ScriptableReaderEquipement>()._equipementPower;
+            GameObject.Find("Saber").GetComponent<ScriptableReader>()._entityMana -= Image.GetComponent<ScriptableReaderEquipement>()._equipementMana;
+            print(GameObject.Find("Saber").GetComponent<ScriptableReader>()._entityAttackSpeed);
+            print(GameObject.Find("Saber").GetComponent<ScriptableReader>()._entityPower);
+            print(GameObject.Find("Saber").GetComponent<ScriptableReader>()._entityMana);
         }
     }
 
@@ -50,22 +60,28 @@ public class DragItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
         {
             GameObject.Find("Xander").GetComponent<ScriptableReader>()._entityAttackSpeed += Image.GetComponent<ScriptableReaderEquipement>()._equipementAttackSpeed;
             GameObject.Find("Xander").GetComponent<ScriptableReader>()._entityPower += Image.GetComponent<ScriptableReaderEquipement>()._equipementPower;
+            GameObject.Find("Xander").GetComponent<ScriptableReader>()._entityMana += Image.GetComponent<ScriptableReaderEquipement>()._equipementMana;
             print(GameObject.Find("Xander").GetComponent<ScriptableReader>()._entityAttackSpeed);
             print(GameObject.Find("Xander").GetComponent<ScriptableReader>()._entityPower);
+            print(GameObject.Find("Xander").GetComponent<ScriptableReader>()._entityMana);
         }
         if (_parentAfterDrag.tag == "Slot 1 (5)")
         {
             GameObject.Find("Synthia").GetComponent<ScriptableReader>()._entityAttackSpeed += Image.GetComponent<ScriptableReaderEquipement>()._equipementAttackSpeed;
             GameObject.Find("Synthia").GetComponent<ScriptableReader>()._entityPower += Image.GetComponent<ScriptableReaderEquipement>()._equipementPower;
+            GameObject.Find("Synthia").GetComponent<ScriptableReader>()._entityMana += Image.GetComponent<ScriptableReaderEquipement>()._equipementMana;
             print(GameObject.Find("Synthia").GetComponent<ScriptableReader>()._entityAttackSpeed);
             print(GameObject.Find("Synthia").GetComponent<ScriptableReader>()._entityPower);
+            print(GameObject.Find("Synthia").GetComponent<ScriptableReader>()._entityMana);
         }
         if (_parentAfterDrag.tag == "Slot 1 (6)")
         {
             GameObject.Find("Saber").GetComponent<ScriptableReader>()._entityAttackSpeed += Image.GetComponent<ScriptableReaderEquipement>()._equipementAttackSpeed;
             GameObject.Find("Saber").GetComponent<ScriptableReader>()._entityPower += Image.GetComponent<ScriptableReaderEquipement>()._equipementPower;
+            GameObject.Find("Saber").GetComponent<ScriptableReader>()._entityMana += Image.GetComponent<ScriptableReaderEquipement>()._equipementMana;
             print(GameObject.Find("Saber").GetComponent<ScriptableReader>()._entityAttackSpeed);
             print(GameObject.Find("Saber").GetComponent<ScriptableReader>()._entityPower);
+            print(GameObject.Find("Saber").GetComponent<ScriptableReader>()._entityMana);
         }
     }
 }
