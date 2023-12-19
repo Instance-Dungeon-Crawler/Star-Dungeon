@@ -6,25 +6,63 @@ public class InputsController : MonoBehaviour
     [SerializeField] private PlayerController _playerController;
     [SerializeField] private PlayerMovement _playerMovements;
     [SerializeField] private CameraRotation _cameraRotation;
+    [SerializeField] private Transform _player;
     private bool _inventoryIsOpen = false;
+
+    private bool WallcheckFront()
+    {
+        RaycastHit hit;
+        if (Physics.Raycast(new Vector3(_player.position.x, _player.position.y + 2, _player.position.z), _player.forward, out hit, 5))
+        {
+            if (hit.collider.name == "Wall" || (hit.collider.name == "CloseDoor" && PlayerPrefs.GetInt("key") >= 1))
+            {
+                return (true);
+            }
+            else
+            {
+                return (false);
+            }
+        }
+        return (false);
+    }
+
+    private bool WallcheckBack()
+    {
+        RaycastHit hit;
+        if (Physics.Raycast(new Vector3(_player.position.x, _player.position.y + 2, _player.position.z), -_player.forward, out hit, 5))
+        {
+            if (hit.collider.name == "Wall" || (hit.collider.name == "CloseDoor" && PlayerPrefs.GetInt("key") >= 1))
+            {
+                return (true);
+            }
+            else
+            {
+                return (false);
+            }
+        }
+        return (false);
+    }
 
     public void PlayerForward(InputAction.CallbackContext context)
     {
-        if (context.started && _playerMovements._canMove)
+        if (context.started && _playerMovements._canMove && !WallcheckFront())
         {
             _playerController.OnMoveForward();
             _cameraRotation._canRotate = false;
-            _playerMovements._canMove = false;
+            _playerMovements._canMove = false;   
         }
     }
 
     public void PlayerBack(InputAction.CallbackContext context)
     {
-        if (context.started && _playerMovements._canMove)
+        if (context.started && _playerMovements._canMove && !WallcheckBack())
         {
-            _playerController.OnMoveBack();
-            _cameraRotation._canRotate = false;
-            _playerMovements._canMove = false;
+           
+                    _playerController.OnMoveBack();
+                    _cameraRotation._canRotate = false;
+                    _playerMovements._canMove = false;
+                
+            
         }
     }
 
@@ -73,7 +111,5 @@ public class InputsController : MonoBehaviour
         }
 
     }
-
-
-
 }
+
