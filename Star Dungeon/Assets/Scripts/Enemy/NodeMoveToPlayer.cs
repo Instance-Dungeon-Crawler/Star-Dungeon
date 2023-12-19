@@ -1,16 +1,20 @@
 using UnityEngine;
+using UnityEngine.AI;
 
 public class NodeMoveToPlayer : Node
 {
     private Transform _transform;
+    private Animator _animator;
     private GameObject _player;
+    private NavMeshAgent _agent;
     private float _speed = 10f;
     private PlayerMovement _playerMovements;
-    public NodeMoveToPlayer(Transform transform, GameObject player, PlayerMovement _movements)
+    public NodeMoveToPlayer(Transform transform, GameObject player, Animator _Animator, NavMeshAgent _Agent)
     {
         _transform = transform;
         _player = player;
-        _playerMovements = _movements;
+        _animator = _Animator;
+        _agent = _Agent;
     }
     public override NodeState Evaluate()
     {
