@@ -15,9 +15,9 @@ public class NodeStartCombat : Node
     //load the scene where the fight will happen
     public override NodeState Evaluate()
     {
-        if (Vector3.Distance(_transform.position, _player.transform.position) <= 1f)
+        if (Vector3.Distance(_transform.position, _player.transform.position) <= 2.5f)
         {
-            SceneManager.LoadScene("Battle Scene");
+            SceneManager.LoadScene("Battle");   
         }
         return nodeState;
     }

@@ -16,7 +16,7 @@ public class NodeSeePlayer : Node
         Vector3 targetDir = _player.transform.position - _transform.position;
         float angle = Vector3.Angle(targetDir, _transform.forward);
         RaycastHit hit;
-        if (angle < 90 && Physics.Raycast(new Vector3(_transform.position.x, _transform.position.y + 2, _transform.position.z), targetDir,out hit,15))
+        if (angle < 180 && Physics.Raycast(new Vector3(_transform.position.x, _transform.position.y + 2, _transform.position.z), targetDir,out hit,15))
         {
             if (hit.collider.tag == "Player")
             {

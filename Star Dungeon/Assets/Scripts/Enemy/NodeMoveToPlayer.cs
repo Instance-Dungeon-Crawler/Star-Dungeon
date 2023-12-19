@@ -55,10 +55,12 @@ public class NodeMoveToPlayer : Node
                     Move();
                 }
             }
+            
             else if(_player.transform.position.z != _transform.position.z) 
             {
                 if (_player.transform.position.z < _transform.position.z && _agent.velocity.magnitude <= 0)
                 {
+                    Debug.Log("test");
                     _transform.rotation = Quaternion.Euler(0, 180f, 0);
                     Move();
                 }

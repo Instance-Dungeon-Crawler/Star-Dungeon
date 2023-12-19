@@ -30,7 +30,7 @@ public class NodePatrol : Node
                 _transform.rotation = Quaternion.Euler(0, _transform.eulerAngles.y + 90f,0);
             }
         }
-        if (_timer <= 0)
+        if (_timer <= 0 && _Agent.velocity.magnitude <= 0)
         {
             float _forx = Mathf.Round(_transform.forward.x*5*10)*0.1f;
             float _fory = Mathf.Round(_transform.forward.y * 5 * 10) * 0.1f;
