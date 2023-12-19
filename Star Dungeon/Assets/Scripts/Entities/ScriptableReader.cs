@@ -11,6 +11,8 @@ public class ScriptableReader : MonoBehaviour
     [HideInInspector] public float _entityPower;
     [HideInInspector] public string _entityName;
     [HideInInspector] public string _entityClassName;
+    [HideInInspector] public int _entityLevel;
+    [HideInInspector] public int _entityXP;
 
 
     void Awake()
@@ -22,6 +24,8 @@ public class ScriptableReader : MonoBehaviour
         _entityAttackSpeed = _statsEntity._attackSpeed;
         _entityResistance = _statsEntity._resistance;
         _entityPower = _statsEntity._power;
+        _entityLevel = _statsEntity._level;
+        _entityXP = _statsEntity._XP;
     }
 }
 

@@ -1,9 +1,15 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Star Dungeon/Assets/Imports/#NVJOB Alpha Flashing UI/Example Scenes/Standard Assets/Editor.meta
 guid: 8f7308500f322e644817ccfc3e0a17a5
 folderAsset: yes
 timeCreated: 1436977287
 licenseType: Store
+========
+guid: b4a65f5f0c60194469192c11954bc298
+folderAsset: yes
+>>>>>>>> AITileBasedMovement:Star Dungeon/Assets/robot_metallic.meta
 DefaultImporter:
+  externalObjects: {}
   userData: 
   assetBundleName: 
   assetBundleVariant: 

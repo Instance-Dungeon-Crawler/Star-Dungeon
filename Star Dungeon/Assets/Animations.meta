@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Star Dungeon/Assets/Animations.meta
 guid: e8f433bd68f42044ea97d35b756b9e84
+========
+guid: 9769eabfdc9d61a43868bf7ca83a57db
+>>>>>>>> AITileBasedMovement:Star Dungeon/Assets/Scenes/Devroom.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Star Dungeon/Assets/Imports/#NVJOB Alpha Flashing UI/Example Scenes/Materials.meta
 guid: 77a4c637a99ca7c448f43c45294ccbab
+========
+guid: 29fda5eec6111504b867248755ab2f48
+>>>>>>>> AITileBasedMovement:Star Dungeon/Assets/Scenes/Game.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

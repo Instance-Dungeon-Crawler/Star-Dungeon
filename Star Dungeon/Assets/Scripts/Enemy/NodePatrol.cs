@@ -1,43 +1,49 @@
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.AI;
+using static UnityEngine.UI.Image;
 
 public class NodePatrol : Node
 {
     private Transform _transform;
-    private Transform[] _waypoints;
-    private GameObject _player;
-    private int _currentWaypointIndex = 0;
-    private float _speed = 5f;
-    private PlayerMovement _playerMovement;
+    private Animator _Animator;
+    private float _timer = 0; 
+    private NavMeshAgent _Agent;
+    RaycastHit hit;
+    
 
-
-
-    public NodePatrol(Transform transform, Transform[] waypoints, GameObject player, PlayerMovement _movements)
+    public NodePatrol(Transform transform, Animator _animator, NavMeshAgent agent)
     {
         _transform = transform;
-        _waypoints = waypoints;
-        _player = player;
-        _playerMovement = _movements;
-
+        _Animator = _animator;
+        _Agent = agent;
     }
 
     public override NodeState Evaluate()
     {
-        //make AI patrol between multiple waypoints
-        Transform wp = _waypoints[_currentWaypointIndex];
-        if (Vector3.Distance(_transform.position, wp.position) < 0.01f)
+        _timer -= Time.deltaTime;
+        if (Physics.Raycast(new Vector3(_transform.position.x, _transform.position.y + 2, _transform.position.z), _transform.forward, out hit,5))
         {
-            _transform.position = wp.position;
-            _currentWaypointIndex = (_currentWaypointIndex + 1) % _waypoints.Length;
+            if ((hit.collider.name == "Wall" || hit.collider.name == "Door" ||hit.collider.name == "CloseDoor") && _Agent.velocity.magnitude <= 0)
+            {
+                _transform.rotation = Quaternion.Euler(0, _transform.eulerAngles.y + 90f,0);
+            }
         }
-        else if(!_playerMovement._canMove)
+        if (_timer <= 0)
         {
-            _transform.position = Vector3.MoveTowards(_transform.position, wp.position, _speed * Time.deltaTime);
-            _transform.LookAt(_player.transform);
+            float _forx = Mathf.Round(_transform.forward.x*5*10)*0.1f;
+            float _fory = Mathf.Round(_transform.forward.y * 5 * 10) * 0.1f;
+            float _forz = Mathf.Round(_transform.forward.z * 5 * 10) * 0.1f;
+            Vector3 _tarforward = new Vector3(_forx, _fory, _forz);
+            _Agent.SetDestination(_transform.position + _tarforward);
+            _Animator.SetBool("IsWalking", true);
+            _timer = 2;
+        }
+        else if (_Agent.velocity.magnitude <= 0)
+        {
+            _Animator.SetBool("IsWalking", false);
         }
         return NodeState.RUNNING;
     } 
 }
-
-    
-

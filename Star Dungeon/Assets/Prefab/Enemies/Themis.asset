@@ -15,7 +15,7 @@ MonoBehaviour:
   _entityName: Thermis
   _className: Enemy
   _level: 0
-  _XP: 0
+  _XP: 10
   _life: 200
   _mana: 0
   _attackSpeed: 6
