@@ -8,114 +8,64 @@ using UnityEngine.UI;
 
 public class ButtonManager : MonoBehaviour
 {
-
+    [SerializeField] private GameObject _credits, _mainMenu;
     private void Start()
     {
-
         Screen.SetResolution(1920, 1080, true);
-
         QualitySettings.SetQualityLevel(1);
-
-
     }
-
     public void PlayGame()
     {
-        SceneManager.LoadScene("Devroom");
+        SceneManager.LoadScene("Game");
     }
-
     public void Mainmenu()
     {
-        SceneManager.LoadScene(3);
+        SceneManager.LoadScene("MainMenu");
     }
 
-    public void Option()
+    public void Credits()
     {
-
-        SceneManager.LoadScene("MenuSettings");
-
+        if (_mainMenu.activeSelf)
+        {
+            _credits.SetActive(true);   
+            _mainMenu.SetActive(false);
+        }
+        else if (_credits.activeSelf)
+        {
+            _credits.SetActive(false);
+            _mainMenu.SetActive(true);
+        }
     }
-
+    public void Settings()
+    {
+        SceneManager.LoadScene("Settings");
+    }
     public void QuitGame()
     {
-        
         Application.Quit();
-
     }
-
     public void WindowResolution()
     {
-
         Screen.SetResolution(1600, 900, true);
-      
     }
-
     public void FullscreenResolution()
     {
-
         Screen.SetResolution(1920, 1080, true);
-
-
     }
-
     public void FullscreenWindowResolution()
     {
-
-
         Screen.SetResolution(2560, 1440, true);
-
-
     }
-
-
-
     public void low()
     {
         QualitySettings.SetQualityLevel(0);
-
-
-
     }
-
     public void med()
     {
-
-
         QualitySettings.SetQualityLevel(1);
-
-
-
     }
-
     public void high()
     {
-
         QualitySettings.SetQualityLevel(2);
-
-
-
     }
-
-
-    
-
-
-
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
