@@ -12,7 +12,10 @@ public class Skills
     public float _attackSpeed;
     public GameObject _target;
     public GameObject _launcher;
-    public bool _attack;
+
+    public enum _enum {attack, bigattack, skip}
+
+    public _enum _attack;
 }
 
 
@@ -39,12 +42,14 @@ public class BattleButtonsManager : MonoBehaviour
 
     [Header("Life")]
     [SerializeField] private List<Slider> _charactersSliders = new List<Slider>();
-
+    
     [Header("Skills")]
     Skills _skills = new Skills();
     Skills _skills1 = new Skills();
     Skills _skills2 = new Skills();
     Skills _skills3 = new Skills();
+
+    private bool _bleeding = false;
 
 
     private enum _enum { xander, synthia, saber };
@@ -109,12 +114,38 @@ public class BattleButtonsManager : MonoBehaviour
 
     public void EnemyAttack()
     {
-        _skills3._attack = true;
+        _skills3._attack = Skills._enum.attack;
         _skills3._attackSpeed = _enemyStats._entityAttackSpeed;
         _skillsList.Add(_skills3);
         _skills3._launcher = GameObject.Find("Thermis");
         int randomTarget = Random.Range(0, _characters.Count());
         _skills3._target = _characters[randomTarget];
+        
+        // int turn = 0;
+        // int bleeding = 0;
+        //
+        // if (turn == 0)
+        // {
+        //     bleeding = Random.Range(1, 100);
+        //
+        //     if (bleeding >= 1 && bleeding <= 100)
+        //     {
+        //         turn++;
+        //     }
+        // }
+        // else if (turn > 0)
+        // {
+        //     _skills3._target.GetComponent<ScriptableReader>()._entityLife -=
+        //         (_skills3._target.GetComponent<ScriptableReader>()._entityLife * 5) / 100;
+        //     turn++;
+        //     _attackDialogue.SetText("Saignement");
+        //     _bleeding = true;
+        // }
+        // else if (turn > 3)
+        // {
+        //     turn = 0;
+        //     _bleeding = false;
+        // }
     }
 
     public void Attacks()
@@ -122,31 +153,61 @@ public class BattleButtonsManager : MonoBehaviour
         switch (_character)
         {
             case _enum.xander:
-                _skills._attack = true;
+                _skills._attack = Skills._enum.attack;
                 _skills._attackSpeed = _xander._entityAttackSpeed;
                 _skills._target = _enemies.First();
                 _skills1._launcher = GameObject.Find("Synthia");
                 _attackDialogue.SetText("What should " + _skills1._launcher.GetComponent<ScriptableReader>()._entityName + " do ?");
-                Debug.Log(_skills._target);
                 _skillsList.Add(_skills);
                 _character = _enum.synthia;
                 break;
             case _enum.synthia:
-                _skills1._attack = true;
+                _skills1._attack = Skills._enum.attack;
                 _skills1._attackSpeed = _synthia._entityAttackSpeed;
                 _skillsList.Add(_skills1);
                 _skills1._target = _enemies.First();
                 _skills2._launcher = GameObject.Find("Saber");
                 _attackDialogue.SetText("What should " + _skills2._launcher.GetComponent<ScriptableReader>()._entityName + " do ?");
-                Debug.Log(_skills1._target);
                 _character = _enum.saber;
                 break;
             case _enum.saber:
-                _skills2._attack = true;
+                _skills2._attack = Skills._enum.attack;
                 _skills2._attackSpeed = _saber._entityAttackSpeed;
                 _skillsList.Add(_skills2);
                 _skills2._target = _enemies.First();
-                Debug.Log(_skills2._target);
+                _character = _enum.xander;
+                SortingSkillsList();
+                LaunchAttack();
+                break;
+            default: break;
+        }
+    }
+
+    public void BigAttack()
+    {
+        switch (_character)
+        {
+            case _enum.xander:
+                _skills._attack = Skills._enum.bigattack;
+                _skills._attackSpeed = _xander._entityAttackSpeed;
+                _skillsList.Add(_skills);
+                _skills1._launcher = GameObject.Find("Synthia");
+                _attackDialogue.SetText("What should " + _skills1._launcher.GetComponent<ScriptableReader>()._entityName + " do ?");
+                _character = _enum.synthia;
+                break;
+            case _enum.synthia:
+                _skills1._attack = Skills._enum.bigattack;
+                _skills1._attackSpeed = _synthia._entityAttackSpeed;
+                _skillsList.Add(_skills1);
+                _skills2._launcher = GameObject.Find("Saber");
+                _attackDialogue.SetText("What should " + _skills2._launcher.GetComponent<ScriptableReader>()._entityName + " do ?");
+                _character = _enum.saber;
+                break;
+            case _enum.saber:
+                _skills2._attack = Skills._enum.bigattack;
+                _skills2._attackSpeed = _saber._entityAttackSpeed;
+                _skillsList.Add(_skills2);
+                _skills2._launcher = GameObject.Find("Saber");
                 _character = _enum.xander;
                 SortingSkillsList();
                 LaunchAttack();
@@ -160,29 +221,26 @@ public class BattleButtonsManager : MonoBehaviour
         switch (_character)
         {
             case _enum.xander:
-                _skills._attack = false;
+                _skills._attack = Skills._enum.skip;
                 _skills._attackSpeed = _xander._entityAttackSpeed;
                 _skillsList.Add(_skills);
                 _skills1._launcher = GameObject.Find("Synthia");
                 _attackDialogue.SetText("What should " + _skills1._launcher.GetComponent<ScriptableReader>()._entityName + " do ?");
-                Debug.Log("Skip");
                 _character = _enum.synthia;
                 break;
             case _enum.synthia:
-                _skills1._attack = false;
+                _skills1._attack = Skills._enum.skip;
                 _skills1._attackSpeed = _synthia._entityAttackSpeed;
                 _skillsList.Add(_skills1);
                 _skills2._launcher = GameObject.Find("Saber");
                 _attackDialogue.SetText("What should " + _skills2._launcher.GetComponent<ScriptableReader>()._entityName + " do ?");
-                Debug.Log("Skip");
                 _character = _enum.saber;
                 break;
             case _enum.saber:
-                _skills2._attack = false;
+                _skills2._attack = Skills._enum.skip;
                 _skills2._attackSpeed = _saber._entityAttackSpeed;
                 _skillsList.Add(_skills2);
                 _skills2._launcher = GameObject.Find("Saber");
-                Debug.Log("Skip");
                 _character = _enum.xander;
                 SortingSkillsList();
                 LaunchAttack();
@@ -231,7 +289,7 @@ public class BattleButtonsManager : MonoBehaviour
                 _attackDialogue.SetText(enemy.GetComponent<ScriptableReader>()._entityName + " has been defeated. You found a key,you can now open the locked doors !");
                 PlayerPrefs.SetInt("Key", 1);
                 Levelling();
-                SceneManager.LoadScene("Devroom");
+                SceneManager.LoadScene("Game");
                 
             }
             else
@@ -245,7 +303,7 @@ public class BattleButtonsManager : MonoBehaviour
         {
             _attackButton._interactable = false;
             _skipButton._interactable = false;
-            if (skills._attack == true)
+            if (skills._attack == Skills._enum.attack)
             {
                 if (skills._target.GetComponent<ScriptableReader>()._entityLife >= 0 && skills._launcher.GetComponent<ScriptableReader>()._entityLife > 0)
                 {
@@ -268,12 +326,16 @@ public class BattleButtonsManager : MonoBehaviour
                 }
                 yield return new WaitForSeconds(4);
             }
-            else
+            else if(skills._attack == Skills._enum.skip)
             {
                 Debug.Log("skip");
                 _attackDialogue.SetText(skills._launcher.GetComponent<ScriptableReader>()._entityName + " skipped their turn ");
                 StartCoroutine(ClearDialogueBox());
                 yield return new WaitForSeconds(4);
+            }
+            else if (skills._attack == Skills._enum.bigattack)
+            {
+                if(skills._launcher == GameObject.Find("Xander"))
             }
         }
         EndGame();

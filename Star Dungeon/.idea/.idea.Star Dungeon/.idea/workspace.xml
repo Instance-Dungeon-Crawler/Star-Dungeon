@@ -6,11 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="665704e8-9598-48cf-954f-e9c5213aa5c5" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Star Dungeon/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Star Dungeon/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/NodeMoveToPlayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/NodeMoveToPlayer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/NodeSeePlayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/NodeSeePlayer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/NodeStartCombat.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/NodeStartCombat.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/robot_metallic/material/robot_metallic.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/robot_metallic/material/robot_metallic.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/robot_metallic/material/robot_metallic.mat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/robot_metallic/material/robot_metallic.mat.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game/Battle Scene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Game/Battle Scene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/BattleButtonsManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/BattleButtonsManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/MinimapRenderTexture.renderTexture" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/MinimapRenderTexture.renderTexture" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.testtools.codecoverage/Settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.testtools.codecoverage/Settings.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,7 +106,7 @@
       <workItem from="1702654341532" duration="2498000" />
       <workItem from="1702896243099" duration="3608000" />
       <workItem from="1702979080368" duration="2459000" />
-      <workItem from="1702992157383" duration="660000" />
+      <workItem from="1702992157383" duration="3676000" />
     </task>
     <servers />
   </component>
