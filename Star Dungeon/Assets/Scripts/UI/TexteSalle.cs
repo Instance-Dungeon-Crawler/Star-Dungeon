@@ -1,46 +1,42 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using System.Collections.Generic;
 
-public class TexteSalle : MonoBehaviour
+public class GestionPortes : MonoBehaviour
 {
-    private List<GameObject> salles = new List<GameObject>();
+    public GameObject _PremiereSalle;
+    public GameObject _TroisiemeSalle;
 
-    public int _haskey;
-    public GameObject _PrefabSalle;
+    private List<string> PortesFranchies = new List<string>();
 
     private void OnTriggerEnter(Collider other)
     {
-        if (_haskey == 0 && other.CompareTag("DoorOpen"))
+        if (other.CompareTag("DoorOpen"))
         {
-            salles.Add(other.gameObject);
-            GameObject firstDoor = salles[0];
+            string nomPorte = other.gameObject.name;
 
-            if (firstDoor != null)
+            if (!PortesFranchies.Contains(nomPorte))
             {
-
-                _PrefabSalle.SetActive(true);
-
-
-
+                PortesFranchies.Add(nomPorte);
+                AfficherMessage(nomPorte);
             }
-         
-
-            
-           
-
-
-
         }
-
-       
     }
 
-    void OnTriggerExit(Collider other)
+    private void AfficherMessage(string nomPorte)
     {
-        if (_haskey == 0 && other.gameObject.CompareTag("DoorOpen"))
+        switch (nomPorte)
         {
-            _PrefabSalle.SetActive(false);
+            case "Door":
+                _PremiereSalle.SetActive(true);
+                break;
+
+            case "Porte3":
+                _TroisiemeSalle.SetActive(true);
+                break;
+
+            default:
+                Debug.Log("test");
+                break;
         }
     }
 }

@@ -12,6 +12,7 @@ TagManager:
   - Door
   - Ground
   - DoorOpen
+  - Ennemie
   layers:
   - Default
   - TransparentFX
