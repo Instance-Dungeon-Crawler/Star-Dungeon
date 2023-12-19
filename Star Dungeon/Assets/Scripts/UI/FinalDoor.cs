@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class FinalDoor : MonoBehaviour
 {
@@ -19,6 +21,18 @@ public class FinalDoor : MonoBehaviour
 
         }
 
+        if(_haskey == 1 && other.gameObject.CompareTag("FinalDoor"))
+        {
+
+
+            SceneManager.LoadScene("MenuPrincipal");
+
+
+
+
+        }
+
+
 
 
     }
@@ -31,5 +45,6 @@ public class FinalDoor : MonoBehaviour
         }
     }
 
+   
 
 }
