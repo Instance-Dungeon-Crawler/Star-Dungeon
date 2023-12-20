@@ -435,7 +435,7 @@ public class BattleButtonsManager : MonoBehaviour
             {
                 skills._launcher.GetComponent<ScriptableReader>()._entityBleeding = false;
             }
-            yield return new WaitForSeconds(4);
+            yield return new WaitForSeconds(1);
             if (skills._attack == Skills._enum.attack)
             {
                 if (skills._target.GetComponent<ScriptableReader>()._entityLife >= 0 && skills._launcher.GetComponent<ScriptableReader>()._entityLife > 0)
@@ -445,7 +445,7 @@ public class BattleButtonsManager : MonoBehaviour
                     skills._damage = (skills._launcher.GetComponent<ScriptableReader>()._entityPower / skills._target.GetComponent<ScriptableReader>()._entityResistance) * _luckFactor;
                     skills._target.GetComponent<ScriptableReader>()._entityLife -= skills._damage;
                     _attackDialogue.SetText(skills._launcher.GetComponent<ScriptableReader>()._entityName + " attack " + skills._target.GetComponent<ScriptableReader>()._entityName);
-                    yield return new WaitForSeconds(2);
+                    yield return new WaitForSeconds(1);
                     int randbleed = Random.Range(0, 100);
                     if (randbleed <= 25 && skills._launcher.GetComponent<ScriptableReader>()._entityName == "Thermis" && !skills._target.GetComponent<ScriptableReader>()._entityBleeding)
                     {
@@ -465,14 +465,14 @@ public class BattleButtonsManager : MonoBehaviour
                     _attackDialogue.SetText(skills._launcher.GetComponent<ScriptableReader>()._entityName + " attack...but " + skills._target.GetComponent<ScriptableReader>()._entityName + " is already dead.");
                     StartCoroutine(ClearDialogueBox());
                 }
-                yield return new WaitForSeconds(4);
+                yield return new WaitForSeconds(1);
             }
             else if(skills._attack == Skills._enum.skip)
             {
                 Debug.Log("skip");
                 _attackDialogue.SetText(skills._launcher.GetComponent<ScriptableReader>()._entityName + " skipped their turn ");
                 StartCoroutine(ClearDialogueBox());
-                yield return new WaitForSeconds(4);
+                yield return new WaitForSeconds(1);
             }
             else if (skills._attack == Skills._enum.bigattack)
             {
@@ -498,7 +498,7 @@ public class BattleButtonsManager : MonoBehaviour
                         _attackDialogue.SetText(skills._launcher.GetComponent<ScriptableReader>()._entityName + " act...but " + skills._target.GetComponent<ScriptableReader>()._entityName + " is already dead.");
                         StartCoroutine(ClearDialogueBox());
                     }
-                    yield return new WaitForSeconds(4);
+                    yield return new WaitForSeconds(1);
                 }
                 if (skills._launcher == GameObject.Find("Saber"))
                 {
@@ -522,7 +522,7 @@ public class BattleButtonsManager : MonoBehaviour
                         _attackDialogue.SetText(skills._launcher.GetComponent<ScriptableReader>()._entityName + " act...but " + skills._target.GetComponent<ScriptableReader>()._entityName + " is already dead.");
                         StartCoroutine(ClearDialogueBox());
                     }
-                    yield return new WaitForSeconds(4);
+                    yield return new WaitForSeconds(1);
                 }
                 if (skills._launcher == GameObject.Find("Synthia"))
                 {
@@ -553,7 +553,7 @@ public class BattleButtonsManager : MonoBehaviour
                         _attackDialogue.SetText(skills._launcher.GetComponent<ScriptableReader>()._entityName + " act...but " + skills._target.GetComponent<ScriptableReader>()._entityName + " is already dead.");
                         StartCoroutine(ClearDialogueBox());
                     }
-                    yield return new WaitForSeconds(4);
+                    yield return new WaitForSeconds(1);
                 }
             }
             
@@ -578,7 +578,7 @@ public class BattleButtonsManager : MonoBehaviour
 
     private IEnumerator ClearDialogueBox()
     {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(1f);
         _attackDialogue.SetText("");
     }
 
