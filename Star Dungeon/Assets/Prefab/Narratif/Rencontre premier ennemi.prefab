@@ -219,7 +219,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: What is this thing?
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 0}
+  m_fontAsset: {fileID: 11400000, guid: dee91b956082b724b9635a9260ffb840, type: 2}
   m_sharedMaterial: {fileID: -4237502758950370710, guid: dee91b956082b724b9635a9260ffb840, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}

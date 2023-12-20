@@ -60,9 +60,9 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "End Game",
+                    "name": "TutorialClose",
                     "type": "Button",
-                    "id": "87871334-dcf1-4f86-a63f-6ba98f9d2da9",
+                    "id": "bb5410ec-6e00-41de-a739-6c1ff24970f3",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -138,12 +138,12 @@
                 },
                 {
                     "name": "",
-                    "id": "bc82ffdb-76bf-4f93-ab71-5006e9aea872",
-                    "path": "<Keyboard>/anyKey",
+                    "id": "ded8fd23-8170-4e8a-a287-0ae2743b8a9a",
+                    "path": "<Keyboard>/escape",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "End Game",
+                    "action": "TutorialClose",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
