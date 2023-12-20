@@ -8,16 +8,12 @@ public class AddItems : MonoBehaviour
     public PlayerController _playerController;
     int index = 0;
     public List<GameObject> _items = new List<GameObject>();
-    private void Start()
-    {   
-    }
-
+    
     private void Update()
     {
         if (_playerController._haskey == 1 && index == 0)
         {
             index++;
-            Debug.Log("caca");
             AddInventoryEquipement();
         }
     }

@@ -45,10 +45,8 @@ public class OpenDoor : MonoBehaviour
 
     private void MoveDoor()
     {
-        Debug.Log("Rotation en y : " + this.transform.localRotation.y);
         if (_canOpenDoor && transform.GetChild(0).GetChild(0).localPosition.z <= 2 && transform.localRotation.y > 0)
         {
-            Debug.Log("La porte est ouverte");
             transform.GetChild(0).GetComponent<BoxCollider>().enabled = false;
             transform.GetChild(0).GetChild(0).Translate(-transform.right * (10f * Time.deltaTime));
             transform.GetChild(0).GetChild(1).Translate(transform.right * (10f * Time.deltaTime));
@@ -76,5 +74,4 @@ public class OpenDoor : MonoBehaviour
             transform.GetChild(0).GetChild(1).Translate(transform.forward * (10f * Time.deltaTime));       
         }
     }
-    
 }
