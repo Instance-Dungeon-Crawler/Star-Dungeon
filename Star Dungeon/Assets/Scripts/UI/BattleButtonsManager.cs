@@ -6,6 +6,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.XR;
 
 public class Skills
 {
@@ -37,11 +38,15 @@ public class BattleButtonsManager : MonoBehaviour
     [SerializeField] private TMP_Text _attackDialogue;
 
     [Header("Buttons")]
+    [SerializeField] ButtonCustom _skillButton;
     [SerializeField] ButtonCustom _attackButton;
     [SerializeField] ButtonCustom _skipButton;
 
     [Header("Life")]
     [SerializeField] private List<Slider> _charactersSliders = new List<Slider>();
+
+    [Header("Mana")]
+    [SerializeField] private List<Slider> _charactersManaSliders = new List<Slider>();
     
     [Header("Skills")]
     Skills _skills = new Skills();
@@ -61,6 +66,11 @@ public class BattleButtonsManager : MonoBehaviour
     private float _synthiaMaxLife;
     private float _saberMaxLife;
     private float _thermisMaxLife;
+
+    [Header("Max Mana")]
+    private float _xanderMaxMana;
+    private float _synthiaMaxMana;
+    private float _saberMaxMana;
 
     public List<Skills> _skillsList = new List<Skills>();
 
@@ -82,14 +92,23 @@ public class BattleButtonsManager : MonoBehaviour
         _synthiaMaxLife = GameObject.Find("Synthia").GetComponent<ScriptableReader>()._entityLife;
         _saberMaxLife = GameObject.Find("Saber").GetComponent<ScriptableReader>()._entityLife;
         _thermisMaxLife = GameObject.Find("Thermis").GetComponent<ScriptableReader>()._entityLife;
+        _xanderMaxMana = GameObject.Find("Xander").GetComponent<ScriptableReader>()._entityMana;
+        _synthiaMaxMana = GameObject.Find("Synthia").GetComponent<ScriptableReader>()._entityMana;
+        _saberMaxMana = GameObject.Find("Saber").GetComponent<ScriptableReader>()._entityMana;
 
         _skills._launcher = GameObject.Find("Xander");
         _attackDialogue.SetText("What should " + _skills._launcher.GetComponent<ScriptableReader>()._entityName + " do ?");
+        if (PlayerPrefs.GetInt("GlobalLvl") < 2)
+        {
+            _skillButton._interactable = false;
+        }
+
     }
 
     private void Update()
     {
         Life();
+        Mana();
     }
 
     public void SortingSkillsList()
@@ -182,6 +201,19 @@ public class BattleButtonsManager : MonoBehaviour
                 _skills1._launcher = GameObject.Find("Synthia");
                 _attackDialogue.SetText("What should " + _skills1._launcher.GetComponent<ScriptableReader>()._entityName + " do ?");
                 _skillsList.Add(_skills);
+                if (PlayerPrefs.GetInt("GlobalLvl") >= 2 && _synthia._entityMana >= 50 && _synthia._entityCooldown <= 0)
+                {
+                    _skillButton._interactable = true;
+                }
+                else if (_synthia._entityCooldown > 0)
+                {
+                    _synthia._entityCooldown -= 1;
+                    _skillButton._interactable = false;
+                }
+                else
+                {
+                    _skillButton._interactable = false;
+                }
                 _character = _enum.synthia;
                 break;
             case _enum.synthia:
@@ -191,6 +223,19 @@ public class BattleButtonsManager : MonoBehaviour
                 _skills1._target = _enemies.First();
                 _skills2._launcher = GameObject.Find("Saber");
                 _attackDialogue.SetText("What should " + _skills2._launcher.GetComponent<ScriptableReader>()._entityName + " do ?");
+                if (PlayerPrefs.GetInt("GlobalLvl") >= 2 && _saber._entityMana >= 50 && _saber._entityCooldown <= 0)
+                {
+                    _skillButton._interactable = true;
+                }
+                else if (_saber._entityCooldown > 0)
+                {
+                    _saber._entityCooldown -= 1;
+                    _skillButton._interactable = false;
+                }
+                else
+                {
+                    _skillButton._interactable = false;
+                }
                 _character = _enum.saber;
                 break;
             case _enum.saber:
@@ -217,6 +262,19 @@ public class BattleButtonsManager : MonoBehaviour
                 _skills._target = _enemies.First();
                 _skills1._launcher = GameObject.Find("Synthia");
                 _attackDialogue.SetText("What should " + _skills1._launcher.GetComponent<ScriptableReader>()._entityName + " do ?");
+                if (PlayerPrefs.GetInt("GlobalLvl") >= 2 && _synthia._entityMana >= 50 && _synthia._entityCooldown <= 0)
+                {
+                    _skillButton._interactable = true;
+                }
+                else if (_synthia._entityCooldown > 0)
+                {
+                    _synthia._entityCooldown -= 1;
+                    _skillButton._interactable = false;
+                }
+                else
+                {
+                    _skillButton._interactable = false;
+                }
                 _character = _enum.synthia;
                 break;
             case _enum.synthia:
@@ -226,6 +284,19 @@ public class BattleButtonsManager : MonoBehaviour
                 _skills1._target = GameObject.Find(WhoToHeal());
                 _skills2._launcher = GameObject.Find("Saber");
                 _attackDialogue.SetText("What should " + _skills2._launcher.GetComponent<ScriptableReader>()._entityName + " do ?");
+                if (PlayerPrefs.GetInt("GlobalLvl") >= 2 && _saber._entityMana >= 50 && _saber._entityCooldown <= 0)
+                {
+                    _skillButton._interactable = true;
+                }
+                else if (_saber._entityCooldown > 0)
+                {
+                    _saber._entityCooldown -= 1;
+                    _skillButton._interactable = false;
+                }
+                else
+                {
+                    _skillButton._interactable = false;
+                }
                 _character = _enum.saber;
                 break;
             case _enum.saber:
@@ -251,6 +322,19 @@ public class BattleButtonsManager : MonoBehaviour
                 _skillsList.Add(_skills);
                 _skills1._launcher = GameObject.Find("Synthia");
                 _attackDialogue.SetText("What should " + _skills1._launcher.GetComponent<ScriptableReader>()._entityName + " do ?");
+                if (PlayerPrefs.GetInt("GlobalLvl") >= 2 && _synthia._entityMana >= 50 && _synthia._entityCooldown <= 0)
+                {
+                    _skillButton._interactable = true;
+                }
+                else if (_synthia._entityCooldown > 0)
+                {
+                    _synthia._entityCooldown -= 1;
+                    _skillButton._interactable = false;
+                }
+                else
+                {
+                    _skillButton._interactable = false;
+                }
                 _character = _enum.synthia;
                 break;
             case _enum.synthia:
@@ -259,6 +343,19 @@ public class BattleButtonsManager : MonoBehaviour
                 _skillsList.Add(_skills1);
                 _skills2._launcher = GameObject.Find("Saber");
                 _attackDialogue.SetText("What should " + _skills2._launcher.GetComponent<ScriptableReader>()._entityName + " do ?");
+                if (PlayerPrefs.GetInt("GlobalLvl") >= 2 && _saber._entityMana >= 50 && _saber._entityCooldown <= 0)
+                {
+                    _skillButton._interactable = true;
+                }
+                else if (_saber._entityCooldown > 0)
+                {
+                    _saber._entityCooldown -= 1;
+                    _skillButton._interactable = false;
+                }
+                else
+                {
+                    _skillButton._interactable = false;
+                }
                 _character = _enum.saber;
                 break;
             case _enum.saber:
@@ -311,11 +408,17 @@ public class BattleButtonsManager : MonoBehaviour
             if (enemy.GetComponent<ScriptableReader>()._entityLife <= 0)
             {
                 _enemies.Remove(enemy);
-                _attackDialogue.SetText(enemy.GetComponent<ScriptableReader>()._entityName + " has been defeated. You found a key,you can now open the locked doors !");
-                PlayerPrefs.SetInt("Key", 1);
+                if (Random.Range(0, 1) < 0.5)
+                {
+                    _attackDialogue.SetText(enemy.GetComponent<ScriptableReader>()._entityName + " has been defeated. You found a key,it can open locked doors !");
+                    PlayerPrefs.SetInt("Key", PlayerPrefs.GetInt("key") + 1);
+                }
+                else
+                {
+                    _attackDialogue.SetText(enemy.GetComponent<ScriptableReader>()._entityName + " has been defeated.");
+                }
                 Levelling();
-                SceneManager.LoadScene("Game");
-                
+                SceneManager.LoadScene("Game");     
             }
             else
                 _attackDialogue.SetText("What should " + _skills._launcher.GetComponent<ScriptableReader>()._entityName + " do ?");
@@ -326,6 +429,7 @@ public class BattleButtonsManager : MonoBehaviour
     {
         foreach (var skills in _skillsList.ToList())
         {
+            _skillButton._interactable = false;
             _attackButton._interactable = false;
             _skipButton._interactable = false;
             if (skills._attack == Skills._enum.attack)
@@ -367,9 +471,22 @@ public class BattleButtonsManager : MonoBehaviour
                         _luckFactor = Random.Range(20, 50);
                         skills._damage = ((skills._launcher.GetComponent<ScriptableReader>()._entityPower*1.1f) / (skills._target.GetComponent<ScriptableReader>()._entityResistance) * _luckFactor);
                         skills._target.GetComponent<ScriptableReader>()._entityLife -= skills._damage;
-                        _attackDialogue.SetText(skills._launcher.GetComponent<ScriptableReader>()._entityName + " wind up and strikes hard " + skills._target.GetComponent<ScriptableReader>()._entityName);
+                        _xander._entityMana -= 50;
+                        _xander._entityCooldown = 2;
+                        _attackDialogue.SetText(skills._launcher.GetComponent<ScriptableReader>()._entityName + " wind up and strikes " + skills._target.GetComponent<ScriptableReader>()._entityName+ " hard.");
                         StartCoroutine(ClearDialogueBox());
                     }
+                    else if (skills._launcher.GetComponent<ScriptableReader>()._entityLife <= 0)
+                    {
+                        _attackDialogue.SetText(skills._launcher.GetComponent<ScriptableReader>()._entityName + " is dead. They cannot act.");
+                        StartCoroutine(ClearDialogueBox());
+                    }
+                    else
+                    {
+                        _attackDialogue.SetText(skills._launcher.GetComponent<ScriptableReader>()._entityName + " act...but " + skills._target.GetComponent<ScriptableReader>()._entityName + " is already dead.");
+                        StartCoroutine(ClearDialogueBox());
+                    }
+                    yield return new WaitForSeconds(4);
                 }
                 if (skills._launcher == GameObject.Find("Saber"))
                 {
@@ -378,26 +495,72 @@ public class BattleButtonsManager : MonoBehaviour
                         _luckFactor = Random.Range(20, 50);
                         skills._damage = ((skills._launcher.GetComponent<ScriptableReader>()._entityPower * 0.5f) / (skills._target.GetComponent<ScriptableReader>()._entityResistance) * _luckFactor);
                         skills._target.GetComponent<ScriptableReader>()._entityLife -= skills._damage;
-                        _attackDialogue.SetText(skills._launcher.GetComponent<ScriptableReader>()._entityName + " strike below the belt " + skills._target.GetComponent<ScriptableReader>()._entityName);
+                        _saber._entityMana -= 50;
+                        _saber._entityCooldown = 2;
+                        _attackDialogue.SetText(skills._launcher.GetComponent<ScriptableReader>()._entityName + " strike " + skills._target.GetComponent<ScriptableReader>()._entityName + " below the belt.");
                         StartCoroutine(ClearDialogueBox());
                     }
+                    else if (skills._launcher.GetComponent<ScriptableReader>()._entityLife <= 0)
+                    {
+                        _attackDialogue.SetText(skills._launcher.GetComponent<ScriptableReader>()._entityName + " is dead. They cannot act.");
+                        StartCoroutine(ClearDialogueBox());
+                    }
+                    else
+                    {
+                        _attackDialogue.SetText(skills._launcher.GetComponent<ScriptableReader>()._entityName + " act...but " + skills._target.GetComponent<ScriptableReader>()._entityName + " is already dead.");
+                        StartCoroutine(ClearDialogueBox());
+                    }
+                    yield return new WaitForSeconds(4);
                 }
                 if (skills._launcher == GameObject.Find("Synthia"))
                 {
                     if (skills._target.GetComponent<ScriptableReader>()._entityLife >= 0 && skills._launcher.GetComponent<ScriptableReader>()._entityLife > 0)
                     {
-                        skills._damage = ((skills._launcher.GetComponent<ScriptableReader>()._entityPower*0.7f));
-                        skills._target.GetComponent<ScriptableReader>()._entityLife += skills._damage;
-                        _attackDialogue.SetText(skills._launcher.GetComponent<ScriptableReader>()._entityName + "healed" + skills._target.GetComponent<ScriptableReader>()._entityName);
+                        if (_synthia._entityLife == _synthiaMaxLife && _saber._entityLife == _saberMaxLife && _xander._entityLife == _xanderMaxLife)
+                        {
+                            _attackDialogue.SetText(skills._launcher.GetComponent<ScriptableReader>()._entityName + " tried to heal but no one was injured.");
+                            StartCoroutine(ClearDialogueBox());
+                        }
+                        else
+                        {
+                            skills._damage = ((skills._launcher.GetComponent<ScriptableReader>()._entityPower * 0.7f));
+                            skills._target.GetComponent<ScriptableReader>()._entityLife += skills._damage;
+                            _synthia._entityMana -= 50;
+                            _synthia._entityCooldown = 2;
+                            _attackDialogue.SetText(skills._launcher.GetComponent<ScriptableReader>()._entityName + " healed " + skills._target.GetComponent<ScriptableReader>()._entityName);
+                            StartCoroutine(ClearDialogueBox());
+                        }
+                    }
+                    else if (skills._launcher.GetComponent<ScriptableReader>()._entityLife <= 0)
+                    {
+                        _attackDialogue.SetText(skills._launcher.GetComponent<ScriptableReader>()._entityName + " is dead. They cannot act.");
                         StartCoroutine(ClearDialogueBox());
                     }
-
+                    else
+                    {
+                        _attackDialogue.SetText(skills._launcher.GetComponent<ScriptableReader>()._entityName + " act...but " + skills._target.GetComponent<ScriptableReader>()._entityName + " is already dead.");
+                        StartCoroutine(ClearDialogueBox());
+                    }
+                    yield return new WaitForSeconds(4);
                 }
             }
         }
         EndGame();
         _attackButton._interactable = true;
         _skipButton._interactable = true;
+        if (PlayerPrefs.GetInt("GlobalLvl") >= 2 && _xander._entityMana >= 50 && _xander._entityCooldown <= 0)
+        {
+            _skillButton._interactable = true;
+        }
+        else if (_xander._entityCooldown >0)
+        {
+            _xander._entityCooldown -= 1;
+            _skillButton._interactable = false;
+        }
+        else
+        {
+            _skillButton._interactable = false;
+        }
     }
 
     private IEnumerator ClearDialogueBox()
@@ -422,5 +585,12 @@ public class BattleButtonsManager : MonoBehaviour
             else if (_charactersSliders[i].value < 0.2)
                 _charactersSliders[i].transform.Find("Life Bar").GetComponent<Image>().color = new Color32(255, 118, 126, 255);
         }
+    }
+
+    private void Mana()
+    {
+        _charactersManaSliders[0].value = GameObject.Find("Xander").GetComponent<ScriptableReader>()._entityMana / _xanderMaxMana;
+        _charactersManaSliders[1].value = GameObject.Find("Synthia").GetComponent<ScriptableReader>()._entityMana / _synthiaMaxMana;
+        _charactersManaSliders[2].value = GameObject.Find("Saber").GetComponent<ScriptableReader>()._entityMana / _saberMaxMana;
     }
 }
