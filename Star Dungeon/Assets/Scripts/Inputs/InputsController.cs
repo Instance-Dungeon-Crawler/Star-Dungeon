@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -12,9 +13,23 @@ public class InputsController : MonoBehaviour
     private bool WallcheckFront()
     {
         RaycastHit hit;
-        if (Physics.Raycast(new Vector3(_player.position.x, _player.position.y + 2, _player.position.z), _player.forward, out hit, 5))
+        if (Physics.Raycast(new Vector3(_player.position.x, _player.position.y + 2, _player.position.z), _player.forward, out hit, 2.5f))
         {
-            if (hit.collider.name == "Wall" || (hit.collider.name == "CloseDoor" && PlayerPrefs.GetInt("key") >= 1))
+            if (hit.collider.name == "Wall")
+            {
+                return (true);
+            }
+            else
+            {
+                return (false);
+            }
+        }
+        
+        Debug.Log("ok");
+        if (Physics.Raycast(new Vector3(_player.position.x, _player.position.y + 2, _player.position.z), _player.forward, out hit, 7f))
+        {
+            Debug.Log(hit.collider.name);
+            if(hit.collider.name == "GameObject")
             {
                 return (true);
             }
@@ -26,12 +41,28 @@ public class InputsController : MonoBehaviour
         return (false);
     }
 
+    private void Update()
+    {
+        Debug.DrawRay(new Vector3(_player.position.x, _player.position.y + 2, _player.position.z), _player.forward*7f, Color.red);
+    }
+
     private bool WallcheckBack()
     {
         RaycastHit hit;
-        if (Physics.Raycast(new Vector3(_player.position.x, _player.position.y + 2, _player.position.z), -_player.forward, out hit, 5))
+        if (Physics.Raycast(new Vector3(_player.position.x, _player.position.y + 2, _player.position.z), _player.forward, out hit, 2.5f))
         {
-            if (hit.collider.name == "Wall" || (hit.collider.name == "CloseDoor" && PlayerPrefs.GetInt("key") >= 1))
+            if (hit.collider.name == "Wall")
+            {
+                return (true);
+            }
+            else
+            {
+                return (false);
+            }
+        }
+        else if (Physics.Raycast(new Vector3(_player.position.x, _player.position.y + 2, _player.position.z), _player.forward, out hit, 5f))
+        {
+            if (hit.collider.name == "Door" || hit.collider.name == "CloseDoor")
             {
                 return (true);
             }
@@ -45,7 +76,7 @@ public class InputsController : MonoBehaviour
 
     public void PlayerForward(InputAction.CallbackContext context)
     {
-        if (context.started && _playerMovements._canMove && !WallcheckFront())
+        if (!WallcheckFront() && context.started && _playerMovements._canMove)
         {
             _playerController.OnMoveForward();
             _cameraRotation._canRotate = false;
@@ -56,13 +87,10 @@ public class InputsController : MonoBehaviour
     public void PlayerBack(InputAction.CallbackContext context)
     {
         if (context.started && _playerMovements._canMove && !WallcheckBack())
-        {
-           
-                    _playerController.OnMoveBack();
-                    _cameraRotation._canRotate = false;
-                    _playerMovements._canMove = false;
-                
-            
+        { 
+            _playerController.OnMoveBack(); 
+            _cameraRotation._canRotate = false; 
+            _playerMovements._canMove = false;
         }
     }
 

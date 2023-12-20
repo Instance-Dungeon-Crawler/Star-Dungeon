@@ -6,11 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="665704e8-9598-48cf-954f-e9c5213aa5c5" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Star Dungeon/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Star Dungeon/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/NodeMoveToPlayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/NodeMoveToPlayer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/NodeSeePlayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/NodeSeePlayer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/NodeStartCombat.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/NodeStartCombat.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/robot_metallic/material/robot_metallic.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/robot_metallic/material/robot_metallic.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/robot_metallic/material/robot_metallic.mat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/robot_metallic/material/robot_metallic.mat.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefab/Map/CloseDoor.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/Map/CloseDoor.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game/Game.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Game/Game.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Inputs/InputsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Inputs/InputsController.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,6 +30,7 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;Attach to Unity Editor.Attach to Unity Editor.executor&quot;: &quot;Debug&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
