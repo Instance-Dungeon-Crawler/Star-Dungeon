@@ -418,7 +418,7 @@ public class BattleButtonsManager : MonoBehaviour
                     {
                         _skills._target.GetComponent<ScriptableReader>()._entityBleeding = true;
                         _skills._target.GetComponent<ScriptableReader>()._entityBleedTimer = 3;
-                        _attackDialogue.SetText(skills._target.GetComponent<ScriptableReader>()._entityName + "is bleeding");
+                        _attackDialogue.SetText(skills._target.GetComponent<ScriptableReader>()._entityName + " is bleeding");
                     }
                     StartCoroutine(ClearDialogueBox());
                 }
@@ -523,7 +523,7 @@ public class BattleButtonsManager : MonoBehaviour
                     yield return new WaitForSeconds(4);
                 }
             }
-            if (skills._launcher.GetComponent<ScriptableReader>()._entityBleeding == true)
+            if (skills._launcher.GetComponent<ScriptableReader>()._entityBleeding == true  && skills._launcher.GetComponent<ScriptableReader>()._entityLife >0)
             {
                 if (skills._launcher.GetComponent<ScriptableReader>()._entityName == "Xander")
                 {
@@ -548,6 +548,10 @@ public class BattleButtonsManager : MonoBehaviour
                 }
                 _attackDialogue.SetText(skills._target.GetComponent<ScriptableReader>()._entityName + " lost health due to bleeding");
                 StartCoroutine(ClearDialogueBox());
+            }
+            else
+            {
+                skills._launcher.GetComponent<ScriptableReader>()._entityBleeding = false;
             }
             yield return new WaitForSeconds(4);
         }
