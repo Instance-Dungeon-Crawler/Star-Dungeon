@@ -24,11 +24,8 @@ public class InputsController : MonoBehaviour
                 return (false);
             }
         }
-        
-        Debug.Log("ok");
         if (Physics.Raycast(new Vector3(_player.position.x, _player.position.y + 2, _player.position.z), _player.forward, out hit, 7f))
         {
-            Debug.Log(hit.collider.name);
             if(hit.collider.name == "GameObject")
             {
                 return (true);
@@ -49,7 +46,7 @@ public class InputsController : MonoBehaviour
     private bool WallcheckBack()
     {
         RaycastHit hit;
-        if (Physics.Raycast(new Vector3(_player.position.x, _player.position.y + 2, _player.position.z), _player.forward, out hit, 2.5f))
+        if (Physics.Raycast(new Vector3(_player.position.x, _player.position.y + 2, _player.position.z), -_player.forward, out hit, 2.5f))
         {
             if (hit.collider.name == "Wall")
             {
@@ -60,9 +57,9 @@ public class InputsController : MonoBehaviour
                 return (false);
             }
         }
-        else if (Physics.Raycast(new Vector3(_player.position.x, _player.position.y + 2, _player.position.z), _player.forward, out hit, 5f))
+        else if (Physics.Raycast(new Vector3(_player.position.x, _player.position.y + 2, _player.position.z), -_player.forward, out hit, 5f))
         {
-            if (hit.collider.name == "Door" || hit.collider.name == "CloseDoor")
+            if(hit.collider.name == "GameObject")
             {
                 return (true);
             }
@@ -86,7 +83,7 @@ public class InputsController : MonoBehaviour
 
     public void PlayerBack(InputAction.CallbackContext context)
     {
-        if (context.started && _playerMovements._canMove && !WallcheckBack())
+        if (!WallcheckBack() && context.started && _playerMovements._canMove)
         { 
             _playerController.OnMoveBack(); 
             _cameraRotation._canRotate = false; 
