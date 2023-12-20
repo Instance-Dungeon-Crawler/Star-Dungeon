@@ -16,4 +16,5 @@ public class StatsEntity : ScriptableObject
     public int _Cooldown;
     public bool _bleeding;
     public int _bleedTimer;
+    public bool _IsDead;
 }
