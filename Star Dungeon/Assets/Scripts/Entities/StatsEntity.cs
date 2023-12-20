@@ -13,4 +13,7 @@ public class StatsEntity : ScriptableObject
     public int _attackSpeed;
     public int _resistance;
     public int _power;
+    public int _Cooldown;
+    public bool _bleeding;
+    public int _bleedTimer;
 }

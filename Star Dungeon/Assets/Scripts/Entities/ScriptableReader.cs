@@ -13,6 +13,9 @@ public class ScriptableReader : MonoBehaviour
     [HideInInspector] public string _entityClassName;
     [HideInInspector] public int _entityLevel;
     [HideInInspector] public int _entityXP;
+    [HideInInspector] public int _entityCooldown;
+    [HideInInspector] public bool _entityBleeding;
+    [HideInInspector] public int _entityBleedTimer;
 
 
     void Awake()
@@ -26,6 +29,9 @@ public class ScriptableReader : MonoBehaviour
         _entityPower = _statsEntity._power;
         _entityLevel = _statsEntity._level;
         _entityXP = _statsEntity._XP;
+        _entityCooldown = _statsEntity._Cooldown;
+        _entityBleeding = _statsEntity._bleeding;
+        _entityBleedTimer = _statsEntity._bleedTimer;
     }
 }
 
