@@ -11,16 +11,8 @@ public class PorteClassiqueFerme : MonoBehaviour
     {
         if (_haskey == 0 && other.gameObject.CompareTag("Door"))
         {
-
-
-
             _DialoguePorte.SetActive(true);
-
-
         }
-
-                 
-        
     }
 
     void OnTriggerExit(Collider other)
@@ -29,7 +21,5 @@ public class PorteClassiqueFerme : MonoBehaviour
         {
             _DialoguePorte.SetActive(false);
         }
-    }
-
-
+    } 
 }

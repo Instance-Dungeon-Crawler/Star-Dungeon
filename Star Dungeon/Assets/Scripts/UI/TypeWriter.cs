@@ -75,7 +75,7 @@ public class TypeWriter : MonoBehaviour
     IEnumerator LoadSceneAfterDelay()
     {
         yield return new WaitForSeconds(5f);
-        SceneManager.LoadScene("MenuPrincipal");
+        SceneManager.LoadScene("MainMenu");
     }
 
 }

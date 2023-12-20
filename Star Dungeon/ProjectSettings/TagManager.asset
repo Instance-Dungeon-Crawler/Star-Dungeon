@@ -10,6 +10,9 @@ TagManager:
   - Slot 1 (5)
   - Slot 1 (6)
   - Wall
+  - DoorOpen
+  - Door
+  - FinalDoor
   layers:
   - Default
   - TransparentFX

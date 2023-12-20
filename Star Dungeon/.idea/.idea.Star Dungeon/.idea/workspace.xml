@@ -6,10 +6,19 @@
   <component name="ChangeListManager">
     <list default="true" id="665704e8-9598-48cf-954f-e9c5213aa5c5" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Star Dungeon/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Star Dungeon/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/OpenDoor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/OpenDoor.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefab/Map/CloseDoor.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/Map/CloseDoor.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefab/Map/Door.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/Map/Door.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefab/Narratif/Début labyrinthe (lieu d’apparition).prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/Narratif/Début labyrinthe (lieu d’apparition).prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefab/Narratif/Porte Ouverte (porte classique).prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/Narratif/Porte Ouverte (porte classique).prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefab/Narratif/Porte fermée (porte classique).prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/Narratif/Porte fermée (porte classique).prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefab/Narratif/Première salle.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/Narratif/Première salle.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game/Game.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Game/Game.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Inventory/AddItems.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Inventory/AddItems.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/OpenDoor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/OpenDoor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/FinalDoor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/FinalDoor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/PorteClassiqueFermé.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/PorteClassiqueFermé.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/TexteEnnemie.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/TexteEnnemie.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

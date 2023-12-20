@@ -13,38 +13,20 @@ public class FinalDoor : MonoBehaviour
     {
         if (_haskey == 0 && other.gameObject.CompareTag("FinalDoor"))
         {
-
-
-
             _DialoguePorteFinal.SetActive(true);
-
-
         }
 
-        if(_haskey == 1 && other.gameObject.CompareTag("FinalDoor"))
+        if (_haskey == 1 && other.gameObject.CompareTag("FinalDoor"))
         {
-
-
-            SceneManager.LoadScene("MenuPrincipal");
-
-
-
-
+            SceneManager.LoadScene("MainMenu");
         }
-
-
-
-
     }
 
-    void OnTriggerExit(Collider other)
+    private void OnTriggerExit(Collider other)
     {
         if (other.gameObject.CompareTag("FinalDoor"))
         {
             _DialoguePorteFinal.SetActive(false);
         }
     }
-
-   
-
 }
