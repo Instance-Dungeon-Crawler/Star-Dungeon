@@ -166,7 +166,7 @@ Transform:
   m_GameObject: {fileID: 6109384101803991490}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.007935251, y: -0.14994706, z: -1.4331326}
+  m_LocalPosition: {x: 0, y: -0.14994706, z: -1.4331326}
   m_LocalScale: {x: 10, y: 10, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -314,8 +314,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8289769007041923440}
-  - component: {fileID: 6615521550342705125}
   - component: {fileID: 457381852387550893}
+  - component: {fileID: 1150293698040756042}
   m_Layer: 2
   m_Name: Door
   m_TagString: Untagged
@@ -339,25 +339,6 @@ Transform:
   - {fileID: 7571862199861989997}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6615521550342705125
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7517251875454551983}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1b65f7c37daa294fa26d2b824da4b01, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _endPosRight: {x: 12, y: 3, z: 18}
-  _endPosLeft: {x: 7.5, y: 3, z: 18}
-  _speed: 1
-  _doorLeft: {fileID: 3839293139818445038}
-  _doorRight: {fileID: 6109384101803991490}
-  _player: {fileID: 0}
-  _LockedDoorText: {fileID: 0}
 --- !u!65 &457381852387550893
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -379,3 +360,15 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 5.1645775, y: 3.2064633, z: 3.6728005}
   m_Center: {x: 0.0403018, y: 0.0844295, z: -0.86592484}
+--- !u!114 &1150293698040756042
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7517251875454551983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1da25d7e7d3f6ca428eda0bcf94a8cb0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

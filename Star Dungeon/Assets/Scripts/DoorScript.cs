@@ -75,26 +75,26 @@ public class DoorScript : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.tag == "Player" && _player.GetComponent<PlayerController>()._haskey  == 1) 
+        if (other.tag == "Player") 
         {
-            PlayerPrefs.SetInt("Key", 0);
-            _player.GetComponent<PlayerController>()._haskey--;
+            //PlayerPrefs.SetInt("Key", 0);
+            //_player.GetComponent<PlayerController>()._haskey--;
             if (!Moving)
             {
                 Moving = true;
             }
         }
-        else if (other.tag == "Player" && _player.GetComponent<PlayerController>()._haskey == 1)
-        {
-            _LockedDoorText.SetActive(true);
-        }
+        // else if (other.tag == "Player" && _player.GetComponent<PlayerController>()._haskey == 1)
+        // {
+        //     _LockedDoorText.SetActive(true);
+        // }
     }
 
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.tag == "Player")
-        {
-            _LockedDoorText.SetActive(false);
-        }
-    }
+    // private void OnTriggerExit(Collider other)
+    // {
+    //     if (other.tag == "Player")
+    //     {
+    //         _LockedDoorText.SetActive(false);
+    //     }
+    // }
 }
