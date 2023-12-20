@@ -472,7 +472,7 @@ GameObject:
   - component: {fileID: 210709056}
   - component: {fileID: 210709057}
   m_Layer: 5
-  m_Name: Mana
+  m_Name: Xander Mana
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -607,7 +607,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 01b51e1b33a27f64ba164549b51e9e3b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -712,7 +712,7 @@ GameObject:
   - component: {fileID: 595375910}
   - component: {fileID: 595375909}
   m_Layer: 5
-  m_Name: Mana Bar
+  m_Name: Life Bar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -757,7 +757,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: ab4eea7868f5b7148979825c07c6149c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -912,7 +912,10 @@ MonoBehaviour:
   - {fileID: 116377140}
   - {fileID: 1720653702}
   - {fileID: 1984823423}
-  _charactersManaSliders: []
+  _charactersManaSliders:
+  - {fileID: 210709057}
+  - {fileID: 797515930}
+  - {fileID: 1739444005}
 --- !u!1 &797515928
 GameObject:
   m_ObjectHideFlags: 0
@@ -924,7 +927,7 @@ GameObject:
   - component: {fileID: 797515929}
   - component: {fileID: 797515930}
   m_Layer: 5
-  m_Name: Mana
+  m_Name: Synthia Mana
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1284,7 +1287,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: ab4eea7868f5b7148979825c07c6149c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1642,6 +1645,8 @@ MonoBehaviour:
   _entityLevel: 0
   _entityXP: 0
   _entityCooldown: 0
+  _entityBleeding: 0
+  _entityBleedTimer: 0
 --- !u!1 &1171026855
 GameObject:
   m_ObjectHideFlags: 0
@@ -2003,7 +2008,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 01b51e1b33a27f64ba164549b51e9e3b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2123,6 +2128,8 @@ MonoBehaviour:
   _entityLevel: 0
   _entityXP: 0
   _entityCooldown: 0
+  _entityBleeding: 0
+  _entityBleedTimer: 0
 --- !u!1 &1381635183
 GameObject:
   m_ObjectHideFlags: 0
@@ -2359,6 +2366,8 @@ MonoBehaviour:
   _entityLevel: 0
   _entityXP: 0
   _entityCooldown: 0
+  _entityBleeding: 0
+  _entityBleedTimer: 0
 --- !u!1 &1408762423
 GameObject:
   m_ObjectHideFlags: 0
@@ -2416,7 +2425,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 01b51e1b33a27f64ba164549b51e9e3b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3047,7 +3056,7 @@ GameObject:
   - component: {fileID: 1739444004}
   - component: {fileID: 1739444005}
   m_Layer: 5
-  m_Name: Mana
+  m_Name: Saber Mana
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3182,7 +3191,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 01b51e1b33a27f64ba164549b51e9e3b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4200,6 +4209,8 @@ MonoBehaviour:
   _entityLevel: 0
   _entityXP: 0
   _entityCooldown: 0
+  _entityBleeding: 0
+  _entityBleedTimer: 0
 --- !u!1 &2135861037
 GameObject:
   m_ObjectHideFlags: 0
@@ -4257,7 +4268,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: ab4eea7868f5b7148979825c07c6149c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
