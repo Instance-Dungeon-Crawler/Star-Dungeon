@@ -10,12 +10,13 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float _time;
     public bool _canMove = true;
     private Animator _animator;
+    public AudioSource _audioSource;
 
     private void Start()
     {
         _cameraRotation = GetComponent<CameraRotation>();
         _animator = GetComponentInChildren<Animator>();
-
+        
     }
 
     public IEnumerator PlayerForward()
@@ -31,6 +32,7 @@ public class PlayerMovement : MonoBehaviour
             this.transform.position = Vector3.LerpUnclamped(startposition, _targetPos, time);
             yield return null;
             time += Time.deltaTime / _time;
+
         }
         transform.position = _targetPos;
         _cameraRotation._canRotate = true;
@@ -42,7 +44,6 @@ public class PlayerMovement : MonoBehaviour
         float time = 0f;
         Vector3 startposition = transform.position;
         _targetPos = (transform.position - transform.forward * _distance);
-
         while (time < 1)
         {
             _canMove = false;
@@ -50,19 +51,23 @@ public class PlayerMovement : MonoBehaviour
 
             yield return null;
             time += Time.deltaTime / _time;
+
         }
         transform.position = _targetPos;
         _cameraRotation._canRotate = true;
         _canMove = true;
+        
     }
 
     public void Forward()
     {
+
         StartCoroutine(PlayerForward());
     }
 
     public void Back()
     {
+
         StartCoroutine(PlayerBack());
     }
 }

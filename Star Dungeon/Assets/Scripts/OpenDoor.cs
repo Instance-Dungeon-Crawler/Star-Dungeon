@@ -1,9 +1,15 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class OpenDoor : MonoBehaviour
 {
+    [SerializeField] AudioClip _doorClip;
     private bool _canOpenDoor = false;
     private bool _canCloseDoor = false;
+    public AudioSource _audioSource;
 
     private Vector3 _initRightDoorPosition;
     private Vector3 _initLeftDoorPosition;
@@ -19,6 +25,8 @@ public class OpenDoor : MonoBehaviour
     {
         if (other.tag == "Player")
         {
+            AudioClip clip = _doorClip;
+            _audioSource.PlayOneShot(clip);
             _canOpenDoor = true;
             _canCloseDoor = false;
         }
@@ -28,6 +36,8 @@ public class OpenDoor : MonoBehaviour
     {
         if (other.tag == "Player")
         {
+            AudioClip clip = _doorClip;
+            _audioSource.PlayOneShot(clip);
             _canCloseDoor = true;
             _canOpenDoor = false;
         }
