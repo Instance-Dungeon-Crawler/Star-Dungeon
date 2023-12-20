@@ -9,7 +9,11 @@ TagManager:
   - Slot 1 (4)
   - Slot 1 (5)
   - Slot 1 (6)
-  - Wall
+  - Ground
+  - DoorOpen
+  - Ennemie
+  - DoorLock
+  - FinalDoor
   layers:
   - Default
   - TransparentFX
@@ -17,7 +21,7 @@ TagManager:
   - 
   - Water
   - UI
-  - DisableFog
+  - 
   - 
   - 
   - 
