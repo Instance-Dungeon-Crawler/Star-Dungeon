@@ -7,6 +7,7 @@ using UnityEngine;
 public class ClosedDoor : MonoBehaviour
 {
     OpenDoor _OpenDoor;
+    PlayerComponent _PlayerComponent;
 
     [SerializeField] AudioClip _doorClip;
     private bool _canOpenDoor = false;
@@ -15,7 +16,7 @@ public class ClosedDoor : MonoBehaviour
     public int _Haskey;
     private Vector3 _initRightDoorPosition;
     private Vector3 _initLeftDoorPosition;
-
+    public int key;
 
     private void Start()
     {
@@ -27,7 +28,7 @@ public class ClosedDoor : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (_Haskey == 1 && other.tag == "Player")
+        if (key == 1 && other.tag == "Player")
         {
             AudioClip clip = _doorClip;
             _audioSource.PlayOneShot(clip);
@@ -38,7 +39,7 @@ public class ClosedDoor : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (_Haskey == 1 && other.tag == "Player")
+        if (key == 1 && other.tag == "Player")
         {
             AudioClip clip = _doorClip;
             _audioSource.PlayOneShot(clip);
