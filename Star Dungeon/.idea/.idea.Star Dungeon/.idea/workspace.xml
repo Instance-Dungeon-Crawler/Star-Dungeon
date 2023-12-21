@@ -6,6 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="665704e8-9598-48cf-954f-e9c5213aa5c5" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Star Dungeon/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Star Dungeon/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CreditsManager.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CreditsManager.cs.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Menus/Settings.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Menus/Settings.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Oswald Bold SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Oswald Bold SDF.asset" afterDir="false" />
     </list>
@@ -20,6 +22,7 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/PlayerPref.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/ButtonManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/SettingsManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../Tou-Shoot/Tou'Shoot/Assets/Scripts/Saves/SaveAudioSettings.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
@@ -114,7 +117,7 @@
       <workItem from="1703060461270" duration="13361000" />
       <workItem from="1703086961049" duration="2050000" />
       <workItem from="1703148566273" duration="8234000" />
-      <workItem from="1703163807458" duration="595000" />
+      <workItem from="1703163807458" duration="1272000" />
     </task>
     <servers />
   </component>

@@ -247,9 +247,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 206662aaf999a75408e253e898ebd7eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  toggle1: {fileID: 164566818}
-  toggle2: {fileID: 1881335854}
-  toggle3: {fileID: 21014339}
 --- !u!1 &44072273
 GameObject:
   m_ObjectHideFlags: 0
@@ -403,7 +400,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &64982356
 RectTransform:
   m_ObjectHideFlags: 0
@@ -962,9 +959,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 206662aaf999a75408e253e898ebd7eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  toggle1: {fileID: 164566818}
-  toggle2: {fileID: 1881335854}
-  toggle3: {fileID: 21014339}
 --- !u!1 &304788733
 GameObject:
   m_ObjectHideFlags: 0
@@ -1253,9 +1247,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 206662aaf999a75408e253e898ebd7eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  toggle1: {fileID: 601689348}
-  toggle2: {fileID: 437695096}
-  toggle3: {fileID: 327268765}
 --- !u!1 &354293016
 GameObject:
   m_ObjectHideFlags: 0
@@ -1316,7 +1307,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1115692093}
-        m_TargetAssemblyTypeName: CreditsManager, Assembly-CSharp
+        m_TargetAssemblyTypeName: SettingsManager, Assembly-CSharp
         m_MethodName: Back
         m_Mode: 1
         m_Arguments:
@@ -1496,9 +1487,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 206662aaf999a75408e253e898ebd7eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  toggle1: {fileID: 601689348}
-  toggle2: {fileID: 437695096}
-  toggle3: {fileID: 327268765}
 --- !u!1 &572083369
 GameObject:
   m_ObjectHideFlags: 0
@@ -1757,9 +1745,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 206662aaf999a75408e253e898ebd7eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  toggle1: {fileID: 601689348}
-  toggle2: {fileID: 437695096}
-  toggle3: {fileID: 327268765}
 --- !u!1 &691735966
 GameObject:
   m_ObjectHideFlags: 0
@@ -2354,9 +2339,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1115692087}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c85310094a5fd5e48afafa2fd8c07d6b, type: 3}
+  m_Script: {fileID: 11500000, guid: efab5dfdfb1497040b02a4607baff1f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _windowded: {fileID: 601689348}
+  _fullscreen: {fileID: 437695096}
+  _windowedFullscreen: {fileID: 327268765}
+  _low: {fileID: 164566818}
+  _medium: {fileID: 1881335854}
+  _high: {fileID: 21014339}
 --- !u!1 &1135983571
 GameObject:
   m_ObjectHideFlags: 0
@@ -3860,9 +3851,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 206662aaf999a75408e253e898ebd7eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  toggle1: {fileID: 164566818}
-  toggle2: {fileID: 1881335854}
-  toggle3: {fileID: 21014339}
 --- !u!1 &1981230660
 GameObject:
   m_ObjectHideFlags: 0
