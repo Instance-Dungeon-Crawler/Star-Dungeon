@@ -6,24 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="665704e8-9598-48cf-954f-e9c5213aa5c5" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Star Dungeon/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Star Dungeon/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/EnemyManager.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/EnemyManager.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefab/Map/Door.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/Map/Door.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Saves.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Saves/SaveValues.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Saves/SaveValues.json.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game/Game.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Game/Game.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game/Game/NavMesh-Ground 1.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Game/Game/NavMesh-Ground 1.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DontDestroyOnLoad.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DontDestroyOnLoad.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/EnnemiAI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/EnnemiAI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/OpenDoor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/OpenDoor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Save/Save.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Save/Save.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Save/SavesValues.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Save/SavesValues.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/ButtonManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/ButtonManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/MinimapRenderTexture.renderTexture" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/MinimapRenderTexture.renderTexture" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.testtools.codecoverage/Settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.testtools.codecoverage/Settings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Menus/Settings.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Menus/Settings.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Oswald Bold SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Oswald Bold SDF.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
