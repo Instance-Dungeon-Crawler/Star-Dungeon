@@ -8,9 +8,8 @@ public class PlayerPref : MonoBehaviour
     void Awake()
     {
         //Xander Stats
-        PlayerPrefs.SetInt("GlobalLvl", _xander._entityLevel);
-        PlayerPrefs.SetInt("GlobalXP", _xander._entityXP);
-        PlayerPrefs.SetInt("threshold", _xander._threshold);
+        PlayerPrefs.SetInt("xanderLvl", _xander._entityLevel);
+        PlayerPrefs.SetInt("xanderXP", _xander._entityXP);
         PlayerPrefs.SetFloat("xanderLife",_xander._entityLife);
         PlayerPrefs.SetFloat("xanderMana",_xander._entityMana);
         PlayerPrefs.SetFloat("xanderAttackSpeed",_xander._entityAttackSpeed);
