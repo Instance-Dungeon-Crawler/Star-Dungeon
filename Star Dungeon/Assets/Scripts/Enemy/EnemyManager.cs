@@ -6,9 +6,14 @@ public class EnemyManager : MonoBehaviour
     public List<GameObject> _enemies = new List<GameObject>();
     public GameObject _enemyInBattle;
 
+    public AudioSource _BattleSound;
+    public  AudioClip _BattleSoundClip;
+    
+
     public static EnemyManager Instance;
     [SerializeField] private GameObject Combat_Canva;
     [SerializeField] private  GameObject Combat_Text;
+
 
     private void Awake()
     {
@@ -25,6 +30,7 @@ public class EnemyManager : MonoBehaviour
 
     private void Start()
     {
+        _BattleSound.Play();
         DontDestroyOnLoad(this);
         foreach (var enemy in GameObject.FindGameObjectsWithTag("Enemy"))
         {
@@ -50,8 +56,9 @@ public class EnemyManager : MonoBehaviour
         Combat_Text.SetActive(true);
         Combat_Canva.SetActive(true);
         Combat_Canva.GetComponent<BattleButtonsManager>().Restart();
-
-
+        _BattleSound.Stop();
+        _BattleSound.PlayOneShot(_BattleSoundClip);
+        
         // Save.Instance.SaveToJSON();
         // SceneManager.LoadScene("Battle Scene");   
 

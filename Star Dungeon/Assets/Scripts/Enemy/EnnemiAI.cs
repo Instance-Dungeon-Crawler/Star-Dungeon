@@ -54,7 +54,7 @@ public class EnnemiAI : MonoBehaviour
     {
         if (_agent.velocity.magnitude > 0 && _timer <=0)
         {
-            AudioClip clip = _footStepRobot[UnityEngine.Random.Range(0, _footStepRobot.Length)];
+            AudioClip clip = _footStepRobot[Random.Range(0, _footStepRobot.Length)];
             _audioSource.PlayOneShot(clip);
             _timer = 0.6f;
         }

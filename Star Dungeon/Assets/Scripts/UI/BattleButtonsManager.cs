@@ -4,7 +4,6 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using TMPro;
 using Unity.VisualScripting;
-using UnityEditor.PackageManager.Requests;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -60,6 +59,8 @@ public class BattleButtonsManager : MonoBehaviour
     public GameObject _enemy;
     [SerializeField] private GameObject Combat_Canva;
     [SerializeField] private GameObject Combat_Text;
+
+    public AudioClip _Combat_AudioClip;
 
     private enum _enum { xander, synthia, saber };
     private _enum _character;
@@ -432,6 +433,8 @@ public class BattleButtonsManager : MonoBehaviour
                         _robot.GetComponent<EnnemiAI>().transform.position = _robot.GetComponent<EnnemiAI>()._startPos.position;
                     }
                 }
+                EnemyManager.Instance._BattleSound.Stop();
+                EnemyManager.Instance._BattleSound.PlayOneShot(_Combat_AudioClip);
                 Combat_Text.SetActive(false);
                 Combat_Canva.SetActive(false);
                 

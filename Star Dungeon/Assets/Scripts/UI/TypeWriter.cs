@@ -43,8 +43,9 @@ public class TypeWriter : MonoBehaviour
 
         }
 
-        if (!isTyping && (Keyboard.current.anyKey.wasPressedThisFrame || Mouse.current.leftButton.wasPressedThisFrame) && _time <0)
+        if (!isTyping && (Keyboard.current.anyKey.wasPressedThisFrame || Mouse.current.leftButton.wasPressedThisFrame) && _time < 0)
         {
+
             Debug.Log("test");
             EndGame();
 

@@ -24,7 +24,7 @@ public class FinalDoor : MonoBehaviour
 
         if (_playerComponent.key >= 1 && other.gameObject.CompareTag("FinalDoor"))
         {
-            SceneManager.LoadScene("MainMenu");
+            SceneManager.LoadScene("EndGame");
         }
     }
 

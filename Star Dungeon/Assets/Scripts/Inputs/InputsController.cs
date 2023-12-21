@@ -16,9 +16,9 @@ public class InputsController : MonoBehaviour
     private bool WallcheckFront()
     {
         RaycastHit hit;
-        if (Physics.Raycast(new Vector3(_player.position.x, _player.position.y + 2, _player.position.z), _player.forward, out hit, 2.5f))
+        if (Physics.Raycast(new Vector3(_player.position.x, _player.position.y + 2, _player.position.z), _player.forward, out hit, 3f))
         {
-            if (hit.collider.name == "Wall")
+            if (hit.collider.tag == "Wall")
             {
                 return (true);
             }
@@ -49,9 +49,9 @@ public class InputsController : MonoBehaviour
     private bool WallcheckBack()
     {
         RaycastHit hit;
-        if (Physics.Raycast(new Vector3(_player.position.x, _player.position.y + 2, _player.position.z), -_player.forward, out hit, 2.5f))
+        if (Physics.Raycast(new Vector3(_player.position.x, _player.position.y + 2, _player.position.z), -_player.forward, out hit, 3f))
         {
-            if (hit.collider.name == "Wall")
+            if (hit.collider.tag == "Wall")
             {
                 return (true);
             }
