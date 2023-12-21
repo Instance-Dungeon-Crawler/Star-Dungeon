@@ -12,6 +12,6 @@ public class DontDestroyOnLoad : MonoBehaviour
 
     private void Awake()
     {
-        Save.Instance.LoadFromJSON();
+
     }
 }

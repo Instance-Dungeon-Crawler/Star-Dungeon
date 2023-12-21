@@ -9,6 +9,9 @@ public class EnnemiAI : MonoBehaviour
     public Animator _animator;
     public NavMeshAgent _agent;
     public Transform _startPos;
+    public AudioSource _audioSource;
+    public AudioClip _audioClip;
+    public bool _isDead = false;
 
     private void Awake()
     {
@@ -21,8 +24,7 @@ public class EnnemiAI : MonoBehaviour
               new Sequence(new List<Node>
               {
                   //check if the Ennemi see the player
-                new NodeSeePlayer(transform, _player),
-
+                new NodeSeePlayer(transform, _player, _audioSource, _audioClip),
                 new Sequence(new List<Node>
                 {
                 //if player is seen move to him and start combat once player is reached

@@ -6,10 +6,11 @@ using UnityEngine;
 
 public class OpenDoor : MonoBehaviour
 {
-    [SerializeField] AudioClip _doorClip;
+    [SerializeField] AudioSource _openDoor;
+    [SerializeField] AudioSource _closeDoor;
     private bool _canOpenDoor = false;
     private bool _canCloseDoor = false;
-    public AudioSource _audioSource;
+    
 
     private Vector3 _initRightDoorPosition;
     private Vector3 _initLeftDoorPosition;
@@ -25,8 +26,7 @@ public class OpenDoor : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            AudioClip clip = _doorClip;
-            _audioSource.PlayOneShot(clip);
+            _openDoor.Play();
             _canOpenDoor = true;
             _canCloseDoor = false;
         }
@@ -36,8 +36,7 @@ public class OpenDoor : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            AudioClip clip = _doorClip;
-            _audioSource.PlayOneShot(clip);
+            _closeDoor.Play();
             _canCloseDoor = true;
             _canOpenDoor = false;
         }
