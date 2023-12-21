@@ -66,40 +66,7 @@ public class GodMod : MonoBehaviour
             ToggleGodMode();
         }
     }
-
-
-    public void D(InputAction.CallbackContext context)
-    {
-        if (context.started && _d == false)
-        {
-            _d = true;
-        }
-
-        else if (context.canceled)
-        {
-
-            _d = false;
-
-
-        }
-
-
-    }
-
-    public void Cntrl(InputAction.CallbackContext context)
-    {
-        if (context.started && _cntrl == false)
-        {
-            _cntrl = true;
-        }
-
-        else if (context.canceled)
-        {
-
-            _cntrl = false;
-        }
-    }
-
+    
     public void ToggleGodMode()
     {
         if (GameState == E_GameState.E_GodMode)

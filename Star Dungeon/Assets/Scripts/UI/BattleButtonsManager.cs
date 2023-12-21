@@ -1,13 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using TMPro;
+using Unity.VisualScripting;
+using UnityEditor.PackageManager.Requests;
 using UnityEngine;
-using UnityEngine.InputSystem;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class Skills
 {
@@ -19,6 +18,7 @@ public class Skills
     public enum _enum {attack, bigattack, skip}
     public _enum _attack;
 }
+
 
 
 public class BattleButtonsManager : MonoBehaviour
@@ -55,13 +55,10 @@ public class BattleButtonsManager : MonoBehaviour
     Skills _skills2 = new Skills();
     Skills _skills3 = new Skills();
 
-    PlayerComponent _playerComponent;
-
     public GameObject _enemy;
     [SerializeField] private GameObject Combat_Canva;
     [SerializeField] private GameObject Combat_Text;
 
-    ClosedDoor _ClosedDoor;
     private enum _enum { xander, synthia, saber };
     private _enum _character;
     private int _luckFactor;
@@ -76,12 +73,19 @@ public class BattleButtonsManager : MonoBehaviour
     private float _xanderMaxMana;
     private float _synthiaMaxMana;
     private float _saberMaxMana;
-    public int key;
+
     public List<Skills> _skillsList = new List<Skills>();
 
+    public void Restart()
+    {
+        if (_thermisMaxLife >0)
+        {
+            GameObject.Find("Thermis").GetComponent<ScriptableReader>()._entityLife = _thermisMaxLife;
+        }
+        Start();
+    }
     private void Start()
     {
-       
         _enemy = EnemyManager.Instance._enemyInBattle;
         _character = _enum.xander;
 
@@ -95,7 +99,6 @@ public class BattleButtonsManager : MonoBehaviour
             _enemies.Add(gameObjects);
         }
 
-
         _xanderMaxLife = GameObject.Find("Xander").GetComponent<ScriptableReader>()._entityLife;
         _synthiaMaxLife = GameObject.Find("Synthia").GetComponent<ScriptableReader>()._entityLife;
         _saberMaxLife = GameObject.Find("Saber").GetComponent<ScriptableReader>()._entityLife;
@@ -104,6 +107,7 @@ public class BattleButtonsManager : MonoBehaviour
         _synthiaMaxMana = GameObject.Find("Synthia").GetComponent<ScriptableReader>()._entityMana;
         _saberMaxMana = GameObject.Find("Saber").GetComponent<ScriptableReader>()._entityMana;
 
+
         _skills._launcher = GameObject.Find("Xander");
         _attackDialogue.SetText("What should " + _skills._launcher.GetComponent<ScriptableReader>()._entityName + " do ?");
         if (PlayerPrefs.GetInt("GlobalLvl") < 2)
@@ -111,7 +115,6 @@ public class BattleButtonsManager : MonoBehaviour
             _skillButton._interactable = false;
         }
 
-        
     }
 
     private void Update()
@@ -393,13 +396,10 @@ public class BattleButtonsManager : MonoBehaviour
             {
                 _enemies.Remove(enemy);
                 int randkey = Random.Range(0, 1);
-
-                if (randkey == 1 )
+                if (randkey == 0)
                 {
-                    key = 1;
                     _attackDialogue.SetText(enemy.GetComponent<ScriptableReader>()._entityName + " has been defeated. You found a key,it can open locked doors !");
                     PlayerPrefs.SetInt("Key", PlayerPrefs.GetInt("key") + 1);
-                    _ClosedDoor.GetComponent<ClosedDoor>()._Haskey = 1;
                 }
                 else
                 {
@@ -409,12 +409,19 @@ public class BattleButtonsManager : MonoBehaviour
                 // SceneManager.LoadScene("Game");     
                 // Save.Instance.LoadFromJSON();
                 foreach (var _robot in EnemyManager.Instance._enemies)
-                { 
-                    _robot.SetActive(true);
+                {
+                    if (!_robot.GetComponent<EnnemiAI>()._isDead)
+                    {
+                        _robot.SetActive(true);
+                    }
+                    else if(_robot.GetComponent<EnnemiAI>()._isDead)
+                    {
+                        _robot.GetComponent<EnnemiAI>().transform.position = _robot.GetComponent<EnnemiAI>()._startPos.position;
+                    }
                 }
-
                 Combat_Text.SetActive(false);
                 Combat_Canva.SetActive(false);
+                
             }
             else
                 _attackDialogue.SetText("What should " + _skills._launcher.GetComponent<ScriptableReader>()._entityName + " do ?");
