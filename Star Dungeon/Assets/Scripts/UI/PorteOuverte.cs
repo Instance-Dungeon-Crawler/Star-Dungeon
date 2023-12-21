@@ -5,11 +5,16 @@ using UnityEngine;
 public class PorteOuverte : MonoBehaviour
 {
     public GameObject _DialoguePorteOuverte;
-    public int _haskey;
+    public PlayerComponent _playercomponent;
+
+    private void Start()
+    {
+        _playercomponent = GetComponent<PlayerComponent>(); 
+    }
 
     void OnTriggerEnter(Collider other)
     {
-        if (_haskey == 1 && other.gameObject.CompareTag("Door"))
+        if (_playercomponent.key >= 1 &&  other.gameObject.CompareTag("Door"))
         {
 
 

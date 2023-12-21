@@ -19,7 +19,7 @@ public class TexteApparition : MonoBehaviour
 
        
 
-        Invoke("DesactiverTexteDebut", 6f);
+        Invoke("DesactiverTexteDebut", 4f);
     }
 
     void DesactiverTexteDebut()

@@ -5,11 +5,20 @@ using UnityEngine;
 public class PorteClassiqueFerme : MonoBehaviour
 {
     public GameObject _DialoguePorte;
-    public int _haskey;
+    
+
+    PlayerComponent _playerComponent;
+
+    private void Start()
+    {
+        _playerComponent = GetComponent<PlayerComponent>();
+    }
+
+
 
     void OnTriggerEnter(Collider other)
     {
-        if (_haskey == 0 && other.gameObject.CompareTag("Door"))
+        if (_playerComponent.key == 0 && other.gameObject.CompareTag("Door"))
         {
             _DialoguePorte.SetActive(true);
         }
