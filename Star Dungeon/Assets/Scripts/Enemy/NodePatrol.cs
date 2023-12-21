@@ -25,9 +25,16 @@ public class NodePatrol : Node
         _timer -= Time.deltaTime;
         if (Physics.Raycast(new Vector3(_transform.position.x, _transform.position.y + 2, _transform.position.z), _transform.forward, out hit,2.5f))
         {
-            if ((hit.collider.name == "Wall" ||hit.collider.name == "Door" || hit.collider.name == "CloseDoor") && _Agent.velocity.magnitude <= 0)
+            if (hit.collider.name == "Wall" && _Agent.velocity.magnitude <= 0)
             {
                 _transform.rotation = Quaternion.Euler(0, _transform.eulerAngles.y + 90f,0);
+            }
+        }
+        if (Physics.Raycast(new Vector3(_transform.position.x, _transform.position.y + 2, _transform.position.z), _transform.forward, out hit, 7f))
+        {
+            if (hit.collider.name == "GameObject" && _Agent.velocity.magnitude <= 0)
+            {
+                _transform.rotation = Quaternion.Euler(0, _transform.eulerAngles.y + 90f, 0);
             }
         }
         if (_timer <= 0 && _Agent.velocity.magnitude <= 0)
