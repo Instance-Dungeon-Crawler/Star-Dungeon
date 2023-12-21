@@ -13,7 +13,6 @@ public class EnnemiAI : MonoBehaviour
     public NavMeshAgent _agent;
     public AudioSource _audioSource;
     private float _timer = 0.6f;
-    public StatsEntity _DataEnemy;
     public bool _isDead = false;
 
     private void Awake()
