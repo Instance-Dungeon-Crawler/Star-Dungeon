@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class InputsController : MonoBehaviour
 {
@@ -94,12 +95,33 @@ public class InputsController : MonoBehaviour
         }
     }
 
-    public void Pause(InputAction.CallbackContext context)
+    public void OnPause(InputAction.CallbackContext context)
     {
-        if (context.performed && controls.activeSelf == false && game.activeSelf == false)
+            if (context.performed /*&& controls.activeSelf == false && game.activeSelf == false*/)
+            {
+                Pause();
+            }
+    }
+
+    public void Pause()
+    {
+        if (pause.activeSelf)
+        {
+            pause.SetActive(false);
+            Time.timeScale = 1;
+        }
+        else
         {
             pause.SetActive(true);
             Time.timeScale = 0;
+        }
+    }
+
+    public void BackToMenu(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            SceneManager.LoadScene("MainMenu");
         }
     }
 

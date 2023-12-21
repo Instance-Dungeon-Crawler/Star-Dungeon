@@ -9,8 +9,10 @@ using UnityEngine.UI;
 public class ButtonManager : MonoBehaviour
 {
     [SerializeField] private GameObject _credits, _mainMenu;
+    public AudioSource _audioSource;
     private void Start()
     {
+        _audioSource.Play();
         Screen.SetResolution(1920, 1080, true);
         QualitySettings.SetQualityLevel(1);
     }

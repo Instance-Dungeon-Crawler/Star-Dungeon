@@ -38,7 +38,9 @@ public class PlayerMovement : MonoBehaviour
         transform.position = _targetPos;
         _cameraRotation._canRotate = true;
         _canMove = true;
+        ResetPos();
     }
+
     
     public IEnumerator PlayerBack()
     {
@@ -57,7 +59,19 @@ public class PlayerMovement : MonoBehaviour
         transform.position = _targetPos;
         _cameraRotation._canRotate = true;
         _canMove = true;
-        
+        ResetPos();
+    }
+    void ResetPos()
+    {
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, Vector3.down, out hit, 1))
+        {
+            if (hit.collider.tag == "Ground")
+            {
+                transform.position =
+                    new Vector3(hit.transform.position.x, transform.position.y, hit.transform.position.z);
+            }
+        }
     }
 
     public void Forward()

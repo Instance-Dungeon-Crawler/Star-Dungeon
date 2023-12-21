@@ -17,7 +17,7 @@ public class FinalDoor : MonoBehaviour
     }
     void OnTriggerEnter(Collider other)
     {
-        if (_playerComponent.key == 0 && other.gameObject.CompareTag("FinalDoor"))
+        if (_playerComponent.key == 0 && other.GetComponent<Collider>().tag == "FinalDoor")
         {
             _DialoguePorteFinal.SetActive(true);
         }

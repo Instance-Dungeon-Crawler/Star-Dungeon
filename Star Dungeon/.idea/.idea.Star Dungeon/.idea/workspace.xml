@@ -6,9 +6,15 @@
   <component name="ChangeListManager">
     <list default="true" id="665704e8-9598-48cf-954f-e9c5213aa5c5" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Star Dungeon/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Star Dungeon/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CreditsManager.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CreditsManager.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Menus/Settings.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Menus/Settings.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Inputs/Player Inputs.inputactions" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Inputs/Player Inputs.inputactions" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game/Game.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Game/Game.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Menus/Endgame.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Menus/Endgame.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Menus/MainMenu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Menus/MainMenu.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/NodePatrol.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/NodePatrol.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Inputs/InputsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Inputs/InputsController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMovement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/ButtonManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/ButtonManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/FinalDoor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/FinalDoor.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Oswald Bold SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Oswald Bold SDF.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -49,15 +55,15 @@
   },
   "keyToStringList": {
     "rider.external.source.directories": [
-      "C:\\Users\\cedri\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\DecompilerCache",
-      "C:\\Users\\cedri\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\SourcesCache",
-      "C:\\Users\\cedri\\AppData\\Local\\Symbols\\src"
+      "C:\\Users\\alexi\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\DecompilerCache",
+      "C:\\Users\\alexi\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\SourcesCache",
+      "C:\\Users\\alexi\\AppData\\Local\\Symbols\\src"
     ]
   }
 }]]></component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="D:/La Horde/Instance/Instance n°1/Build\Star Dungeon.exe" />
+      <option name="EXE_PATH" value="$PROJECT_DIR$/../../../../Bureau/Build_StarDungeon\Star Dungeon.exe" />
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="D:\La Horde\Instance\Instance n°1\Build" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -65,7 +71,7 @@
       <method v="2" />
     </configuration>
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="E:\Unity\Editor\2022.3.14f1\Editor\Unity.exe" />
+      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2022.3.14f1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-projectPath &quot;E:\GitHub\Star-Dungeon\Star Dungeon&quot; -debugCodeOptimization" />
       <option name="WORKING_DIRECTORY" value="E:\GitHub\Star-Dungeon\Star Dungeon" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -73,7 +79,7 @@
       <method v="2" />
     </configuration>
     <configuration name="Unit Tests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="E:\Unity\Editor\2022.3.14f1\Editor\Unity.exe" />
+      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2022.3.14f1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath &quot;E:\GitHub\Star-Dungeon\Star Dungeon&quot; -testResults Logs/results.xml -testPlatform EditMode -debugCodeOptimization" />
       <option name="WORKING_DIRECTORY" value="E:\GitHub\Star-Dungeon\Star Dungeon" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -90,10 +96,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="22140">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="22140" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -118,6 +124,7 @@
       <workItem from="1703086961049" duration="2050000" />
       <workItem from="1703148566273" duration="8234000" />
       <workItem from="1703163807458" duration="1429000" />
+      <workItem from="1703187603271" duration="7940000" />
     </task>
     <servers />
   </component>
