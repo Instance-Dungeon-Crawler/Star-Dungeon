@@ -8,7 +8,7 @@ public class EnnemiAI : MonoBehaviour
     public GameObject _player;
     public Animator _animator;
     public NavMeshAgent _agent;
-    private Transform _startPos;
+    public Transform _startPos;
 
     private void Awake()
     {
