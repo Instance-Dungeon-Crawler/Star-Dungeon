@@ -46,13 +46,14 @@ public class EnemyManager : MonoBehaviour
 
         
         _enemyInBattle = enemy;
-        _enemies.Remove(_enemyInBattle);
-        new BattleButtonsManager();
+        _enemies.Remove(_enemyInBattle); 
         Combat_Text.SetActive(true);
         Combat_Canva.SetActive(true);
+        Combat_Canva.GetComponent<BattleButtonsManager>().Restart();
+
 
         // Save.Instance.SaveToJSON();
         // SceneManager.LoadScene("Battle Scene");   
-        
+
     }
 }

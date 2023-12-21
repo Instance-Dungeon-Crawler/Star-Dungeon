@@ -1,8 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using TMPro;
 using Unity.VisualScripting;
+using UnityEditor.PackageManager.Requests;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -16,6 +18,7 @@ public class Skills
     public enum _enum {attack, bigattack, skip}
     public _enum _attack;
 }
+
 
 
 public class BattleButtonsManager : MonoBehaviour
@@ -73,6 +76,14 @@ public class BattleButtonsManager : MonoBehaviour
 
     public List<Skills> _skillsList = new List<Skills>();
 
+    public void Restart()
+    {
+        if (_thermisMaxLife >0)
+        {
+            GameObject.Find("Thermis").GetComponent<ScriptableReader>()._entityLife = _thermisMaxLife;
+        }
+        Start();
+    }
     private void Start()
     {
         _enemy = EnemyManager.Instance._enemyInBattle;

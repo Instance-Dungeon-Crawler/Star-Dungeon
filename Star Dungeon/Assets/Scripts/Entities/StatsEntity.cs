@@ -8,6 +8,7 @@ public class StatsEntity : ScriptableObject
 
     public int _level;
     public int _XP;
+    public int _threshold;
     public int _life;
     public int _mana;
     public int _attackSpeed;
