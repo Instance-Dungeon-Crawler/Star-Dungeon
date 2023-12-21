@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
@@ -9,12 +8,18 @@ public class EnnemiAI : MonoBehaviour
     [SerializeField] AudioClip _seeRobot;
     private Node NodeStart;
     public GameObject _player;
+    public Transform _startPos;
     public Animator _animator;
     public NavMeshAgent _agent;
     public AudioSource _audioSource;
     private float _timer = 0.6f;
     public StatsEntity _DataEnemy;
     public bool _isDead = false;
+
+    private void Awake()
+    {
+        _startPos = transform;
+    }
 
 
     private void Start()
@@ -54,9 +59,5 @@ public class EnnemiAI : MonoBehaviour
             _audioSource.PlayOneShot(clip);
             _timer = 0.6f;
         }
-    }
-    public void SeeSound()
-    {
-       
     }
 }

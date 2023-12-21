@@ -1,10 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Linq;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Skills
@@ -89,7 +88,6 @@ public class BattleButtonsManager : MonoBehaviour
             _enemies.Add(gameObjects);
         }
 
-
         _xanderMaxLife = GameObject.Find("Xander").GetComponent<ScriptableReader>()._entityLife;
         _synthiaMaxLife = GameObject.Find("Synthia").GetComponent<ScriptableReader>()._entityLife;
         _saberMaxLife = GameObject.Find("Saber").GetComponent<ScriptableReader>()._entityLife;
@@ -97,6 +95,7 @@ public class BattleButtonsManager : MonoBehaviour
         _xanderMaxMana = GameObject.Find("Xander").GetComponent<ScriptableReader>()._entityMana;
         _synthiaMaxMana = GameObject.Find("Synthia").GetComponent<ScriptableReader>()._entityMana;
         _saberMaxMana = GameObject.Find("Saber").GetComponent<ScriptableReader>()._entityMana;
+
 
         _skills._launcher = GameObject.Find("Xander");
         _attackDialogue.SetText("What should " + _skills._launcher.GetComponent<ScriptableReader>()._entityName + " do ?");
@@ -399,12 +398,19 @@ public class BattleButtonsManager : MonoBehaviour
                 // SceneManager.LoadScene("Game");     
                 // Save.Instance.LoadFromJSON();
                 foreach (var _robot in EnemyManager.Instance._enemies)
-                { 
-                    _robot.SetActive(true);
+                {
+                    if (!_robot.GetComponent<EnnemiAI>()._isDead)
+                    {
+                        _robot.SetActive(true);
+                    }
+                    else if(_robot.GetComponent<EnnemiAI>()._isDead)
+                    {
+                        _robot.GetComponent<EnnemiAI>().transform.position = _robot.GetComponent<EnnemiAI>()._startPos.position;
+                    }
                 }
-
                 Combat_Text.SetActive(false);
                 Combat_Canva.SetActive(false);
+                
             }
             else
                 _attackDialogue.SetText("What should " + _skills._launcher.GetComponent<ScriptableReader>()._entityName + " do ?");

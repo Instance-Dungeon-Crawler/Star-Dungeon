@@ -1,8 +1,5 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class EnemyManager : MonoBehaviour
 {
@@ -47,10 +44,13 @@ public class EnemyManager : MonoBehaviour
             _robot.SetActive(false);
         }
 
+        
         _enemyInBattle = enemy;
         _enemies.Remove(_enemyInBattle);
+        new BattleButtonsManager();
         Combat_Text.SetActive(true);
         Combat_Canva.SetActive(true);
+
         // Save.Instance.SaveToJSON();
         // SceneManager.LoadScene("Battle Scene");   
         
