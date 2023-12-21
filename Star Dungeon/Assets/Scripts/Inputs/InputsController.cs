@@ -9,6 +9,9 @@ public class InputsController : MonoBehaviour
     [SerializeField] private CameraRotation _cameraRotation;
     [SerializeField] private Transform _player;
     private bool _inventoryIsOpen = false;
+    public GameObject controls;
+    public GameObject pause;
+    public GameObject game;
 
     private bool WallcheckFront()
     {
@@ -88,6 +91,15 @@ public class InputsController : MonoBehaviour
             _playerController.OnMoveBack(); 
             _cameraRotation._canRotate = false; 
             _playerMovements._canMove = false;
+        }
+    }
+
+    public void Pause(InputAction.CallbackContext context)
+    {
+        if (context.performed && controls.activeSelf == false && game.activeSelf == false)
+        {
+            pause.SetActive(true);
+            Time.timeScale = 0;
         }
     }
 

@@ -59,21 +59,21 @@ public class SettingsManager : MonoBehaviour
             _medium.isOn = false;   
             _high.isOn = false;
             
-            QualitySettings.SetQualityLevel(0, true);
+            //QualitySettings.SetQualityLevel(0, true);
         }
         else if (_medium.isOn)
         {
             _low.isOn = false;
             _high.isOn = false;
             
-            QualitySettings.SetQualityLevel(2, true);
+            //QualitySettings.SetQualityLevel(2, true);
         }
         else if (_high.isOn)
         {
             _low.isOn = false;
             _medium.isOn = false;
             
-            QualitySettings.SetQualityLevel(5, true);
+            //QualitySettings.SetQualityLevel(5, true);
         }   
     }
 }
