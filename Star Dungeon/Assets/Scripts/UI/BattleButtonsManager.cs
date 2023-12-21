@@ -73,6 +73,8 @@ public class BattleButtonsManager : MonoBehaviour
     private float _saberMaxMana;
 
     public List<Skills> _skillsList = new List<Skills>();
+    public AudioSource _audioSourceFight;
+    public AudioSource _audioSourcePlayer;
 
     private void Start()
     {
@@ -104,6 +106,9 @@ public class BattleButtonsManager : MonoBehaviour
         {
             _skillButton._interactable = false;
         }
+        Debug.Log("Song");
+        _audioSourcePlayer.Stop();
+        _audioSourceFight.Play();
 
     }
 
@@ -402,6 +407,8 @@ public class BattleButtonsManager : MonoBehaviour
                 { 
                     _robot.SetActive(true);
                 }
+                _audioSourcePlayer.Play();
+                _audioSourceFight.Stop();
 
                 Combat_Text.SetActive(false);
                 Combat_Canva.SetActive(false);
