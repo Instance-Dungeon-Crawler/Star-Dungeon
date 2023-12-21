@@ -1,14 +1,21 @@
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
 public class EnnemiAI : MonoBehaviour
 {
     private Node NodeStart;
+    public GameObject _enemy;
     public GameObject _player;
     public Animator _animator;
     public NavMeshAgent _agent;
+    private Transform _startPos;
 
+    private void Awake()
+    {
+        _startPos = transform;
+    }
     private void Start()
     {
         NodeStart = new Selector(new List<Node>
