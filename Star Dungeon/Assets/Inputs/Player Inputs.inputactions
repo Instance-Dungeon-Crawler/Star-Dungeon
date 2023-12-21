@@ -67,6 +67,24 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "GodModeCntrl",
+                    "type": "Button",
+                    "id": "335a4a77-b149-4ce8-bd24-c3bb91cf1a4f",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "GodModeD",
+                    "type": "Button",
+                    "id": "dbdd041b-5399-40ce-81e4-2b2ab8959291",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -144,6 +162,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "TutorialClose",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "412b40ce-f6cb-446f-9b56-6cbc149d6ecf",
+                    "path": "<Keyboard>/ctrl",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "GodModeCntrl",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "08114e41-3300-47c6-a2e2-24a74f46293e",
+                    "path": "<Keyboard>/d",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "GodModeD",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

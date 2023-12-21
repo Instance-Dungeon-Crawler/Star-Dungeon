@@ -111,6 +111,22 @@ public class InputsController : MonoBehaviour
         }
     }
 
+    public void GodModeControl(InputAction.CallbackContext context)
+    {
+        if(context.performed && !GodMod.Instance._controlIsPressed)
+            GodMod.Instance._controlIsPressed = true;
+        else if(context.performed && GodMod.Instance._controlIsPressed)
+            GodMod.Instance._controlIsPressed = false;
+    }
+
+    public void GodModeD(InputAction.CallbackContext context)
+    {
+        if (context.performed && !GodMod.Instance._dIsPressed)
+            GodMod.Instance._dIsPressed = true;
+        else if (context.performed && GodMod.Instance._dIsPressed)
+            GodMod.Instance._dIsPressed = false;
+    }
+
     public void OpenInvent(InputAction.CallbackContext context)
     {
         if (!_inventoryIsOpen)
