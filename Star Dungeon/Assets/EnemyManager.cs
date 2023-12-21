@@ -7,8 +7,8 @@ using UnityEngine.SceneManagement;
 
 public class EnemyManager : MonoBehaviour
 {
-    [SerializeField] private List<GameObject> _enemies = new List<GameObject>();
-    public GameObject _enemy;
+    public List<GameObject> _enemies = new List<GameObject>();
+    public GameObject _enemyInBattle;
 
     public static EnemyManager Instance;
     [SerializeField] private GameObject Combat_Canva;
@@ -48,7 +48,8 @@ public class EnemyManager : MonoBehaviour
             _robot.SetActive(false);
         }
 
-        _enemy = enemy;
+        _enemyInBattle = enemy;
+        _enemies.Remove(_enemyInBattle);
         Combat_Text.SetActive(true);
         Combat_Canva.SetActive(true);
         // Save.Instance.SaveToJSON();

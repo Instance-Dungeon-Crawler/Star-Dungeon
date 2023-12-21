@@ -6,15 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="665704e8-9598-48cf-954f-e9c5213aa5c5" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Star Dungeon/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Star Dungeon/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game/Game.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Game/Game.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/EnnemiAI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/EnnemiAI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/NodeStartCombat.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/NodeStartCombat.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/ScriptableReader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Entities/ScriptableReader.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Save/Save.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Save/Save.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Save/SavesValues.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Save/SavesValues.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/EnemyManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/EnemyManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/BattleButtonsManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/BattleButtonsManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/ButtonManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/ButtonManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Oswald Bold SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Oswald Bold SDF.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -121,7 +114,7 @@
       <workItem from="1702992157383" duration="660000" />
       <workItem from="1703060461270" duration="13361000" />
       <workItem from="1703086961049" duration="2050000" />
-      <workItem from="1703148566273" duration="5861000" />
+      <workItem from="1703148566273" duration="7092000" />
     </task>
     <servers />
   </component>

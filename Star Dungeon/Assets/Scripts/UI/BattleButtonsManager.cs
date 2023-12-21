@@ -76,7 +76,7 @@ public class BattleButtonsManager : MonoBehaviour
 
     private void Start()
     {
-        _enemy = EnemyManager.Instance._enemy;
+        _enemy = EnemyManager.Instance._enemyInBattle;
         _character = _enum.xander;
 
         foreach (GameObject gameObject in GameObject.FindGameObjectsWithTag("Characters"))
@@ -398,17 +398,9 @@ public class BattleButtonsManager : MonoBehaviour
                 Levelling();
                 // SceneManager.LoadScene("Game");     
                 // Save.Instance.LoadFromJSON();
-                foreach (var _robot in GameObject.FindGameObjectsWithTag("Enemy"))
-                {
-                    if (_enemy == _robot)
-                    {
-                        return;
-                    }
-                    else
-                    {
-                        _robot.SetActive(true);
-                        Debug.Log("Ca se fais");
-                    }
+                foreach (var _robot in EnemyManager.Instance._enemies)
+                { 
+                    _robot.SetActive(true);
                 }
 
                 Combat_Text.SetActive(false);
