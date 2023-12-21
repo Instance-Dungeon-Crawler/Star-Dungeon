@@ -4,8 +4,10 @@ using System.ComponentModel;
 using System.Linq;
 using TMPro;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class Skills
 {
@@ -53,10 +55,13 @@ public class BattleButtonsManager : MonoBehaviour
     Skills _skills2 = new Skills();
     Skills _skills3 = new Skills();
 
+    PlayerComponent _playerComponent;
+
     public GameObject _enemy;
     [SerializeField] private GameObject Combat_Canva;
     [SerializeField] private GameObject Combat_Text;
 
+    ClosedDoor _ClosedDoor;
     private enum _enum { xander, synthia, saber };
     private _enum _character;
     private int _luckFactor;
@@ -71,11 +76,12 @@ public class BattleButtonsManager : MonoBehaviour
     private float _xanderMaxMana;
     private float _synthiaMaxMana;
     private float _saberMaxMana;
-
+    public int key;
     public List<Skills> _skillsList = new List<Skills>();
 
     private void Start()
     {
+       
         _enemy = EnemyManager.Instance._enemyInBattle;
         _character = _enum.xander;
 
@@ -105,6 +111,7 @@ public class BattleButtonsManager : MonoBehaviour
             _skillButton._interactable = false;
         }
 
+        
     }
 
     private void Update()
@@ -386,10 +393,13 @@ public class BattleButtonsManager : MonoBehaviour
             {
                 _enemies.Remove(enemy);
                 int randkey = Random.Range(0, 1);
-                if (randkey == 0)
+
+                if (randkey == 1 )
                 {
+                    key = 1;
                     _attackDialogue.SetText(enemy.GetComponent<ScriptableReader>()._entityName + " has been defeated. You found a key,it can open locked doors !");
                     PlayerPrefs.SetInt("Key", PlayerPrefs.GetInt("key") + 1);
+                    _ClosedDoor.GetComponent<ClosedDoor>()._Haskey = 1;
                 }
                 else
                 {
