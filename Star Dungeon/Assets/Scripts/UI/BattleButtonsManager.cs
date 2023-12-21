@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using TMPro;
 using UnityEngine;
@@ -52,7 +53,9 @@ public class BattleButtonsManager : MonoBehaviour
     Skills _skills2 = new Skills();
     Skills _skills3 = new Skills();
 
-
+    public GameObject _enemy;
+    [SerializeField] private GameObject Combat_Canva;
+    [SerializeField] private GameObject Combat_Text;
 
     private enum _enum { xander, synthia, saber };
     private _enum _character;
@@ -73,6 +76,7 @@ public class BattleButtonsManager : MonoBehaviour
 
     private void Start()
     {
+        _enemy = EnemyManager.Instance._enemy;
         _character = _enum.xander;
 
         foreach (GameObject gameObject in GameObject.FindGameObjectsWithTag("Characters"))
@@ -369,6 +373,7 @@ public class BattleButtonsManager : MonoBehaviour
             {
                 _characters.Remove(characters);
                 _attackDialogue.SetText(characters.GetComponent<ScriptableReader>()._entityName + " is dead. ");
+                _enemy.GetComponent<EnnemiAI>()._isDead = true;
             }
             else
                 _attackDialogue.SetText("What should " + _skills._launcher.GetComponent<ScriptableReader>()._entityName + " do ?");
@@ -391,7 +396,23 @@ public class BattleButtonsManager : MonoBehaviour
                     _attackDialogue.SetText(enemy.GetComponent<ScriptableReader>()._entityName + " has been defeated.");
                 }
                 Levelling();
-                SceneManager.LoadScene("Game");     
+                // SceneManager.LoadScene("Game");     
+                // Save.Instance.LoadFromJSON();
+                foreach (var _robot in GameObject.FindGameObjectsWithTag("Enemy"))
+                {
+                    if (_enemy == _robot)
+                    {
+                        return;
+                    }
+                    else
+                    {
+                        _robot.SetActive(true);
+                        Debug.Log("Ca se fais");
+                    }
+                }
+
+                Combat_Text.SetActive(false);
+                Combat_Canva.SetActive(false);
             }
             else
                 _attackDialogue.SetText("What should " + _skills._launcher.GetComponent<ScriptableReader>()._entityName + " do ?");

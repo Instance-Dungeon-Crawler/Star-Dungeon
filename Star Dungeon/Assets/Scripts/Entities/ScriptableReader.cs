@@ -16,6 +16,7 @@ public class ScriptableReader : MonoBehaviour
     [HideInInspector] public int _entityCooldown;
     [HideInInspector] public bool _entityBleeding;
     [HideInInspector] public int _entityBleedTimer;
+    [HideInInspector] public bool _isDead;
 
 
     void Awake()
@@ -32,6 +33,7 @@ public class ScriptableReader : MonoBehaviour
         _entityCooldown = _statsEntity._Cooldown;
         _entityBleeding = _statsEntity._bleeding;
         _entityBleedTimer = _statsEntity._bleedTimer;
+        _isDead = _statsEntity._IsDead;
     }
 }
 

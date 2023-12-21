@@ -42,9 +42,9 @@ public class ButtonManager : MonoBehaviour
     }
     public void QuitGame()
     {
-        SaveValues.Instance.IsDead = new List<bool>();
-        SaveValues.Instance.Position_Enemy = new List<Vector3>();
-        SaveValues.Instance.Position_Player = new Vector3();
+        Save.Instance.SaveValues.IsDead = new List<bool>();
+        Save.Instance.SaveValues.Position_Enemy = new List<Vector3>();
+        Save.Instance.SaveValues.Position_Player = new Vector3();
         Application.Quit();
     }
     public void WindowResolution()

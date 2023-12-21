@@ -14,20 +14,11 @@ public class Save : MonoBehaviour
     private List<Vector3> EnemysV3 = new List<Vector3>();
     private List<bool> EnemyBool = new List<bool>();
 
+    [SerializeField] private ScriptableReader _enemy;
+
     public static Save Instance;
     private void Awake()
     {
-        Player = GetComponent<PlayerMovement>().gameObject;
-        foreach (var enemy in GameObject.FindObjectsOfType<EnnemiAI>())
-        {
-            if (enemy != null)
-            {
-                EnemyBool.Add(enemy.GetComponent<StatsEntity>()._IsDead);
-                
-                EnemysV3.Add(enemy.gameObject.transform.position);
-            }
-        }
-
         if (Instance == null)
             Instance = this;
         else
@@ -40,6 +31,18 @@ public class Save : MonoBehaviour
 
     private void Start()
     {
+        
+        Player = GameObject.Find("Player").GetComponent<PlayerMovement>().gameObject;
+        foreach (var enemy in GameObject.FindGameObjectsWithTag("Enemy"))
+        {
+            if (enemy != null)
+            {
+                EnemyBool.Add(enemy.GetComponent<EnnemiAI>()._isDead);
+                
+                EnemysV3.Add(enemy.gameObject.transform.position);
+            }
+        }
+        
         if (!Directory.Exists(saveFolderPath))
         {
             Directory.CreateDirectory(saveFolderPath);
@@ -56,9 +59,9 @@ public class Save : MonoBehaviour
 
     public void SaveToJSON()
     {
-        SaveValues.Instance.Position_Player = Player.transform.position;
-        SaveValues.Instance.Position_Enemy = EnemysV3;
-        SaveValues.Instance.IsDead = EnemyBool;
+        SaveValues.Position_Player = Player.transform.position;
+        SaveValues.Position_Enemy = EnemysV3;
+        SaveValues.IsDead = EnemyBool;
 
         string gameData = JsonUtility.ToJson(SaveValues);
         File.WriteAllText(Application.dataPath + "/Saves/SaveValues.json", gameData);
@@ -69,8 +72,8 @@ public class Save : MonoBehaviour
         string gameData = File.ReadAllText(filePath);
 
         SaveValues = JsonUtility.FromJson<SaveValues>(gameData);
-        Player.transform.position = SaveValues.Instance.Position_Player;
-        EnemysV3 = SaveValues.Instance.Position_Enemy;
-        EnemyBool = SaveValues.Instance.IsDead; 
+        Player.transform.position = SaveValues.Position_Player;
+        EnemysV3 = SaveValues.Position_Enemy;
+        EnemyBool = SaveValues.IsDead; 
     }
 }

@@ -18,8 +18,7 @@ public class NodeStartCombat : Node
     {
         if (Vector3.Distance(_transform.position, _player.transform.position) <= 2.5f)
         {
-            Save.Instance.SaveToJSON();
-            SceneManager.LoadScene("Battle Scene");   
+            EnemyManager.Instance.StartCombat(_transform.gameObject);
         }
         return nodeState;
     }
