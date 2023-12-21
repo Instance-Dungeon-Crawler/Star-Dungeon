@@ -7,7 +7,7 @@ public class PlayerMovement : MonoBehaviour
     private CameraRotation _cameraRotation;
     public int _distance;
     public Vector3 _targetPos;
-    [SerializeField] private float _time;
+    [SerializeField] public float _time;
     public bool _canMove = true;
     private Animator _animator;
     public AudioSource _audioSource;
@@ -26,12 +26,13 @@ public class PlayerMovement : MonoBehaviour
         Vector3 startposition = transform.position;
         _targetPos = (transform.position + transform.forward * _distance);
         //_animator.SetTrigger("Camera");
-        while (time < 1)
+        while (time < 1) 
         {
+            Debug.Log(_time);
             _canMove = false;
             this.transform.position = Vector3.LerpUnclamped(startposition, _targetPos, time);
             yield return null;
-            time += Time.deltaTime / _time;
+            time  += Time.deltaTime / _time;
 
         }
         transform.position = _targetPos;
