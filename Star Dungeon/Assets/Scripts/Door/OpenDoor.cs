@@ -6,27 +6,31 @@ using UnityEngine;
 
 public class OpenDoor : MonoBehaviour
 {
-    [SerializeField] AudioSource _openDoor;
-    [SerializeField] AudioSource _closeDoor;
+    
+
+    [SerializeField] AudioClip _doorClip;
     private bool _canOpenDoor = false;
     private bool _canCloseDoor = false;
-    
+    public AudioSource _audioSource;
 
     private Vector3 _initRightDoorPosition;
     private Vector3 _initLeftDoorPosition;
-
+   
 
     private void Start()
     {
         _initRightDoorPosition = transform.GetChild(0).GetChild(1).localPosition;
         _initLeftDoorPosition = transform.GetChild(0).GetChild(0).localPosition;
+       
+
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
         {
-            _openDoor.Play();
+            AudioClip clip = _doorClip;
+            _audioSource.PlayOneShot(clip);
             _canOpenDoor = true;
             _canCloseDoor = false;
         }
@@ -34,9 +38,10 @@ public class OpenDoor : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.tag == "Player")
+        if ( other.tag == "Player")
         {
-            _closeDoor.Play();
+            AudioClip clip = _doorClip;
+            _audioSource.PlayOneShot(clip);
             _canCloseDoor = true;
             _canOpenDoor = false;
         }
@@ -50,6 +55,7 @@ public class OpenDoor : MonoBehaviour
 
     private void MoveDoor()
     {
+
         if (_canOpenDoor && transform.GetChild(0).GetChild(0).localPosition.z <= 2 && transform.localRotation.y > 0)
         {
             transform.GetChild(0).GetComponent<BoxCollider>().enabled = false;
@@ -60,7 +66,7 @@ public class OpenDoor : MonoBehaviour
         {
             transform.GetChild(0).GetComponent<BoxCollider>().enabled = false;
             transform.GetChild(0).GetChild(0).Translate(transform.forward * (10f * Time.deltaTime));
-            transform.GetChild(0).GetChild(1).Translate(- transform.forward * (10f * Time.deltaTime));    
+            transform.GetChild(0).GetChild(1).Translate(-transform.forward * (10f * Time.deltaTime));
         }
     }
 
@@ -76,7 +82,7 @@ public class OpenDoor : MonoBehaviour
         {
             transform.GetChild(0).GetComponent<BoxCollider>().enabled = true;
             transform.GetChild(0).GetChild(0).Translate(-transform.forward * (10f * Time.deltaTime));
-            transform.GetChild(0).GetChild(1).Translate(transform.forward * (10f * Time.deltaTime));       
+            transform.GetChild(0).GetChild(1).Translate(transform.forward * (10f * Time.deltaTime));
         }
     }
 }

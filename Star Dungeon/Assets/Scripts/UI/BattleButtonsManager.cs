@@ -55,6 +55,8 @@ public class BattleButtonsManager : MonoBehaviour
     Skills _skills2 = new Skills();
     Skills _skills3 = new Skills();
 
+    public PlayerComponent _playerComponent;
+
     public GameObject _enemy;
     [SerializeField] private GameObject Combat_Canva;
     [SerializeField] private GameObject Combat_Text;
@@ -73,6 +75,8 @@ public class BattleButtonsManager : MonoBehaviour
     private float _xanderMaxMana;
     private float _synthiaMaxMana;
     private float _saberMaxMana;
+
+
 
     public List<Skills> _skillsList = new List<Skills>();
 
@@ -110,11 +114,12 @@ public class BattleButtonsManager : MonoBehaviour
 
         _skills._launcher = GameObject.Find("Xander");
         _attackDialogue.SetText("What should " + _skills._launcher.GetComponent<ScriptableReader>()._entityName + " do ?");
-        if (PlayerPrefs.GetInt("GlobalLvl") < 2)
+        if (_playerComponent.Level < 2)
         {
             _skillButton._interactable = false;
         }
 
+        _playerComponent.GetComponent<PlayerComponent>();
     }
 
     private void Update()
@@ -187,7 +192,8 @@ public class BattleButtonsManager : MonoBehaviour
                 _skills1._launcher = GameObject.Find("Synthia");
                 _attackDialogue.SetText("What should " + _skills1._launcher.GetComponent<ScriptableReader>()._entityName + " do ?");
                 _skillsList.Add(_skills);
-                if (PlayerPrefs.GetInt("GlobalLvl") >= 2 && _synthia._entityMana >= 50 && _synthia._entityCooldown <= 0)
+
+                if (_playerComponent.Level >= 2 && _synthia._entityMana >= 50 && _synthia._entityCooldown <= 0)
                 {
                     _skillButton._interactable = true;
                 }
@@ -209,7 +215,7 @@ public class BattleButtonsManager : MonoBehaviour
                 _skills1._target = _enemies.First();
                 _skills2._launcher = GameObject.Find("Saber");
                 _attackDialogue.SetText("What should " + _skills2._launcher.GetComponent<ScriptableReader>()._entityName + " do ?");
-                if (PlayerPrefs.GetInt("GlobalLvl") >= 2 && _saber._entityMana >= 50 && _saber._entityCooldown <= 0)
+                if (_playerComponent.Level >= 2 && _saber._entityMana >= 50 && _saber._entityCooldown <= 0)
                 {
                     _skillButton._interactable = true;
                 }
@@ -248,7 +254,7 @@ public class BattleButtonsManager : MonoBehaviour
                 _skills._target = _enemies.First();
                 _skills1._launcher = GameObject.Find("Synthia");
                 _attackDialogue.SetText("What should " + _skills1._launcher.GetComponent<ScriptableReader>()._entityName + " do ?");
-                if (PlayerPrefs.GetInt("GlobalLvl") >= 2 && _synthia._entityMana >= 50 && _synthia._entityCooldown <= 0)
+                if (_playerComponent.Level >= 2 && _synthia._entityMana >= 50 && _synthia._entityCooldown <= 0)
                 {
                     _skillButton._interactable = true;
                 }
@@ -270,7 +276,7 @@ public class BattleButtonsManager : MonoBehaviour
                 _skills1._target = GameObject.Find(WhoToHeal());
                 _skills2._launcher = GameObject.Find("Saber");
                 _attackDialogue.SetText("What should " + _skills2._launcher.GetComponent<ScriptableReader>()._entityName + " do ?");
-                if (PlayerPrefs.GetInt("GlobalLvl") >= 2 && _saber._entityMana >= 50 && _saber._entityCooldown <= 0)
+                if (_playerComponent.Level >= 2 && _saber._entityMana >= 50 && _saber._entityCooldown <= 0)
                 {
                     _skillButton._interactable = true;
                 }
@@ -308,7 +314,7 @@ public class BattleButtonsManager : MonoBehaviour
                 _skillsList.Add(_skills);
                 _skills1._launcher = GameObject.Find("Synthia");
                 _attackDialogue.SetText("What should " + _skills1._launcher.GetComponent<ScriptableReader>()._entityName + " do ?");
-                if (PlayerPrefs.GetInt("GlobalLvl") >= 2 && _synthia._entityMana >= 50 && _synthia._entityCooldown <= 0)
+                if (_playerComponent.Level >= 2 && _synthia._entityMana >= 50 && _synthia._entityCooldown <= 0)
                 {
                     _skillButton._interactable = true;
                 }
@@ -329,7 +335,7 @@ public class BattleButtonsManager : MonoBehaviour
                 _skillsList.Add(_skills1);
                 _skills2._launcher = GameObject.Find("Saber");
                 _attackDialogue.SetText("What should " + _skills2._launcher.GetComponent<ScriptableReader>()._entityName + " do ?");
-                if (PlayerPrefs.GetInt("GlobalLvl") >= 2 && _saber._entityMana >= 50 && _saber._entityCooldown <= 0)
+                if (_playerComponent.Level >= 2 && _saber._entityMana >= 50 && _saber._entityCooldown <= 0)
                 {
                     _skillButton._interactable = true;
                 }
@@ -365,12 +371,17 @@ public class BattleButtonsManager : MonoBehaviour
     }
     private void Levelling()
     {    
-        if (PlayerPrefs.GetInt("GlobalLvl") < 3)
+        if (_playerComponent.Level < 3)
         {
             _attackDialogue.SetText("you have gained 50 xp");
-            if (PlayerPrefs.GetInt("GlobalXP") >= PlayerPrefs.GetInt("threshold"))
+            _playerComponent.Exp += 50;
+            
+            if (_playerComponent.Exp >= _playerComponent.threshold)
             {
                 _attackDialogue.SetText("You have gained a lvl");
+                _playerComponent.Level +=1;
+                _playerComponent.threshold += 50;
+                _playerComponent.Exp = 0;
             }
         }
     }
@@ -395,11 +406,13 @@ public class BattleButtonsManager : MonoBehaviour
             if (enemy.GetComponent<ScriptableReader>()._entityLife <= 0)
             {
                 _enemies.Remove(enemy);
-                int randkey = Random.Range(0, 1);
+                int randkey = Random.Range(0, 2);
+
                 if (randkey == 0)
                 {
+                    _playerComponent.key += 1;
                     _attackDialogue.SetText(enemy.GetComponent<ScriptableReader>()._entityName + " has been defeated. You found a key,it can open locked doors !");
-                    PlayerPrefs.SetInt("Key", PlayerPrefs.GetInt("key") + 1);
+                    
                 }
                 else
                 {
@@ -591,7 +604,7 @@ public class BattleButtonsManager : MonoBehaviour
         EndGame();
         _attackButton._interactable = true;
         _skipButton._interactable = true;
-        if (PlayerPrefs.GetInt("GlobalLvl") >= 2 && _xander._entityMana >= 50 && _xander._entityCooldown <= 0)
+        if (_playerComponent.Level >= 2 && _xander._entityMana >= 50 && _xander._entityCooldown <= 0)
         {
             _skillButton._interactable = true;
         }

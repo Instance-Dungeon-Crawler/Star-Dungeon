@@ -6,29 +6,28 @@ using UnityEngine;
 
 public class ClosedDoor : MonoBehaviour
 {
-    OpenDoor _OpenDoor;
-    PlayerComponent _PlayerComponent;
+    public PlayerComponent _PlayerComponent;
 
     [SerializeField] AudioClip _doorClip;
     private bool _canOpenDoor = false;
     private bool _canCloseDoor = false;
     public AudioSource _audioSource;
-    public int _Haskey;
+
     private Vector3 _initRightDoorPosition;
     private Vector3 _initLeftDoorPosition;
-    public int key;
+
 
     private void Start()
     {
         _initRightDoorPosition = transform.GetChild(0).GetChild(1).localPosition;
         _initLeftDoorPosition = transform.GetChild(0).GetChild(0).localPosition;
-        _OpenDoor = GetComponent<OpenDoor>();
+
 
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (key == 1 && other.tag == "Player")
+        if (_PlayerComponent.key >= 1 && other.tag == "Player")
         {
             AudioClip clip = _doorClip;
             _audioSource.PlayOneShot(clip);
@@ -39,7 +38,7 @@ public class ClosedDoor : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (key == 1 && other.tag == "Player")
+        if (_PlayerComponent.key >= 1 && other.tag == "Player")
         {
             AudioClip clip = _doorClip;
             _audioSource.PlayOneShot(clip);
@@ -56,7 +55,7 @@ public class ClosedDoor : MonoBehaviour
 
     private void MoveDoor()
     {
-        
+
         if (_canOpenDoor && transform.GetChild(0).GetChild(0).localPosition.z <= 2 && transform.localRotation.y > 0)
         {
             transform.GetChild(0).GetComponent<BoxCollider>().enabled = false;
@@ -87,3 +86,4 @@ public class ClosedDoor : MonoBehaviour
         }
     }
 }
+

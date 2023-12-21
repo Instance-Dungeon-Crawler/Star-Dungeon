@@ -7,16 +7,22 @@ using UnityEngine.SceneManagement;
 public class FinalDoor : MonoBehaviour
 {
     public GameObject _DialoguePorteFinal;
-    public int _haskey;
+  
 
+    PlayerComponent _playerComponent;
+
+    private void Start()
+    {
+        _playerComponent = GetComponent<PlayerComponent>();
+    }
     void OnTriggerEnter(Collider other)
     {
-        if (_haskey == 0 && other.gameObject.CompareTag("FinalDoor"))
+        if (_playerComponent.key == 0 && other.gameObject.CompareTag("FinalDoor"))
         {
             _DialoguePorteFinal.SetActive(true);
         }
 
-        if (_haskey == 1 && other.gameObject.CompareTag("FinalDoor"))
+        if (_playerComponent.key >= 1 && other.gameObject.CompareTag("FinalDoor"))
         {
             SceneManager.LoadScene("MainMenu");
         }
