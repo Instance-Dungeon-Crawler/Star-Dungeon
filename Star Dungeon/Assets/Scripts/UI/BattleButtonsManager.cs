@@ -474,7 +474,7 @@ public class BattleButtonsManager : MonoBehaviour
                 {
                     skills._launcher.GetComponent<ScriptableReader>()._entityBleeding = false;
                 }
-                _attackDialogue.SetText(skills._launcher.GetComponent<ScriptableReader>()._entityName + " lost health due to bleeding");
+                _attackDialogue.SetText(skills._launcher.GetComponent<ScriptableReader>()._entityName + " lost " + skills._damage + " hp due to bleeding");
                 StartCoroutine(ClearDialogueBox());
             }
             else
@@ -490,14 +490,14 @@ public class BattleButtonsManager : MonoBehaviour
                     Debug.Log("attack");
                     skills._damage = (skills._launcher.GetComponent<ScriptableReader>()._entityPower / skills._target.GetComponent<ScriptableReader>()._entityResistance) * _luckFactor;
                     skills._target.GetComponent<ScriptableReader>()._entityLife -= skills._damage;
-                    _attackDialogue.SetText(skills._launcher.GetComponent<ScriptableReader>()._entityName + " attack " + skills._target.GetComponent<ScriptableReader>()._entityName);
+                    _attackDialogue.SetText(skills._launcher.GetComponent<ScriptableReader>()._entityName + " attack " + skills._target.GetComponent<ScriptableReader>()._entityName + "for " + skills._damage + " damage point.");
                     yield return new WaitForSeconds(1);
                     int randbleed = Random.Range(0, 100);
-                    if (randbleed <= 25 && skills._launcher.GetComponent<ScriptableReader>()._entityName == "Thermis" && !skills._target.GetComponent<ScriptableReader>()._entityBleeding)
+                    if (randbleed <= 25 && skills._launcher.GetComponent<ScriptableReader>()._entityName == "Thermis" && !skills._target.GetComponent<ScriptableReader>()._entityBleeding);
                     {
                         skills._target.GetComponent<ScriptableReader>()._entityBleeding = true;
                         skills._target.GetComponent<ScriptableReader>()._entityBleedTimer = 3;
-                        _attackDialogue.SetText(skills._target.GetComponent<ScriptableReader>()._entityName + " is bleeding");
+                        _attackDialogue.SetText(skills._target.GetComponent<ScriptableReader>()._entityName + " is bleeding" + "for " + skills._damage + " damage point.");
                     }
                     StartCoroutine(ClearDialogueBox());
                 }
@@ -531,7 +531,7 @@ public class BattleButtonsManager : MonoBehaviour
                         skills._target.GetComponent<ScriptableReader>()._entityLife -= skills._damage;
                         _xander._entityMana -= 50;
                         _xander._entityCooldown = 2;
-                        _attackDialogue.SetText(skills._launcher.GetComponent<ScriptableReader>()._entityName + " wind up and strikes " + skills._target.GetComponent<ScriptableReader>()._entityName+ " hard.");
+                        _attackDialogue.SetText(skills._launcher.GetComponent<ScriptableReader>()._entityName + " wind up and strikes " + skills._target.GetComponent<ScriptableReader>()._entityName + "for " + skills._damage + " damage point.");
                         StartCoroutine(ClearDialogueBox());
                     }
                     else if (skills._launcher.GetComponent<ScriptableReader>()._entityLife <= 0)
@@ -555,7 +555,7 @@ public class BattleButtonsManager : MonoBehaviour
                         skills._target.GetComponent<ScriptableReader>()._entityLife -= skills._damage;
                         _saber._entityMana -= 50;
                         _saber._entityCooldown = 2;
-                        _attackDialogue.SetText(skills._launcher.GetComponent<ScriptableReader>()._entityName + " strike " + skills._target.GetComponent<ScriptableReader>()._entityName + " below the belt.");
+                        _attackDialogue.SetText(skills._launcher.GetComponent<ScriptableReader>()._entityName + " strike " + skills._target.GetComponent<ScriptableReader>()._entityName + "for " + skills._damage + " damage point.");
                         StartCoroutine(ClearDialogueBox());
                     }
                     else if (skills._launcher.GetComponent<ScriptableReader>()._entityLife <= 0)
@@ -585,7 +585,7 @@ public class BattleButtonsManager : MonoBehaviour
                             skills._target.GetComponent<ScriptableReader>()._entityLife += skills._damage;
                             _synthia._entityMana -= 50;
                             _synthia._entityCooldown = 2;
-                            _attackDialogue.SetText(skills._launcher.GetComponent<ScriptableReader>()._entityName + " healed " + skills._target.GetComponent<ScriptableReader>()._entityName);
+                            _attackDialogue.SetText(skills._launcher.GetComponent<ScriptableReader>()._entityName + " healed " + skills._target.GetComponent<ScriptableReader>()._entityName + "for " + skills._damage + " Health point.");
                             StartCoroutine(ClearDialogueBox());
                         }
                     }
