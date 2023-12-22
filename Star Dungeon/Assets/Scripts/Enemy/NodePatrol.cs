@@ -32,7 +32,7 @@ public class NodePatrol : Node
         }
         if (Physics.Raycast(new Vector3(_transform.position.x, _transform.position.y + 2, _transform.position.z), _transform.forward, out hit, 7f))
         {
-            if (hit.collider.transform.parent.name.Contains("Door") && _Agent.velocity.magnitude <= 0)
+            if (hit.collider.name == "GameObject" && _Agent.velocity.magnitude <= 0)
             {
                 _transform.rotation = Quaternion.Euler(0, _transform.eulerAngles.y + 90f, 0);
             }
