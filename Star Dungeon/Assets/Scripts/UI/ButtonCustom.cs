@@ -4,6 +4,7 @@ using static UnityEngine.UI.Button;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class ButtonCustom : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
 {
@@ -76,4 +77,18 @@ public class ButtonCustom : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
         else
             GetComponent<Image>().sprite = m_enable;
     }
+
+    public void BackToMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+
+
+
+
+
+
+
+
 }
+
